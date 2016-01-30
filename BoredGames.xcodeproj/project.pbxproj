@@ -14,6 +14,11 @@
 		610625E91C5C82C300D1F2A4 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610625E71C5C82C300D1F2A4 /* Game.swift */; };
 		610625EB1C5C82F000D1F2A4 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610625EA1C5C82F000D1F2A4 /* Player.swift */; };
 		610625EC1C5C82F000D1F2A4 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610625EA1C5C82F000D1F2A4 /* Player.swift */; };
+		610625EE1C5C8D0C00D1F2A4 /* PlayerScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610625ED1C5C8D0C00D1F2A4 /* PlayerScanViewController.swift */; };
+		610625F21C5C9EE800D1F2A4 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610625F11C5C9EE800D1F2A4 /* GameViewController.swift */; };
+		610625F61C5CA1C300D1F2A4 /* TimelineGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610625F51C5CA1C300D1F2A4 /* TimelineGame.swift */; };
+		610625F71C5CA1C300D1F2A4 /* TimelineGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610625F51C5CA1C300D1F2A4 /* TimelineGame.swift */; };
+		610625F91C5CA43A00D1F2A4 /* TimelineGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610625F81C5CA43A00D1F2A4 /* TimelineGameViewController.swift */; };
 		618006D31C5C11EA0024FC1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618006D21C5C11EA0024FC1D /* AppDelegate.swift */; };
 		618006D81C5C11EA0024FC1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 618006D61C5C11EA0024FC1D /* Main.storyboard */; };
 		618006DA1C5C11EA0024FC1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 618006D91C5C11EA0024FC1D /* Assets.xcassets */; };
@@ -44,15 +49,15 @@
 		618007181C5C18B70024FC1D /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618007021C5C18B70024FC1D /* WebSocket.swift */; };
 		6180071C1C5C1A5A0024FC1D /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6180071B1C5C1A5A0024FC1D /* Utilities.swift */; };
 		6180071E1C5C33ED0024FC1D /* TimelineDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6180071D1C5C33ED0024FC1D /* TimelineDeck.swift */; };
-		618007201C5C437A0024FC1D /* AmericanHistoryTimelineDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6180071F1C5C437A0024FC1D /* AmericanHistoryTimelineDeck.swift */; };
+		618007201C5C437A0024FC1D /* TimelineDeckAmericanHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6180071F1C5C437A0024FC1D /* TimelineDeckAmericanHistory.swift */; };
 		618007281C5C440D0024FC1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618007271C5C440D0024FC1D /* AppDelegate.swift */; };
-		6180072A1C5C440D0024FC1D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618007291C5C440D0024FC1D /* ViewController.swift */; };
+		6180072A1C5C440D0024FC1D /* GameShowcaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618007291C5C440D0024FC1D /* GameShowcaseController.swift */; };
 		6180072D1C5C440D0024FC1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6180072B1C5C440D0024FC1D /* Main.storyboard */; };
 		6180072F1C5C440D0024FC1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6180072E1C5C440D0024FC1D /* Assets.xcassets */; };
 		618007341C5C441A0024FC1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 618006D91C5C11EA0024FC1D /* Assets.xcassets */; };
 		618007381C5C44BE0024FC1D /* TimelineHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618007371C5C44BE0024FC1D /* TimelineHand.swift */; };
 		618007391C5C44BE0024FC1D /* TimelineHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618007371C5C44BE0024FC1D /* TimelineHand.swift */; };
-		6180073A1C5C454D0024FC1D /* AmericanHistoryTimelineDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6180071F1C5C437A0024FC1D /* AmericanHistoryTimelineDeck.swift */; };
+		6180073A1C5C454D0024FC1D /* TimelineDeckAmericanHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6180071F1C5C437A0024FC1D /* TimelineDeckAmericanHistory.swift */; };
 		6180073B1C5C45500024FC1D /* TimelineDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6180071D1C5C33ED0024FC1D /* TimelineDeck.swift */; };
 		6180073C1C5C45520024FC1D /* TimelineCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618006E71C5C15D30024FC1D /* TimelineCard.swift */; };
 		618007541C5C456B0024FC1D /* SocketAckEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618006ED1C5C18B70024FC1D /* SocketAckEmitter.swift */; };
@@ -88,6 +93,10 @@
 		610625E51C5C796700D1F2A4 /* QRScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScanViewController.swift; sourceTree = "<group>"; };
 		610625E71C5C82C300D1F2A4 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		610625EA1C5C82F000D1F2A4 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		610625ED1C5C8D0C00D1F2A4 /* PlayerScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerScanViewController.swift; sourceTree = "<group>"; };
+		610625F11C5C9EE800D1F2A4 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		610625F51C5CA1C300D1F2A4 /* TimelineGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineGame.swift; sourceTree = "<group>"; };
+		610625F81C5CA43A00D1F2A4 /* TimelineGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineGameViewController.swift; sourceTree = "<group>"; };
 		618006CF1C5C11EA0024FC1D /* BoredGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoredGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		618006D21C5C11EA0024FC1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		618006D71C5C11EA0024FC1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -120,10 +129,10 @@
 		618007021C5C18B70024FC1D /* WebSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSocket.swift; sourceTree = "<group>"; };
 		6180071B1C5C1A5A0024FC1D /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		6180071D1C5C33ED0024FC1D /* TimelineDeck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineDeck.swift; sourceTree = "<group>"; };
-		6180071F1C5C437A0024FC1D /* AmericanHistoryTimelineDeck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmericanHistoryTimelineDeck.swift; sourceTree = "<group>"; };
+		6180071F1C5C437A0024FC1D /* TimelineDeckAmericanHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineDeckAmericanHistory.swift; sourceTree = "<group>"; };
 		618007251C5C440D0024FC1D /* AppleTVBoredGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleTVBoredGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		618007271C5C440D0024FC1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		618007291C5C440D0024FC1D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		618007291C5C440D0024FC1D /* GameShowcaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameShowcaseController.swift; sourceTree = "<group>"; };
 		6180072C1C5C440D0024FC1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6180072E1C5C440D0024FC1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		618007301C5C440D0024FC1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -150,6 +159,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		610625F01C5C92D000D1F2A4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				618007291C5C440D0024FC1D /* GameShowcaseController.swift */,
+				610625ED1C5C8D0C00D1F2A4 /* PlayerScanViewController.swift */,
+				610625F11C5C9EE800D1F2A4 /* GameViewController.swift */,
+				610625F81C5CA43A00D1F2A4 /* TimelineGameViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		610625F31C5CA19B00D1F2A4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		610625F41C5CA1AA00D1F2A4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		618006C61C5C11EA0024FC1D = {
 			isa = PBXGroup;
 			children = (
@@ -254,8 +288,10 @@
 		618007261C5C440D0024FC1D /* AppleTVBoredGames */ = {
 			isa = PBXGroup;
 			children = (
+				610625F31C5CA19B00D1F2A4 /* Models */,
+				610625F41C5CA1AA00D1F2A4 /* Views */,
+				610625F01C5C92D000D1F2A4 /* Controllers */,
 				618007271C5C440D0024FC1D /* AppDelegate.swift */,
-				618007291C5C440D0024FC1D /* ViewController.swift */,
 				6180072B1C5C440D0024FC1D /* Main.storyboard */,
 				6180072E1C5C440D0024FC1D /* Assets.xcassets */,
 				618007301C5C440D0024FC1D /* Info.plist */,
@@ -269,6 +305,7 @@
 				618006E71C5C15D30024FC1D /* TimelineCard.swift */,
 				618007361C5C44590024FC1D /* Decks */,
 				618007371C5C44BE0024FC1D /* TimelineHand.swift */,
+				610625F51C5CA1C300D1F2A4 /* TimelineGame.swift */,
 			);
 			name = Timeline;
 			sourceTree = "<group>";
@@ -277,7 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				6180071D1C5C33ED0024FC1D /* TimelineDeck.swift */,
-				6180071F1C5C437A0024FC1D /* AmericanHistoryTimelineDeck.swift */,
+				6180071F1C5C437A0024FC1D /* TimelineDeckAmericanHistory.swift */,
 			);
 			name = Decks;
 			sourceTree = "<group>";
@@ -404,7 +441,8 @@
 				618007131C5C18B70024FC1D /* SocketPacket.swift in Sources */,
 				618007081C5C18B70024FC1D /* SocketEngineClient.swift in Sources */,
 				618007051C5C18B70024FC1D /* SocketAnyEvent.swift in Sources */,
-				618007201C5C437A0024FC1D /* AmericanHistoryTimelineDeck.swift in Sources */,
+				610625F61C5CA1C300D1F2A4 /* TimelineGame.swift in Sources */,
+				618007201C5C437A0024FC1D /* TimelineDeckAmericanHistory.swift in Sources */,
 				6180070F1C5C18B70024FC1D /* SocketIOClient.swift in Sources */,
 				618007061C5C18B70024FC1D /* SocketClientSpec.swift in Sources */,
 				6180070A1C5C18B70024FC1D /* SocketEnginePollable.swift in Sources */,
@@ -427,13 +465,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6180073A1C5C454D0024FC1D /* AmericanHistoryTimelineDeck.swift in Sources */,
+				6180073A1C5C454D0024FC1D /* TimelineDeckAmericanHistory.swift in Sources */,
 				618007591C5C456B0024FC1D /* SocketEngineClient.swift in Sources */,
 				618007651C5C456B0024FC1D /* SocketParsable.swift in Sources */,
 				618007581C5C456B0024FC1D /* SocketEngine.swift in Sources */,
 				6180075C1C5C456B0024FC1D /* SocketEngineSpec.swift in Sources */,
-				6180072A1C5C440D0024FC1D /* ViewController.swift in Sources */,
+				6180072A1C5C440D0024FC1D /* GameShowcaseController.swift in Sources */,
+				610625F21C5C9EE800D1F2A4 /* GameViewController.swift in Sources */,
 				618007561C5C456B0024FC1D /* SocketAnyEvent.swift in Sources */,
+				610625EE1C5C8D0C00D1F2A4 /* PlayerScanViewController.swift in Sources */,
 				6180073B1C5C45500024FC1D /* TimelineDeck.swift in Sources */,
 				618007571C5C456B0024FC1D /* SocketClientSpec.swift in Sources */,
 				618007281C5C440D0024FC1D /* AppDelegate.swift in Sources */,
@@ -443,6 +483,7 @@
 				618007691C5C456B0024FC1D /* WebSocket.swift in Sources */,
 				618007541C5C456B0024FC1D /* SocketAckEmitter.swift in Sources */,
 				6180075A1C5C456B0024FC1D /* SocketEnginePacketType.swift in Sources */,
+				610625F71C5CA1C300D1F2A4 /* TimelineGame.swift in Sources */,
 				618007641C5C456B0024FC1D /* SocketPacket.swift in Sources */,
 				6180075E1C5C456B0024FC1D /* SocketEventHandler.swift in Sources */,
 				6180076B1C5C456F0024FC1D /* Utilities.swift in Sources */,
@@ -454,6 +495,7 @@
 				6180075B1C5C456B0024FC1D /* SocketEnginePollable.swift in Sources */,
 				618007601C5C456B0024FC1D /* SocketIOClient.swift in Sources */,
 				618007661C5C456B0024FC1D /* SocketStringReader.swift in Sources */,
+				610625F91C5CA43A00D1F2A4 /* TimelineGameViewController.swift in Sources */,
 				618007671C5C456B0024FC1D /* SocketTypes.swift in Sources */,
 				6180073C1C5C45520024FC1D /* TimelineCard.swift in Sources */,
 				6180076A1C5C456B0024FC1D /* SwiftyJSON.swift in Sources */,

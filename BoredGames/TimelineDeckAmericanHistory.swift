@@ -8,7 +8,7 @@
 
 import Foundation
 
-class AmericanHistoryTimelineDeck: TimelineDeck {
+class TimelineDeckAmericanHistory: TimelineDeck {
     
     override init(){
         super.init()
