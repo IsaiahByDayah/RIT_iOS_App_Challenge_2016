@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		610625E31C5C756C00D1F2A4 /* Constants.plist in Resources */ = {isa = PBXBuildFile; fileRef = 610625E21C5C756C00D1F2A4 /* Constants.plist */; };
+		610625E41C5C757300D1F2A4 /* Constants.plist in Resources */ = {isa = PBXBuildFile; fileRef = 610625E21C5C756C00D1F2A4 /* Constants.plist */; };
 		618006D31C5C11EA0024FC1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618006D21C5C11EA0024FC1D /* AppDelegate.swift */; };
 		618006D51C5C11EA0024FC1D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618006D41C5C11EA0024FC1D /* ViewController.swift */; };
 		618006D81C5C11EA0024FC1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 618006D61C5C11EA0024FC1D /* Main.storyboard */; };
@@ -78,6 +80,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		610625E21C5C756C00D1F2A4 /* Constants.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Constants.plist; sourceTree = "<group>"; };
 		618006CF1C5C11EA0024FC1D /* BoredGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoredGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		618006D21C5C11EA0024FC1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		618006D41C5C11EA0024FC1D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +172,7 @@
 				618006D61C5C11EA0024FC1D /* Main.storyboard */,
 				618006D91C5C11EA0024FC1D /* Assets.xcassets */,
 				618006DB1C5C11EA0024FC1D /* LaunchScreen.storyboard */,
+				610625E21C5C756C00D1F2A4 /* Constants.plist */,
 				618006DE1C5C11EA0024FC1D /* Info.plist */,
 				618006E91C5C160E0024FC1D /* Frameworks */,
 			);
@@ -351,6 +355,7 @@
 			files = (
 				618006DD1C5C11EA0024FC1D /* LaunchScreen.storyboard in Resources */,
 				618006DA1C5C11EA0024FC1D /* Assets.xcassets in Resources */,
+				610625E31C5C756C00D1F2A4 /* Constants.plist in Resources */,
 				618006D81C5C11EA0024FC1D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,6 +366,7 @@
 			files = (
 				6180072F1C5C440D0024FC1D /* Assets.xcassets in Resources */,
 				618007341C5C441A0024FC1D /* Assets.xcassets in Resources */,
+				610625E41C5C757300D1F2A4 /* Constants.plist in Resources */,
 				6180072D1C5C440D0024FC1D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
