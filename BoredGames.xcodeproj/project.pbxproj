@@ -10,6 +10,10 @@
 		610625E31C5C756C00D1F2A4 /* Constants.plist in Resources */ = {isa = PBXBuildFile; fileRef = 610625E21C5C756C00D1F2A4 /* Constants.plist */; };
 		610625E41C5C757300D1F2A4 /* Constants.plist in Resources */ = {isa = PBXBuildFile; fileRef = 610625E21C5C756C00D1F2A4 /* Constants.plist */; };
 		610625E61C5C796700D1F2A4 /* QRScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610625E51C5C796700D1F2A4 /* QRScanViewController.swift */; };
+		610625E81C5C82C300D1F2A4 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610625E71C5C82C300D1F2A4 /* Game.swift */; };
+		610625E91C5C82C300D1F2A4 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610625E71C5C82C300D1F2A4 /* Game.swift */; };
+		610625EB1C5C82F000D1F2A4 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610625EA1C5C82F000D1F2A4 /* Player.swift */; };
+		610625EC1C5C82F000D1F2A4 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610625EA1C5C82F000D1F2A4 /* Player.swift */; };
 		618006D31C5C11EA0024FC1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618006D21C5C11EA0024FC1D /* AppDelegate.swift */; };
 		618006D81C5C11EA0024FC1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 618006D61C5C11EA0024FC1D /* Main.storyboard */; };
 		618006DA1C5C11EA0024FC1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 618006D91C5C11EA0024FC1D /* Assets.xcassets */; };
@@ -82,6 +86,8 @@
 /* Begin PBXFileReference section */
 		610625E21C5C756C00D1F2A4 /* Constants.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Constants.plist; sourceTree = "<group>"; };
 		610625E51C5C796700D1F2A4 /* QRScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScanViewController.swift; sourceTree = "<group>"; };
+		610625E71C5C82C300D1F2A4 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		610625EA1C5C82F000D1F2A4 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		618006CF1C5C11EA0024FC1D /* BoredGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoredGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		618006D21C5C11EA0024FC1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		618006D71C5C11EA0024FC1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -193,6 +199,8 @@
 			isa = PBXGroup;
 			children = (
 				618007351C5C444F0024FC1D /* Timeline */,
+				610625E71C5C82C300D1F2A4 /* Game.swift */,
+				610625EA1C5C82F000D1F2A4 /* Player.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -406,9 +414,11 @@
 				618007071C5C18B70024FC1D /* SocketEngine.swift in Sources */,
 				6180070D1C5C18B70024FC1D /* SocketEventHandler.swift in Sources */,
 				618007171C5C18B70024FC1D /* SwiftRegex.swift in Sources */,
+				610625E81C5C82C300D1F2A4 /* Game.swift in Sources */,
 				610625E61C5C796700D1F2A4 /* QRScanViewController.swift in Sources */,
 				618006D31C5C11EA0024FC1D /* AppDelegate.swift in Sources */,
 				618006EB1C5C16AD0024FC1D /* SwiftyJSON.swift in Sources */,
+				610625EB1C5C82F000D1F2A4 /* Player.swift in Sources */,
 				618007381C5C44BE0024FC1D /* TimelineHand.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,8 +447,10 @@
 				6180075E1C5C456B0024FC1D /* SocketEventHandler.swift in Sources */,
 				6180076B1C5C456F0024FC1D /* Utilities.swift in Sources */,
 				618007611C5C456B0024FC1D /* SocketIOClientOption.swift in Sources */,
+				610625EC1C5C82F000D1F2A4 /* Player.swift in Sources */,
 				6180075D1C5C456B0024FC1D /* SocketEngineWebsocket.swift in Sources */,
 				618007621C5C456B0024FC1D /* SocketIOClientStatus.swift in Sources */,
+				610625E91C5C82C300D1F2A4 /* Game.swift in Sources */,
 				6180075B1C5C456B0024FC1D /* SocketEnginePollable.swift in Sources */,
 				618007601C5C456B0024FC1D /* SocketIOClient.swift in Sources */,
 				618007661C5C456B0024FC1D /* SocketStringReader.swift in Sources */,
