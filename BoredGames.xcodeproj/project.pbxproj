@@ -27,12 +27,6 @@
 		615F8E621C5D45FF00FE0DF5 /* TimelinePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615F8E601C5D45FF00FE0DF5 /* TimelinePlayer.swift */; };
 		615F8E641C5D4E3A00FE0DF5 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615F8E631C5D4E3A00FE0DF5 /* PlayerViewController.swift */; };
 		615F8E651C5D4E3A00FE0DF5 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615F8E631C5D4E3A00FE0DF5 /* PlayerViewController.swift */; };
-		615F8E661C5D500F00FE0DF5 /* PlayerCardPositionChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60919811C5CA0F2000C290A /* PlayerCardPositionChoice.swift */; };
-		615F8E671C5D501200FE0DF5 /* GameBoardTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C609197F1C5C9E84000C290A /* GameBoardTVC.swift */; };
-		615F8E681C5D501400FE0DF5 /* PlayerHandTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C609197C1C5C8D55000C290A /* PlayerHandTVC.swift */; };
-		615F8E691C5D501700FE0DF5 /* MainMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60919731C5C6163000C290A /* MainMenuVC.swift */; };
-		615F8E6A1C5D501700FE0DF5 /* AboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60919751C5C6642000C290A /* AboutUsVC.swift */; };
-		615F8E6B1C5D501700FE0DF5 /* QRScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610625E51C5C796700D1F2A4 /* QRScanViewController.swift */; };
 		618006D31C5C11EA0024FC1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618006D21C5C11EA0024FC1D /* AppDelegate.swift */; };
 		618006D81C5C11EA0024FC1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 618006D61C5C11EA0024FC1D /* Main.storyboard */; };
 		618006DA1C5C11EA0024FC1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 618006D91C5C11EA0024FC1D /* Assets.xcassets */; };
@@ -98,6 +92,7 @@
 		618007691C5C456B0024FC1D /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618007021C5C18B70024FC1D /* WebSocket.swift */; };
 		6180076A1C5C456B0024FC1D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618006EA1C5C16AD0024FC1D /* SwiftyJSON.swift */; };
 		6180076B1C5C456F0024FC1D /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6180071B1C5C1A5A0024FC1D /* Utilities.swift */; };
+		61D735FF1C5D51B00084EFC9 /* PlayerHandTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C609197C1C5C8D55000C290A /* PlayerHandTVC.swift */; };
 		C60919741C5C6163000C290A /* MainMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60919731C5C6163000C290A /* MainMenuVC.swift */; };
 		C60919761C5C6642000C290A /* AboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60919751C5C6642000C290A /* AboutUsVC.swift */; };
 		C609197D1C5C8D55000C290A /* PlayerHandTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C609197C1C5C8D55000C290A /* PlayerHandTVC.swift */; };
@@ -513,9 +508,7 @@
 				610625EE1C5C8D0C00D1F2A4 /* PlayerScanViewController.swift in Sources */,
 				6180073B1C5C45500024FC1D /* TimelineDeck.swift in Sources */,
 				618007571C5C456B0024FC1D /* SocketClientSpec.swift in Sources */,
-				615F8E671C5D501200FE0DF5 /* GameBoardTVC.swift in Sources */,
 				618007281C5C440D0024FC1D /* AppDelegate.swift in Sources */,
-				615F8E691C5D501700FE0DF5 /* MainMenuVC.swift in Sources */,
 				6180075F1C5C456B0024FC1D /* SocketFixUTF8.swift in Sources */,
 				618007681C5C456B0024FC1D /* SwiftRegex.swift in Sources */,
 				618007551C5C456B0024FC1D /* SocketAckManager.swift in Sources */,
@@ -525,19 +518,15 @@
 				610625F71C5CA1C300D1F2A4 /* TimelineGame.swift in Sources */,
 				618007641C5C456B0024FC1D /* SocketPacket.swift in Sources */,
 				6180075E1C5C456B0024FC1D /* SocketEventHandler.swift in Sources */,
-				615F8E6B1C5D501700FE0DF5 /* QRScanViewController.swift in Sources */,
 				6180076B1C5C456F0024FC1D /* Utilities.swift in Sources */,
 				618007611C5C456B0024FC1D /* SocketIOClientOption.swift in Sources */,
-				615F8E6A1C5D501700FE0DF5 /* AboutUsVC.swift in Sources */,
 				610625EC1C5C82F000D1F2A4 /* Player.swift in Sources */,
 				6180075D1C5C456B0024FC1D /* SocketEngineWebsocket.swift in Sources */,
 				618007621C5C456B0024FC1D /* SocketIOClientStatus.swift in Sources */,
 				610625E91C5C82C300D1F2A4 /* Game.swift in Sources */,
 				6180075B1C5C456B0024FC1D /* SocketEnginePollable.swift in Sources */,
 				618007601C5C456B0024FC1D /* SocketIOClient.swift in Sources */,
-				615F8E681C5D501400FE0DF5 /* PlayerHandTVC.swift in Sources */,
 				618007661C5C456B0024FC1D /* SocketStringReader.swift in Sources */,
-				615F8E661C5D500F00FE0DF5 /* PlayerCardPositionChoice.swift in Sources */,
 				610625F91C5CA43A00D1F2A4 /* TimelineGameViewController.swift in Sources */,
 				615F8E621C5D45FF00FE0DF5 /* TimelinePlayer.swift in Sources */,
 				618007671C5C456B0024FC1D /* SocketTypes.swift in Sources */,
@@ -545,6 +534,7 @@
 				6180076A1C5C456B0024FC1D /* SwiftyJSON.swift in Sources */,
 				618007631C5C456B0024FC1D /* SocketLogger.swift in Sources */,
 				618007391C5C44BE0024FC1D /* TimelineHand.swift in Sources */,
+				61D735FF1C5D51B00084EFC9 /* PlayerHandTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

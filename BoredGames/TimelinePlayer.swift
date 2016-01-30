@@ -51,7 +51,7 @@ class TimelinePlayer: Player {
         
         let vc = storyboard.instantiateViewControllerWithIdentifier(vcIdentifier) as! UINavigationController
         
-        let tlvc = vc.viewControllers[0] as! PlayerHandVC
+        let tlvc = vc.viewControllers[0] as! PlayerHandTVC
         
         vc.player = self
         
