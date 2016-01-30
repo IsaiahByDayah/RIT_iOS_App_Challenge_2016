@@ -53,9 +53,9 @@ class TimelinePlayer: Player {
         
         let tlvc = vc.viewControllers[0] as! PlayerHandTVC
         
-        vc.player = self
+        tlvc.player = self
         
-        return vc
+        return tlvc
     }
     
 }

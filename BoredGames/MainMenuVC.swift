@@ -16,22 +16,6 @@ class MainMenuVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        let herokuURL = Utilities.Constants.get("HerokuURL") as! String
-        
-        socket = SocketIOClient(socketURL: NSURL(string: herokuURL)!)
-        
-        socket.on("connect") {data, ack in
-            print("socket connected")
-        }
-        
-        socket.on("message") {data, ack in
-            if let msg = data[0] as? String {
-                print(msg)
-            }
-        }
-        
-        socket.connect()
     }
 
     override func didReceiveMemoryWarning() {

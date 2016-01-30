@@ -11,24 +11,27 @@ import UIKit
 var chosenPlayerCard: TimelineCard?
 
 class PlayerHandTVC: PlayerViewController, UITableViewDataSource, UITableViewDelegate {
-    
-    var deck = TimelineDeckAmericanHistory()
-    
-    var playerHand: TimelineHand?
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    var timelinePlayer: TimelinePlayer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        playerHand = TimelineHand(cards: deck.cards)
+        
+        timelinePlayer = player as! TimelinePlayer
+        
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadList:",name:"load", object: nil)
     }
     
     func loadList(notification: NSNotification){
         
-        let index = playerHand?.cards.indexOf(chosenPlayerCard!)
+        let index = timelinePlayer.hand.cards.indexOf(chosenPlayerCard!)
         
-        playerHand?.cards.removeAtIndex(index!)
+        timelinePlayer.hand.cards.removeAtIndex(index!)
         
         //load data here
         self.tableView.reloadData()
@@ -41,30 +44,30 @@ class PlayerHandTVC: PlayerViewController, UITableViewDataSource, UITableViewDel
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return playerHand!.cards.count
+        return timelinePlayer.hand.cards.count
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CardCell", forIndexPath: indexPath)
         
-        let cards = playerHand?.cards[indexPath.row]
+        let card = timelinePlayer.hand.cards[indexPath.row]
         // Configure the cell...
-        cell.textLabel?.text = cards?.title
-        cell.detailTextLabel?.text = "\(cards!.year)"
+        cell.textLabel?.text = card.title
+        cell.detailTextLabel?.text = "\(card.year)"
 
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        chosenPlayerCard = playerHand?.cards[indexPath.row]
+        chosenPlayerCard = timelinePlayer.hand.cards[indexPath.row]
         
         
     }

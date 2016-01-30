@@ -92,6 +92,7 @@ class QRScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
                 print(metadataObj.stringValue)
                 
                 // TODO: Handle QR Code Here
+                
             }
         }
     }
