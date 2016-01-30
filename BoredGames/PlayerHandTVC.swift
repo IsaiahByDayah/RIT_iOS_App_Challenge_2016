@@ -12,7 +12,7 @@ var chosenPlayerCard: TimelineCard?
 
 class PlayerHandTVC: UITableViewController {
     
-    var deck = AmericanHistoryTimelineDeck()
+    var deck = TimelineDeckAmericanHistory()
     
     var playerHand: TimelineHand?
 
