@@ -17,15 +17,7 @@ class MainMenuVC: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        guard let path = NSBundle.mainBundle().pathForResource("Constants", ofType: "plist") else {
-            return
-        }
-        
-        guard let properties = NSDictionary(contentsOfFile: path) else {
-            return
-        }
-        
-        let herokuURL = Utilities.Constants.getConstantFromPlist("HerokuURL") as! String
+        let herokuURL = Utilities.Constants.get("HerokuURL") as! String
         
         socket = SocketIOClient(socketURL: NSURL(string: herokuURL)!)
         

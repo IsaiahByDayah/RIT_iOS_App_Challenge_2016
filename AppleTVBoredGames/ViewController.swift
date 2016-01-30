@@ -25,7 +25,7 @@ class ViewController: UIViewController {
             return
         }
         
-        let herokuURL = Utilities.Constants.getConstantFromPlist("HerokuURL") as! String
+        let herokuURL = Utilities.Constants.get("HerokuURL") as! String
         
         socket = SocketIOClient(socketURL: NSURL(string: herokuURL)!)
         

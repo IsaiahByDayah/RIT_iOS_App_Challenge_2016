@@ -63,7 +63,7 @@ class Utilities: NSObject {
     }
     
     class Constants: NSObject{
-        static func getConstantFromPlist(varName: String) -> AnyObject?{
+        static func get(varName: String) -> AnyObject?{
             
             guard let path = NSBundle.mainBundle().pathForResource("Constants", ofType: "plist") else{
                 return nil
