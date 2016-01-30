@@ -61,4 +61,34 @@ class Utilities: NSObject {
             return scaledImage
         }
     }
+    
+    class Constants: NSObject{
+        static func getConstantFromPlist(varName: String) -> AnyObject?{
+            
+            guard let path = NSBundle.mainBundle().pathForResource("Constants", ofType: "plist") else{
+                return nil
+            }
+            
+            guard let constantVariable = NSDictionary(contentsOfFile: path) else{
+                return nil
+            }
+            
+            var constantValue = constantVariable[varName]
+            
+            return constantValue
+            
+        }
+        
+    }
 }
+
+
+
+
+
+
+
+
+
+
+

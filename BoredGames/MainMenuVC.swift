@@ -25,7 +25,7 @@ class MainMenuVC: UIViewController {
             return
         }
         
-        let herokuURL = properties["HerokuURL"]! as! String
+        let herokuURL = Utilities.Constants.getConstantFromPlist("HerokuURL") as! String
         
         socket = SocketIOClient(socketURL: NSURL(string: herokuURL)!)
         
