@@ -27,7 +27,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Scan Game Code"/>
                                 <connections>
-                                    <action selector="scanGameCode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RBH-um-8vs"/>
+                                    <action selector="scanGameCode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D0J-qa-MqI"/>
+                                    <segue destination="aPV-yc-K8g" kind="show" id="lQS-UD-8ID"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9rm-Jh-SHl">
@@ -66,6 +67,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="380" y="233"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="UvD-J5-rWN">
+            <objects>
+                <viewController id="aPV-yc-K8g" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Y8y-0A-FhD"/>
+                        <viewControllerLayoutGuide type="bottom" id="Z7N-m0-T3K"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TuI-X1-moW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VDy-d1-4g6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1251" y="233"/>
         </scene>
         <!--About UsVC-->
         <scene sceneID="HWQ-ma-vh5">
