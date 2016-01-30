@@ -22,6 +22,38 @@ class TimelineGame: Game {
         print(self.deck)
     }
     
+    convenience init() {
+        self.init(deck: TimelineDeckAmericanHistory())
+    }
+    
+    override func setup() {
+        self.socket.on("connect") {data, ack in
+            print("Game socket connected")
+            
+            let codeObj = JSON([
+                "id": "Hello Isaiah", //self.id,
+                "title": self.title
+                ])
+            
+            let code = "\(codeObj)"
+            
+            let obj = JSON.parse(code)
+            
+            print(obj["id"].stringValue)
+            
+            self.socket.emit("createRoom", code)
+        }
+        
+        self.socket.on("message") {data, ack in
+            let msg = JSON.parse(data[0] as! String)
+            
+            print(msg)
+        }
+        
+        self.socket.connect()
+        print("Game socket started")
+    }
+    
     override func getGameViewController() -> GameViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         

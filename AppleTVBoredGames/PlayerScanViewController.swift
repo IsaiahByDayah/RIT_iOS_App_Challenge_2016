@@ -27,6 +27,10 @@ class PlayerScanViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        if game == nil {
+            return
+        }
+        
         let codeObj = JSON([
             "id":game.id,
             "title": game.title
@@ -48,7 +52,10 @@ class PlayerScanViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         if game == nil {
             alertIssue()
+            return
         }
+        
+        game.setup()
     }
     
     func alertIssue(){

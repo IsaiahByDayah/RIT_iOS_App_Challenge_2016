@@ -41,6 +41,6 @@ class Game: NSObject {
     }
     
     func isRequiredPlayersMet() -> Bool {
-        return players.count >= minPlayers
+        return players.count >= self.minPlayers
     }
 }

@@ -65,6 +65,10 @@ class Utilities: NSObject {
     class Constants: NSObject{
         static func get(varName: String) -> AnyObject?{
             
+            if varName == "HerokuURL" {
+                return "http://localhost:18000" as AnyObject?
+            }
+            
             guard let path = NSBundle.mainBundle().pathForResource("Constants", ofType: "plist") else{
                 return nil
             }
