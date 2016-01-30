@@ -12,7 +12,7 @@ class TimelinePlayer: Player {
     
     var hand: TimelineHand!
     
-    private let vcIdentifier = "TimelinePlayerVC"
+    private let vcIdentifier = "TimelinePlayerScannedViewController"
     
     func giveHand(newHand: TimelineHand){
         self.hand = newHand
@@ -23,16 +23,18 @@ class TimelinePlayer: Player {
             print("Player socket connected")
             
             let codeObj = JSON([
-                "id": "TestPlayerID", //self.id,
-                "room": self.room
-                ])
+                "type": "JOIN_ROOM",
+                "room": self.room,
+                "from": self.id,
+                "to": "Game"
+            ])
             
             let code = "\(codeObj)"
             
             self.socket.emit("JOIN_ROOM", code)
         }
         
-        self.socket.on("message") {data, ack in
+        self.socket.on("MESSAGE") {data, ack in
             print("Data: \(data)")
             
             let msg = JSON.parse(data[0] as! String)
@@ -49,13 +51,11 @@ class TimelinePlayer: Player {
     override func getPlayerViewController() -> PlayerViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let vc = storyboard.instantiateViewControllerWithIdentifier(vcIdentifier) as! UINavigationController
+        let vc = storyboard.instantiateViewControllerWithIdentifier(vcIdentifier) as! TimelinePlayerScannedViewController
         
-        let tlvc = vc.viewControllers[0] as! PlayerHandTVC
+        vc.player = self
         
-        tlvc.player = self
-        
-        return tlvc
+        return vc
     }
     
 }

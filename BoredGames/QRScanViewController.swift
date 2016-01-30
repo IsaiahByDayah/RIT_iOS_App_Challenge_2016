@@ -18,6 +18,8 @@ class QRScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
     
     var hadIssue = false
     
+    var scanFound = false
+    
     @IBOutlet weak var cancelButton: UIButton!
 
     override func viewDidLoad() {
@@ -70,11 +72,16 @@ class QRScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
     
     override func viewDidAppear(animated: Bool) {
         if hadIssue {
-            self.alertIssue()
+            self.alertIssue("We weren't able to connect with an input to scan for a game QR code.")
         }
     }
     
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
+        
+        if scanFound {
+            return
+        }
+        
         if metadataObjects == nil || metadataObjects.count == 0 {
             qrCodeFrameView?.frame = CGRectZero
             return
@@ -88,17 +95,43 @@ class QRScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
             qrCodeFrameView?.frame = barCodeObject.bounds
             
             if metadataObj.stringValue != nil {
+                scanFound = true
                 AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
                 print(metadataObj.stringValue)
                 
                 // TODO: Handle QR Code Here
+                let json = JSON.parse(metadataObj.stringValue)
                 
+                let gameTitle = json["title"].stringValue
+                let room = json["id"].stringValue
+                
+                var player: Player?
+                
+                switch gameTitle {
+                case Utilities.Constants.get("TimelineTitle") as! String:
+                    player = TimelinePlayer(room: room)
+                    break;
+                default:
+                    player = nil
+                }
+                
+                if let thePlayer = player {
+                    thePlayer.setup()
+                    
+                    let vc = thePlayer.getPlayerViewController()
+                    
+                    self.presentViewController(vc, animated: true, completion: nil)
+                
+                } else {
+                    self.alertIssue("We weren't able to find a game based on that QR code. Please try again.")
+                    return
+                }
             }
         }
     }
     
-    func alertIssue(){
-        let confirmation = UIAlertController(title: "Uh Oh!", message: "We weren't able to connect with an input to scan for a game QR code.", preferredStyle: UIAlertControllerStyle.Alert)
+    func alertIssue(msg: String){
+        let confirmation = UIAlertController(title: "Uh Oh!", message: msg, preferredStyle: UIAlertControllerStyle.Alert)
         
         confirmation.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction) -> Void in
             // Handle user confirming word reset

@@ -17,7 +17,7 @@ class TimelineGame: Game {
     init(deck: TimelineDeck) {
         self.deck = deck
         
-        super.init(title: "Timeline", minPlayers: 0, maxPlayers: 5)
+        super.init(title: Utilities.Constants.get("TimelineTitle") as! String, minPlayers: 0, maxPlayers: 5)
         
         print(self.deck)
     }
@@ -31,16 +31,18 @@ class TimelineGame: Game {
             print("Game socket connected")
             
             let codeObj = JSON([
-                "id": "TestGameID", //self.id,
-                "title": self.title
-                ])
+                "type": "JOIN_ROOM",
+                "room": self.id,
+                "from": "Game",
+                "to": "Server"
+            ])
             
             let code = "\(codeObj)"
             
-            self.socket.emit("CREATE_ROOM", code)
+            self.socket.emit("JOIN_ROOM", code)
         }
         
-        self.socket.on("message") {data, ack in
+        self.socket.on("MESSAGE") {data, ack in
             print("Data: \(data)")
             
             let msg = JSON.parse(data[0] as! String)

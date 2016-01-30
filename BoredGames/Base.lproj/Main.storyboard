@@ -281,10 +281,56 @@
             </objects>
             <point key="canvasLocation" x="380" y="1018"/>
         </scene>
+        <!--Timeline Player Scanned View Controller-->
+        <scene sceneID="NeX-Mu-EY9">
+            <objects>
+                <viewController storyboardIdentifier="TimelinePlayerScannedViewController" id="Mzw-Wd-M2c" customClass="TimelinePlayerScannedViewController" customModule="BoredGames" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XNV-TB-PTi"/>
+                        <viewControllerLayoutGuide type="bottom" id="zPn-bi-j14"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="c0u-b2-2Lr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting for all players to be scanned in..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nlh-3v-JSq">
+                                <rect key="frame" x="20" y="289" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Set!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLU-DI-o5C">
+                                <rect key="frame" x="20" y="131" width="560" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="dai-UZ-rdl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pLU-DI-o5C" firstAttribute="trailing" secondItem="c0u-b2-2Lr" secondAttribute="trailingMargin" id="4tf-lO-o5P"/>
+                            <constraint firstItem="nlh-3v-JSq" firstAttribute="trailing" secondItem="pLU-DI-o5C" secondAttribute="trailing" id="7bN-sc-DDk"/>
+                            <constraint firstItem="nlh-3v-JSq" firstAttribute="centerY" secondItem="c0u-b2-2Lr" secondAttribute="centerY" id="7vb-i6-uWl"/>
+                            <constraint firstItem="nlh-3v-JSq" firstAttribute="leading" secondItem="c0u-b2-2Lr" secondAttribute="leadingMargin" id="GnP-t7-jrI"/>
+                            <constraint firstItem="pLU-DI-o5C" firstAttribute="top" secondItem="XNV-TB-PTi" secondAttribute="bottom" constant="111" id="OXz-gF-oZi"/>
+                            <constraint firstItem="pLU-DI-o5C" firstAttribute="leading" secondItem="nlh-3v-JSq" secondAttribute="leading" id="TWY-X8-2J1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="MZZ-wO-67m" kind="show" identifier="showTimelinePlayerNavVC" id="hmR-Op-z71"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uEJ-zJ-6Kb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2028" y="-619"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Jc4-Mv-ZyL">
             <objects>
-                <navigationController storyboardIdentifier="TimelinePlayerVC" automaticallyAdjustsScrollViewInsets="NO" id="MZZ-wO-67m" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="TimelinePlayerNavVC" automaticallyAdjustsScrollViewInsets="NO" id="MZZ-wO-67m" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="imE-lo-8r5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
