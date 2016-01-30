@@ -31,23 +31,21 @@ class TimelineGame: Game {
             print("Game socket connected")
             
             let codeObj = JSON([
-                "id": "Hello Isaiah", //self.id,
+                "id": "TestGameID", //self.id,
                 "title": self.title
                 ])
             
             let code = "\(codeObj)"
             
-            let obj = JSON.parse(code)
-            
-            print(obj["id"].stringValue)
-            
             self.socket.emit("createRoom", code)
         }
         
         self.socket.on("message") {data, ack in
-            let msg = JSON.parse(data[0] as! String)
+            print("Data: \(data)")
             
-            print(msg)
+            let msg = JSON.parse(data as! String)
+            
+            print("Message: \(msg)")
         }
         
         self.socket.connect()
