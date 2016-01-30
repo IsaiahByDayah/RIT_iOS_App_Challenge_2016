@@ -73,6 +73,8 @@
 		618007691C5C456B0024FC1D /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618007021C5C18B70024FC1D /* WebSocket.swift */; };
 		6180076A1C5C456B0024FC1D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618006EA1C5C16AD0024FC1D /* SwiftyJSON.swift */; };
 		6180076B1C5C456F0024FC1D /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6180071B1C5C1A5A0024FC1D /* Utilities.swift */; };
+		C60919741C5C6163000C290A /* MainMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60919731C5C6163000C290A /* MainMenuVC.swift */; };
+		C60919761C5C6642000C290A /* AboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60919751C5C6642000C290A /* AboutUsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,6 +119,8 @@
 		6180072E1C5C440D0024FC1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		618007301C5C440D0024FC1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		618007371C5C44BE0024FC1D /* TimelineHand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineHand.swift; sourceTree = "<group>"; };
+		C60919731C5C6163000C290A /* MainMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuVC.swift; sourceTree = "<group>"; };
+		C60919751C5C6642000C290A /* AboutUsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +179,8 @@
 			isa = PBXGroup;
 			children = (
 				618006D41C5C11EA0024FC1D /* ViewController.swift */,
+				C60919731C5C6163000C290A /* MainMenuVC.swift */,
+				C60919751C5C6642000C290A /* AboutUsVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -372,6 +378,7 @@
 				6180070C1C5C18B70024FC1D /* SocketEngineWebsocket.swift in Sources */,
 				6180070B1C5C18B70024FC1D /* SocketEngineSpec.swift in Sources */,
 				618006D51C5C11EA0024FC1D /* ViewController.swift in Sources */,
+				C60919761C5C6642000C290A /* AboutUsVC.swift in Sources */,
 				618007111C5C18B70024FC1D /* SocketIOClientStatus.swift in Sources */,
 				618007121C5C18B70024FC1D /* SocketLogger.swift in Sources */,
 				6180070E1C5C18B70024FC1D /* SocketFixUTF8.swift in Sources */,
@@ -390,6 +397,7 @@
 				6180070A1C5C18B70024FC1D /* SocketEnginePollable.swift in Sources */,
 				618006E81C5C15D30024FC1D /* TimelineCard.swift in Sources */,
 				6180071E1C5C33ED0024FC1D /* TimelineDeck.swift in Sources */,
+				C60919741C5C6163000C290A /* MainMenuVC.swift in Sources */,
 				618007071C5C18B70024FC1D /* SocketEngine.swift in Sources */,
 				6180070D1C5C18B70024FC1D /* SocketEventHandler.swift in Sources */,
 				618007171C5C18B70024FC1D /* SwiftRegex.swift in Sources */,
@@ -620,6 +628,7 @@
 				618006E31C5C11EA0024FC1D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		618007311C5C440D0024FC1D /* Build configuration list for PBXNativeTarget "AppleTVBoredGames" */ = {
 			isa = XCConfigurationList;
@@ -628,6 +637,7 @@
 				618007331C5C440D0024FC1D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

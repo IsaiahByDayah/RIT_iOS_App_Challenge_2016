@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main MenuVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainMenuVC" customModule="BoredGames" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,150 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQ1-p8-4hN">
+                                <rect key="frame" x="203" y="359" width="194" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="D1U-vU-BAj"/>
+                                    <constraint firstAttribute="width" constant="194" id="U5n-fa-cMV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Scan Game Code"/>
+                                <connections>
+                                    <action selector="scanGameCode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RBH-um-8vs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9rm-Jh-SHl">
+                                <rect key="frame" x="250" y="434" width="100" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="UqL-Ei-jsP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="About Us"/>
+                                <connections>
+                                    <segue destination="PXB-Qq-fZk" kind="show" id="fpn-Pe-fHz"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bored Games" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgh-YN-oIg">
+                                <rect key="frame" x="164" y="160" width="272" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="Jui-z0-lj2"/>
+                                    <constraint firstAttribute="width" constant="272" id="bg8-45-JAx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zgh-YN-oIg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DUt-QI-Qcv"/>
+                            <constraint firstItem="zgh-YN-oIg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="140" id="Qb0-Qv-49M"/>
+                            <constraint firstItem="9rm-Jh-SHl" firstAttribute="centerX" secondItem="BQ1-p8-4hN" secondAttribute="centerX" id="WQJ-nV-cGy"/>
+                            <constraint firstItem="9rm-Jh-SHl" firstAttribute="top" secondItem="BQ1-p8-4hN" secondAttribute="bottom" constant="26" id="edT-q4-pG5"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9rm-Jh-SHl" secondAttribute="bottom" constant="120" id="pXd-bk-7zp"/>
+                            <constraint firstItem="BQ1-p8-4hN" firstAttribute="centerX" secondItem="zgh-YN-oIg" secondAttribute="centerX" id="ruU-hG-7ad"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="380" y="233"/>
+        </scene>
+        <!--About UsVC-->
+        <scene sceneID="HWQ-ma-vh5">
+            <objects>
+                <viewController id="PXB-Qq-fZk" customClass="AboutUsVC" customModule="BoredGames" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bkY-VS-Gc9"/>
+                        <viewControllerLayoutGuide type="bottom" id="bN5-sU-vtv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qwI-j5-Ay0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team BG's" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCH-XJ-sc0">
+                                <rect key="frame" x="191" y="121" width="218" height="109"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="218" id="k2G-ET-11S"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jade Evans" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jaj-Z4-xFu">
+                                <rect key="frame" x="257" y="238" width="87" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="fQj-eb-W0A"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arthur Burgin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUN-Ai-YQD">
+                                <rect key="frame" x="249" y="267" width="103" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="2Me-gE-NLR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Isaiah Smith" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLz-pf-sCB">
+                                <rect key="frame" x="254" y="296" width="93" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="2TM-DX-Jb2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oy-za-WBf">
+                                <rect key="frame" x="50" y="404" width="500" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="HsU-8n-lra"/>
+                                </constraints>
+                                <string key="text">This app was created by us for the 
+2016 RIT iOS App Competition</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ujb-0A-bd0">
+                                <rect key="frame" x="264" y="453" width="72" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="72" id="Kpn-bz-tCs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backToMainMenu:" destination="PXB-Qq-fZk" eventType="touchUpInside" id="30s-rM-6ph"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ujb-0A-bd0" firstAttribute="top" secondItem="6oy-za-WBf" secondAttribute="bottom" constant="8" symbolic="YES" id="1M1-hr-eTZ"/>
+                            <constraint firstItem="bUN-Ai-YQD" firstAttribute="centerX" secondItem="OLz-pf-sCB" secondAttribute="centerX" id="Ad2-gt-Xad"/>
+                            <constraint firstItem="Jaj-Z4-xFu" firstAttribute="centerX" secondItem="fCH-XJ-sc0" secondAttribute="centerX" id="BRD-oI-C2d"/>
+                            <constraint firstItem="Jaj-Z4-xFu" firstAttribute="top" secondItem="fCH-XJ-sc0" secondAttribute="bottom" constant="8" symbolic="YES" id="ECd-Zu-Xcz"/>
+                            <constraint firstItem="OLz-pf-sCB" firstAttribute="top" secondItem="bUN-Ai-YQD" secondAttribute="bottom" constant="8" symbolic="YES" id="Ljj-Eg-aNl"/>
+                            <constraint firstItem="OLz-pf-sCB" firstAttribute="centerX" secondItem="qwI-j5-Ay0" secondAttribute="centerX" id="T7S-fJ-uCU"/>
+                            <constraint firstItem="fCH-XJ-sc0" firstAttribute="top" secondItem="bkY-VS-Gc9" secondAttribute="bottom" constant="101" id="TZQ-lt-hMW"/>
+                            <constraint firstItem="OLz-pf-sCB" firstAttribute="centerX" secondItem="6oy-za-WBf" secondAttribute="centerX" id="amV-Wg-xuo"/>
+                            <constraint firstItem="6oy-za-WBf" firstAttribute="top" secondItem="OLz-pf-sCB" secondAttribute="bottom" constant="87" id="btG-x5-Hw5"/>
+                            <constraint firstItem="6oy-za-WBf" firstAttribute="leading" secondItem="qwI-j5-Ay0" secondAttribute="leadingMargin" constant="30" id="grU-eX-3gN"/>
+                            <constraint firstItem="6oy-za-WBf" firstAttribute="centerX" secondItem="ujb-0A-bd0" secondAttribute="centerX" id="pn3-Fz-Vqh"/>
+                            <constraint firstItem="bN5-sU-vtv" firstAttribute="top" secondItem="ujb-0A-bd0" secondAttribute="bottom" constant="84" id="rik-e2-dzQ"/>
+                            <constraint firstItem="bN5-sU-vtv" firstAttribute="top" secondItem="6oy-za-WBf" secondAttribute="bottom" constant="155" id="sUH-gH-pqy"/>
+                            <constraint firstItem="Jaj-Z4-xFu" firstAttribute="centerX" secondItem="bUN-Ai-YQD" secondAttribute="centerX" id="v29-Ub-Erl"/>
+                            <constraint firstItem="bUN-Ai-YQD" firstAttribute="top" secondItem="Jaj-Z4-xFu" secondAttribute="bottom" constant="8" symbolic="YES" id="ygX-ht-FbV"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WC7-Ra-u0U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="380" y="1018"/>
         </scene>
     </scenes>
 </document>
