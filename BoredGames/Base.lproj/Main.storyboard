@@ -28,7 +28,7 @@
                                 <state key="normal" title="Scan Game Code"/>
                                 <connections>
                                     <action selector="scanGameCode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D0J-qa-MqI"/>
-                                    <segue destination="aPV-yc-K8g" kind="show" id="lQS-UD-8ID"/>
+                                    <segue destination="aPV-yc-K8g" kind="show" id="pdh-D0-EhA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9rm-Jh-SHl">
@@ -68,10 +68,10 @@
             </objects>
             <point key="canvasLocation" x="380" y="233"/>
         </scene>
-        <!--View Controller-->
+        <!--Scan View Controller-->
         <scene sceneID="UvD-J5-rWN">
             <objects>
-                <viewController id="aPV-yc-K8g" sceneMemberID="viewController">
+                <viewController id="aPV-yc-K8g" customClass="QRScanViewController" customModule="BoredGames" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Y8y-0A-FhD"/>
                         <viewControllerLayoutGuide type="bottom" id="Z7N-m0-T3K"/>
@@ -79,8 +79,24 @@
                     <view key="view" contentMode="scaleToFill" id="TuI-X1-moW">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nh7-69-OLL">
+                                <rect key="frame" x="241" y="550" width="119" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="119" id="hrv-LM-XmW"/>
+                                </constraints>
+                                <state key="normal" title="Cancel"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nh7-69-OLL" firstAttribute="centerX" secondItem="TuI-X1-moW" secondAttribute="centerX" id="9UX-4n-cz2"/>
+                            <constraint firstAttribute="bottom" secondItem="nh7-69-OLL" secondAttribute="bottom" constant="20" symbolic="YES" id="rVw-dV-2tH"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="nh7-69-OLL" id="8xK-Uh-Yz3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VDy-d1-4g6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
