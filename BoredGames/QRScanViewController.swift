@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import AudioToolbox
 
 class QRScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
@@ -87,8 +88,10 @@ class QRScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
             qrCodeFrameView?.frame = barCodeObject.bounds
             
             if metadataObj.stringValue != nil {
-                // TODO: Handle QR Code Here
+                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
                 print(metadataObj.stringValue)
+                
+                // TODO: Handle QR Code Here
             }
         }
     }

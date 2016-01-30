@@ -86,6 +86,9 @@
                                     <constraint firstAttribute="width" constant="119" id="hrv-LM-XmW"/>
                                 </constraints>
                                 <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelPressed:" destination="aPV-yc-K8g" eventType="touchUpInside" id="cqI-pR-7de"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
