@@ -90,6 +90,9 @@
 		6180076B1C5C456F0024FC1D /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6180071B1C5C1A5A0024FC1D /* Utilities.swift */; };
 		C60919741C5C6163000C290A /* MainMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60919731C5C6163000C290A /* MainMenuVC.swift */; };
 		C60919761C5C6642000C290A /* AboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60919751C5C6642000C290A /* AboutUsVC.swift */; };
+		C609197D1C5C8D55000C290A /* PlayerHandTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C609197C1C5C8D55000C290A /* PlayerHandTVC.swift */; };
+		C60919801C5C9E84000C290A /* GameBoardTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C609197F1C5C9E84000C290A /* GameBoardTVC.swift */; };
+		C60919821C5CA0F2000C290A /* PlayerCardPositionChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60919811C5CA0F2000C290A /* PlayerCardPositionChoice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -143,6 +146,9 @@
 		618007371C5C44BE0024FC1D /* TimelineHand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineHand.swift; sourceTree = "<group>"; };
 		C60919731C5C6163000C290A /* MainMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuVC.swift; sourceTree = "<group>"; };
 		C60919751C5C6642000C290A /* AboutUsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsVC.swift; sourceTree = "<group>"; };
+		C609197C1C5C8D55000C290A /* PlayerHandTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerHandTVC.swift; sourceTree = "<group>"; };
+		C609197F1C5C9E84000C290A /* GameBoardTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardTVC.swift; sourceTree = "<group>"; };
+		C60919811C5CA0F2000C290A /* PlayerCardPositionChoice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerCardPositionChoice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +235,9 @@
 				C60919731C5C6163000C290A /* MainMenuVC.swift */,
 				C60919751C5C6642000C290A /* AboutUsVC.swift */,
 				610625E51C5C796700D1F2A4 /* QRScanViewController.swift */,
+				C609197C1C5C8D55000C290A /* PlayerHandTVC.swift */,
+				C609197F1C5C9E84000C290A /* GameBoardTVC.swift */,
+				C60919811C5CA0F2000C290A /* PlayerCardPositionChoice.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -452,6 +461,7 @@
 				610625F61C5CA1C300D1F2A4 /* TimelineGame.swift in Sources */,
 				618007201C5C437A0024FC1D /* TimelineDeckAmericanHistory.swift in Sources */,
 				6180070F1C5C18B70024FC1D /* SocketIOClient.swift in Sources */,
+				C609197D1C5C8D55000C290A /* PlayerHandTVC.swift in Sources */,
 				618007061C5C18B70024FC1D /* SocketClientSpec.swift in Sources */,
 				6180070A1C5C18B70024FC1D /* SocketEnginePollable.swift in Sources */,
 				618006E81C5C15D30024FC1D /* TimelineCard.swift in Sources */,
@@ -463,6 +473,8 @@
 				610625E81C5C82C300D1F2A4 /* Game.swift in Sources */,
 				610625E61C5C796700D1F2A4 /* QRScanViewController.swift in Sources */,
 				618006D31C5C11EA0024FC1D /* AppDelegate.swift in Sources */,
+				C60919801C5C9E84000C290A /* GameBoardTVC.swift in Sources */,
+				C60919821C5CA0F2000C290A /* PlayerCardPositionChoice.swift in Sources */,
 				618006EB1C5C16AD0024FC1D /* SwiftyJSON.swift in Sources */,
 				610625EB1C5C82F000D1F2A4 /* Player.swift in Sources */,
 				618007381C5C44BE0024FC1D /* TimelineHand.swift in Sources */,
