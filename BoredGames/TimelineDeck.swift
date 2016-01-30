@@ -70,7 +70,7 @@ class TimelineDeck: NSObject {
         var allCards = self.cards + self.usedCards
         let num = allCards.count
         for _ in 0..<num {
-            let index = Utilities.Number.random(0, excludingMax: self.cards.count)
+            let index = Utilities.Number.random(0, excludingMax: allCards.count)
             let card = allCards.removeAtIndex(index)
             newCards.append(card)
         }
