@@ -73,7 +73,7 @@ class Utilities: NSObject {
                 return nil
             }
             
-            var constantValue = constantVariable[varName]
+            let constantValue = constantVariable[varName]
             
             return constantValue
             
