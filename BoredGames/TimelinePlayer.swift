@@ -1,5 +1,5 @@
 //
-//  TimelineGame.swift
+//  TimelinePlayer.swift
 //  BoredGames
 //
 //  Created by Isaiah Smith on 1/30/16.
@@ -8,36 +8,28 @@
 
 import UIKit
 
-class TimelineGame: Game {
+class TimelinePlayer: Player {
     
-    var deck: TimelineDeck
+    var hand: TimelineHand!
     
-    private let vcIdentifier = "TimelineGameViewController"
+    private let vcIdentifier = "TimelinePlayerVC"
     
-    init(deck: TimelineDeck) {
-        self.deck = deck
-        
-        super.init(title: "Timeline", minPlayers: 0, maxPlayers: 5)
-        
-        print(self.deck)
-    }
-    
-    convenience init() {
-        self.init(deck: TimelineDeckAmericanHistory())
+    func giveHand(newHand: TimelineHand){
+        self.hand = newHand
     }
     
     override func setup() {
         self.socket.on("connect") {data, ack in
-            print("Game socket connected")
+            print("Player socket connected")
             
             let codeObj = JSON([
-                "id": "TestGameID", //self.id,
-                "title": self.title
+                "id": "TestPlayerID", //self.id,
+                "room": self.room
                 ])
             
             let code = "\(codeObj)"
             
-            self.socket.emit("CREATE_ROOM", code)
+            self.socket.emit("JOIN_ROOM", code)
         }
         
         self.socket.on("message") {data, ack in
@@ -54,13 +46,16 @@ class TimelineGame: Game {
         print("Game socket started")
     }
     
-    override func getGameViewController() -> GameViewController {
+    override func getPlayerViewController() -> PlayerViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let vc = storyboard.instantiateViewControllerWithIdentifier(vcIdentifier) as! TimelineGameViewController
+        let vc = storyboard.instantiateViewControllerWithIdentifier(vcIdentifier) as! UINavigationController
         
-        vc.game = self
+        let tlvc = vc.viewControllers[0] as! PlayerHandVC
+        
+        vc.player = self
         
         return vc
     }
+    
 }

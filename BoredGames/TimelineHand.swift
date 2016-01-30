@@ -12,6 +12,10 @@ class TimelineHand: NSObject {
     
     var cards: [TimelineCard]
     
+    override init() {
+        self.cards = [TimelineCard]()
+    }
+    
     init(cards: [TimelineCard]) {
         self.cards = cards
     }

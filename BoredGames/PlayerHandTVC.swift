@@ -10,7 +10,7 @@ import UIKit
 
 var chosenPlayerCard: TimelineCard?
 
-class PlayerHandTVC: UITableViewController {
+class PlayerHandTVC: PlayerViewController {
     
     var deck = TimelineDeckAmericanHistory()
     
