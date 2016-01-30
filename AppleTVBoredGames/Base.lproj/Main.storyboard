@@ -35,7 +35,7 @@
         <!--Player Scan View Controller-->
         <scene sceneID="NL4-CG-RC1">
             <objects>
-                <viewController id="rKC-rS-DyA" customClass="PlayerScanViewController" customModule="AppleTVBoredGames" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlayerScanViewController" id="rKC-rS-DyA" customClass="PlayerScanViewController" customModule="AppleTVBoredGames" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="s4G-3j-nN3"/>
                         <viewControllerLayoutGuide type="bottom" id="xoM-47-rZG"/>
@@ -62,7 +62,7 @@
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
-                                    <action selector="doneButtonPressed:" destination="rKC-rS-DyA" eventType="primaryActionTriggered" id="epz-zU-QGb"/>
+                                    <action selector="doneButtonPressed:" destination="rKC-rS-DyA" eventType="primaryActionTriggered" id="fAy-wZ-mIi"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X Players Joined..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71g-0X-sf1">
@@ -115,16 +115,33 @@
                     </view>
                     <navigationItem key="navigationItem" id="tkR-hI-vYJ"/>
                     <connections>
-                        <outlet property="QRImageView" destination="ku9-xR-TfZ" id="c2W-Pb-bQo"/>
-                        <outlet property="doneButton" destination="d4J-OE-0KT" id="EiK-wy-duO"/>
-                        <outlet property="maxPlayersLabel" destination="Zwx-7B-XC1" id="2Y2-1Z-84d"/>
-                        <outlet property="minPlayersLabel" destination="GDx-ob-5f5" id="4I0-dP-36q"/>
-                        <outlet property="playersJoinedLabel" destination="71g-0X-sf1" id="DHK-wm-LmE"/>
+                        <outlet property="doneScanningButton" destination="d4J-OE-0KT" id="ScA-fe-epp"/>
+                        <outlet property="maxPlayersTextLabel" destination="Zwx-7B-XC1" id="9ix-nr-LlT"/>
+                        <outlet property="minPlayersTextLabel" destination="GDx-ob-5f5" id="RFw-bG-bMP"/>
+                        <outlet property="playersJoinedTextLabel" destination="71g-0X-sf1" id="eu2-L6-BOO"/>
+                        <outlet property="qrImageView" destination="ku9-xR-TfZ" id="TQ2-wS-feo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hdy-7B-iNZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="190" y="1817"/>
+        </scene>
+        <!--Timeline Game View Controller-->
+        <scene sceneID="lEN-RF-zoB">
+            <objects>
+                <viewController storyboardIdentifier="TimelineGameViewController" id="Kaf-Zr-ge3" customClass="TimelineGameViewController" customModule="AppleTVBoredGames" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aaC-rF-tVd"/>
+                        <viewControllerLayoutGuide type="bottom" id="rO8-ac-yJY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aVd-oO-pnN">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3xH-Ab-GKU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2308" y="1817"/>
         </scene>
     </scenes>
 </document>

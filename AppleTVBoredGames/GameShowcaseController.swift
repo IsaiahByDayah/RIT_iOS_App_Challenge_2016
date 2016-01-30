@@ -22,7 +22,7 @@ class GameShowcaseController: UIViewController {
     
         let game = TimelineGame(deck: TimelineDeckAmericanHistory())
         
-        let scanVC = PlayerScanViewController()
+        let scanVC = storyboard?.instantiateViewControllerWithIdentifier("PlayerScanViewController") as! PlayerScanViewController
         scanVC.game = game
         
         self.presentViewController(scanVC, animated: true, completion: nil)
@@ -32,7 +32,16 @@ class GameShowcaseController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func canPerformUnwindSegueAction(action: Selector, fromViewController: UIViewController, withSender sender: AnyObject) -> Bool {
+        if self.respondsToSelector(action) {
+            return true
+        }
+        return false
+    }
 
-
+    @IBAction func prepareForUnwindBackToShowcase(segue: UIStoryboardSegue) {
+        
+    }
 }
 

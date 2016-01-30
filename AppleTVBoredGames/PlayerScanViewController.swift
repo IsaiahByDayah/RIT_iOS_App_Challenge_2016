@@ -10,15 +10,15 @@ import UIKit
 
 class PlayerScanViewController: UIViewController {
 
-    @IBOutlet weak var QRImageView: UIImageView!
+    @IBOutlet weak var qrImageView: UIImageView!
     
-    @IBOutlet weak var playersJoinedLabel: UILabel!
+    @IBOutlet weak var playersJoinedTextLabel: UILabel!
     
-    @IBOutlet weak var minPlayersLabel: UILabel!
+    @IBOutlet weak var minPlayersTextLabel: UILabel!
     
-    @IBOutlet weak var maxPlayersLabel: UILabel!
+    @IBOutlet weak var maxPlayersTextLabel: UILabel!
     
-    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var doneScanningButton: UIButton!
     
     var game: Game!
     
@@ -27,20 +27,22 @@ class PlayerScanViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        let code = JSON([
+        let codeObj = JSON([
             "id":game.id,
             "title": game.title
-        ]).rawString()!
+            ])
         
-        guard let qr = Utilities.QR.getQRCodeForValue(code, ofSize: QRImageView.frame.size) else {
+        let code = "\(codeObj)"
+        
+        guard let qr = Utilities.QR.getQRCodeForValue(code, ofSize: qrImageView.frame.size) else {
             return
         }
         
-        QRImageView.image = qr
+        qrImageView.image = qr
         
-        minPlayersLabel.text = "Min: \(game.minPlayers) Players"
+        minPlayersTextLabel.text = "Min: \(game.minPlayers) Players"
         
-        maxPlayersLabel.text = "Max: \(game.maxPlayers) Players"
+        maxPlayersTextLabel.text = "Max: \(game.maxPlayers) Players"
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -68,10 +70,16 @@ class PlayerScanViewController: UIViewController {
         if game.isRequiredPlayersMet() {
             
             let vc = game.getGameViewController()
-            vc.game = self.game
             
             self.presentViewController(vc, animated: true, completion: nil)
         }
+    }
+    
+    override func canPerformUnwindSegueAction(action: Selector, fromViewController: UIViewController, withSender sender: AnyObject) -> Bool {
+        if self.respondsToSelector(action) {
+            return true
+        }
+        return false
     }
 
     override func didReceiveMemoryWarning() {
