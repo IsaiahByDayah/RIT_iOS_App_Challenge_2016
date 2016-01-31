@@ -207,6 +207,8 @@ class TimelineGame: Game {
         ]
         
         self.socket.emit("MESSAGE", data)
+        
+        self.delagate?.boardUpdated()
     }
     
     func askPlayerIfWon(player: JSON) {
@@ -336,6 +338,8 @@ class TimelineGame: Game {
                         if success {
                             self.board.insert(card, atIndex: i)
                             
+                            self.delagate?.cardPlayed(card, atIndex: i)
+                            
                             self.announceNewBoard()
                             
                             self.askPlayerIfWon(fromJSON)
@@ -451,5 +455,7 @@ class TimelineGame: Game {
 }
 
 protocol TimelineGameDalegate {
-    func gameUpdated()
+    func boardUpdated()
+    
+    func cardPlayed(card: TimelineCard, atIndex index: Int)
 }
