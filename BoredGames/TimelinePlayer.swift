@@ -143,7 +143,7 @@ class TimelinePlayer: Player {
                     case Utilities.Constants.get("ChangePlayerTurn") as! String:
                         let player = msg["request"]["player"]
                         
-                        self.myTurn self.isMe(player)
+                        self.myTurn = self.isMe(player)
                         break
                         
                     default:
