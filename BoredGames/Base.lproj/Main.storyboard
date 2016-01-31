@@ -37,6 +37,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <state key="normal" title="Scan a Game" backgroundImage="Button"/>
+                                <connections>
+                                    <segue destination="aPV-yc-K8g" kind="presentation" id="ZhP-8V-3X0"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1C0-7S-F9H">
                                 <rect key="frame" x="72" y="442" width="443" height="72"/>
@@ -45,6 +48,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <state key="normal" title="About Us" backgroundImage="Button"/>
+                                <connections>
+                                    <segue destination="PXB-Qq-fZk" kind="show" id="y8j-aP-bue"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
