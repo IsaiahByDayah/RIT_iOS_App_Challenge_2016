@@ -84,7 +84,7 @@ class PlayerHandTVC: PlayerViewController, UITableViewDataSource, UITableViewDel
         if identifier == showBoardSegueIdentifier {
             return timelinePlayer.canTakeTurn()
         }
-        else return false
+        return false
     }
 
     /*

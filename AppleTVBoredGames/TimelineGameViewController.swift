@@ -18,6 +18,10 @@ class TimelineGameViewController: GameViewController, TimelineGameDalegate {
         print("Timeline view controller loaded")
         
         self.timelineGame = self.game as! TimelineGame
+        
+        self.timelineGame.dealCards()
+        
+        
     }
     
     func gameUpdated() {

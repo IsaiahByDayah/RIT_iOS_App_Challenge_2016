@@ -16,6 +16,8 @@ class TimelineGame: Game {
     
     private let vcIdentifier = "TimelineGameViewController"
     
+    var board = [TimelineCard]()
+    
     init(deck: TimelineDeck) {
         self.deck = deck
         
@@ -26,8 +28,103 @@ class TimelineGame: Game {
         self.init(deck: TimelineDeckAmericanHistory())
     }
     
+    func tellNextPlayerToGo() {
+        let player = self.players[self.getNextPlayerIndex()]
+        
+        let data = [
+            "type": "MESSAGE",
+            "room": self.id,
+            "from": self.getFromSelf(),
+            "to": self.getToAllPlayers(),
+            "request" : [
+                "action" : Utilities.Constants.get("ChangePlayerTurn") as! String,
+                "player" : self.getTo(player)
+            ]
+        ]
+        
+        self.socket.emit("MESSAGE", data)
+    }
+    
     func dealCards() {
         self.deck.shuffle()
+        
+        for player in self.players {
+            
+            var cards = [TimelineCard]()
+            
+            for _ in 0..<4 {
+                let card = self.deck.draw()
+                cards.append(card)
+            }
+            
+            let cardsJSON = TimelineCard.jsonify(cards)
+            
+            let listJSON = JSON(cardsJSON)
+            
+            guard let json = listJSON.rawString() else {
+                print("Could not stringify cards.")
+                return
+            }
+            
+            let data = [
+                "type": "MESSAGE",
+                "room": self.id,
+                "from": self.getFromSelf(),
+                "to": self.getTo(player),
+                "request" : [
+                    "action" : Utilities.Constants.get("BeginingHandAction") as! String,
+                    "hand" : json
+                ]
+            ]
+            
+            self.socket.emit("MESSAGE", data)
+        }
+    }
+    
+    func dealAndStart() {
+        self.dealCards()
+        self.tellNextPlayerToGo()
+    }
+    
+    func sendResults(success: Bool, msg: JSON){
+        guard let cardString = msg["response"]["card"].rawString() else {
+            print("Couldn't get string of card to send results to spectators")
+            return
+        }
+        
+        let data = [
+            "type": "MESSAGE",
+            "room": self.id,
+            "from": self.getFromSelf(),
+            "to": self.getToSpectators(),
+            "request" : [
+                "action" : Utilities.Constants.get("MoveAction") as! String,
+                "player" : self.getTo(msg["from"]),
+                "success" : success,
+                "move" : [
+                    "card": cardString,
+                    "index": msg["response"]["index"].intValue
+                ]
+            ]
+        ]
+        
+        self.socket.emit("MESSAGE", data)
+    }
+    
+    func isCardRight(card: TimelineCard, index: Int) -> Bool {
+        
+        var cardLeftBool = false
+        var cardRightBool = false
+        
+        if index == 0 || (board[index-1].year <= card.year) {
+            cardLeftBool = true
+        }
+        
+        if index == board.count || (board[index+1].year >= card.year) {
+            cardRightBool = true
+        }
+        
+        return cardLeftBool && cardRightBool
     }
     
     override func setup() {
@@ -91,6 +188,75 @@ class TimelineGame: Game {
                 case Utilities.Constants.get("PlayerRole") as! String:
                     print("Got a message from a player")
                     // Handle message from player
+                    
+                    switch msg["response"]["action"].stringValue {
+                    
+                    // MARK: New Card Played
+                    case Utilities.Constants.get("PlayCardAction") as! String:
+                        let c = msg["response"]["card"]
+                        
+                        let card = TimelineCard(json: c)
+                        
+                        let i = msg["response"]["index"].intValue
+                        
+                        // Handle the playing of card
+                        print("Card Played: \(card)")
+                        
+                        
+                        // Announce Result
+                        let success = self.isCardRight(card, index: i)
+                        
+                        self.sendResults(success, msg: msg)
+                        
+                        if success {
+                            
+                        } else {
+                            Utilities.Flow.run(0.5, closure: { () -> () in
+                                let card = self.deck.draw()
+                                
+                                guard let cardString = card.toJSON().rawString() else {
+                                    print("Couldn't get string of card to send results to spectators")
+                                    return
+                                }
+                                
+                                let data = [
+                                    "type": "MESSAGE",
+                                    "room": self.id,
+                                    "from": self.getFromSelf(),
+                                    "to": self.getTo(msg["from"]),
+                                    "request" : [
+                                        "action" : Utilities.Constants.get("NewCardAction") as! String,
+                                        "card" : cardString
+                                    ]
+                                ]
+                                
+                                self.socket.emit("MESSAGE", data)
+                            })
+                            
+                            Utilities.Flow.run(0.5, closure: { () -> () in
+                                self.tellNextPlayerToGo()
+                            })
+                        }
+                        /*
+                            - Is Card correct?
+                                - if not
+                                    - Announce Move
+                                        - Send new card to player
+                                        - tell next player to go
+                                - if is
+                                    - Anounce Move
+                                        - Announce new board
+                                        - Ask player if they won
+                                            - if did
+                                                - Announce winner
+                                            - if not
+                                                - Tell next player to go
+                        */
+                        break
+                        
+                    default:
+                        print("Unknown Action Recieved. Ignoring...")
+                    }
                     
                     break
                     

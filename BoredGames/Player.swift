@@ -49,7 +49,7 @@ class Player: NSObject {
     }
     
     func isMe(player: JSON) -> Bool {
-        if player["playerID"] == self.id {
+        if player["playerID"].stringValue == self.id {
             return true
         }
         
