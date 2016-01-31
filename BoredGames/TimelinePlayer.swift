@@ -117,6 +117,11 @@ class TimelinePlayer: Player {
             // MARK: Initial Connect Information
             case "CONNECT_INFO":
                 
+                if self.socketID != nil {
+                    print("NOTE: Trying to set self.socketID again but won't let it.")
+                    return
+                }
+                
                 self.socketID = msg["socketID"] as! String
                 
                 let data = [
@@ -179,27 +184,32 @@ class TimelinePlayer: Player {
                         
                     // MARK: Beginning Hand
                     case Utilities.Constants.get("BeginingHandAction") as! String:
-                        let hand = req["hand"] as! String
+                        let to = msg["to"] as! NSDictionary
+                        let toJSON = Utilities.Convert.fromPlayerDictionaryToJSON((to))
                         
-                        print("\n\nBeginning Hand (String): \(hand)\n\n")
-                        
-                        let handJSON = JSON.parse(hand).arrayValue
-                        
-                        print("\n\nBeginning Hand (JSON): \(handJSON)\n\n")
-                        
-                        let cards = TimelineCard.parse(handJSON)
-                        
-                        print("\n\nBeginning Hand (Cards): \(cards)\n\n")
-                        
-                        self.giveCards(cards)
-                        
-                        print(self.hand!.cards.count)
-                        
-                        guard let delegate = self.timelinePlayerDelegate else {
-                            print("Delegate does not exist when hands are given")
-                            return
+                        if self.isMe(toJSON) {
+                            let hand = req["hand"] as! String
+                            
+                            print("\n\nBeginning Hand (String): \(hand)\n\n")
+                            
+                            let handJSON = JSON.parse(hand).arrayValue
+                            
+                            print("\n\nBeginning Hand (JSON): \(handJSON)\n\n")
+                            
+                            let cards = TimelineCard.parse(handJSON)
+                            
+                            print("\n\nBeginning Hand (Cards): \(cards)\n\n")
+                            
+                            self.giveCards(cards)
+                            
+                            print(self.hand!.cards.count)
+                            
+                            guard let delegate = self.timelinePlayerDelegate else {
+                                print("Delegate does not exist when hands are given")
+                                return
+                            }
+                            delegate.gameUpdated()
                         }
-                        delegate.gameUpdated()
                         break
                         
                     // MARK: New Card

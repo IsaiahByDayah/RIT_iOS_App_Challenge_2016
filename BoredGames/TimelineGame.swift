@@ -35,6 +35,8 @@ class TimelineGame: Game {
         
         print("Index of player to go: \(index)")
         
+        print("Index of next player to go: \(self.getCurrentPlayerIndex())")
+        
         let player = self.players[index]
         
         print("Player to go: \(player)")
@@ -321,7 +323,7 @@ class TimelineGame: Game {
                         let i = res["index"] as! Int
                         
                         // TODO: Handle the playing of card
-                        print("Card Played: \(card) \nat index: \(i)")
+                        print("Card Played: \(card) \n at index: \(i)")
                         
                         
                         // Announce Result
@@ -368,23 +370,11 @@ class TimelineGame: Game {
                             
                             self.socket.emit("MESSAGE", data)
                             
-                            self.tellNextPlayerToGo()
+                            //self.tellNextPlayerToGo()
                         }
-                        /*
-                            - Is Card correct?
-                                - if not
-                                    - Announce Move
-                                        - Send new card to player
-                                        - tell next player to go
-                                - if is
-                                    - Anounce Move
-                                        - Announce new board
-                                        - Ask player if they won
-                                            - if did
-                                                - Announce winner
-                                            - if not
-                                                - Tell next player to go
-                        */
+                        
+                        self.tellNextPlayerToGo()
+                        
                         break
                         
                     // MARK: Answer if won
@@ -397,7 +387,7 @@ class TimelineGame: Game {
                             // Go back to main menu
                             
                         } else {
-                            self.tellNextPlayerToGo()
+                            //self.tellNextPlayerToGo()
                         }
 
                         break
