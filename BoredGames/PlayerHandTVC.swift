@@ -94,7 +94,6 @@ class PlayerHandTVC: PlayerViewController, UITableViewDataSource, UITableViewDel
     
     func playersTurn() {
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
     }
     
     func alertGameOver(msg: String){

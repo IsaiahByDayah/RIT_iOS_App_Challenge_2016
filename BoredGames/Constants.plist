@@ -269,9 +269,9 @@
 		</array>
 	</dict>
 	<key>TimelineLoseMessage</key>
-	<string>Default Lose Text</string>
+	<string>Aww man, better luck next time!</string>
 	<key>TimelineWinMessage</key>
-	<string>Default Win Text</string>
+	<string>You showed them who&apos;s boss!</string>
 	<key>AnswerIfWonAction</key>
 	<string>ANSWER_DID_WIN</string>
 	<key>AskIfWonAction</key>
