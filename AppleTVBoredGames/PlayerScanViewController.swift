@@ -70,16 +70,19 @@ class PlayerScanViewController: UIViewController {
     }
     
     @IBAction func cancelButtonPressed(sender: AnyObject) {
+        game.tearDown()
+        
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func doneButtonPressed(sender: AnyObject) {
-        if game.isRequiredPlayersMet() {
-            
-            let vc = game.getGameViewController()
-            
-            self.presentViewController(vc, animated: true, completion: nil)
-        }
+        
+//        if game.isRequiredPlayersMet() {
+//            
+//            let vc = game.getGameViewController()
+//            
+//            self.presentViewController(vc, animated: true, completion: nil)
+//        }
     }
     
     override func canPerformUnwindSegueAction(action: Selector, fromViewController: UIViewController, withSender sender: AnyObject) -> Bool {

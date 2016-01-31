@@ -22,16 +22,14 @@ class TimelinePlayer: Player {
         self.socket.on("connect") {data, ack in
             print("Player socket connected")
             
-            let codeObj = JSON([
+            let data = [
                 "type": "JOIN_ROOM",
                 "room": self.room,
                 "from": self.id,
                 "to": "Game"
-            ])
+            ]
             
-            let code = "\(codeObj)"
-            
-            self.socket.emit("JOIN_ROOM", code)
+            self.socket.emit("JOIN_ROOM", data)
         }
         
         self.socket.on("MESSAGE") {data, ack in
@@ -46,6 +44,10 @@ class TimelinePlayer: Player {
         
         self.socket.connect()
         print("Game socket started")
+    }
+    
+    override func tearDown() {
+        self.socket.disconnect()
     }
     
     override func getPlayerViewController() -> PlayerViewController {

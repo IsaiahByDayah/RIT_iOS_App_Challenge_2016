@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AVFoundation
+import AVFoundation // Not in tvOS SDK?
 import AudioToolbox
 
 class QRScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {

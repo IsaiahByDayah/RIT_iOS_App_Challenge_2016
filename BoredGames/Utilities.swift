@@ -62,6 +62,20 @@ class Utilities: NSObject {
         }
     }
     
+    class Flow: NSObject {
+        
+        static func run(delay: Double, closure: () -> ()) {
+            dispatch_after(
+                dispatch_time(
+                    DISPATCH_TIME_NOW,
+                    Int64(delay * Double(NSEC_PER_SEC))
+                ),
+                dispatch_get_main_queue(),
+                closure
+            )
+        }
+    }
+    
     class Constants: NSObject{
         static func get(varName: String) -> AnyObject?{
             

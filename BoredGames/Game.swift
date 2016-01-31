@@ -35,6 +35,12 @@ class Game: NSObject {
     }
     
     // Will override
+    func tearDown(){
+        // Perform task to teardown game
+        // - stop socket
+    }
+    
+    // Will override
     func getGameViewController() -> GameViewController {
         let vc = GameViewController()
         return vc

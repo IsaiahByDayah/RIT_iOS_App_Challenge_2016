@@ -30,16 +30,18 @@ class TimelineGame: Game {
         self.socket.on("connect") {data, ack in
             print("Game socket connected")
             
-            let codeObj = JSON([
-                "type": "JOIN_ROOM",
-                "room": self.id,
-                "from": "Game",
-                "to": "Server"
-            ])
-            
-            let code = "\(codeObj)"
-            
-            self.socket.emit("JOIN_ROOM", code)
+//            let data = [
+//                "type": "JOIN_ROOM",
+//                "room": self.id,
+//                "from": "Game",
+//                "to": "Server"
+//            ]
+//            
+//            self.socket.emit("JOIN_ROOM", data)
+        }
+        
+        self.socket.on("disconnect") {data, ack in
+            print("Game socket disconnected")
         }
         
         self.socket.on("MESSAGE") {data, ack in
@@ -50,10 +52,28 @@ class TimelineGame: Game {
             print("Message: \(msg)")
             
             // Parse message from player perspective
+            
+            if msg["type"].stringValue == "CONNECT_INFO" {
+            
+                let data = [
+                    "type": "JOIN_ROOM",
+                    "room": self.id,
+                    "from": "Game",
+                    "to": "Server"
+                ]
+                            
+                self.socket.emit("JOIN_ROOM", data)
+                
+                return
+            }
         }
         
         self.socket.connect()
         print("Game socket started")
+    }
+    
+    override func tearDown() {
+        self.socket.disconnect()
     }
     
     override func getGameViewController() -> GameViewController {

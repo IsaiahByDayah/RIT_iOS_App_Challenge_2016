@@ -37,6 +37,12 @@ class Player: NSObject {
         // - start socket
     }
     
+    // Will override
+    func tearDown(){
+        // Perform task to teardown player
+        // - stop socket
+    }
+    
     func getPlayerViewController() -> PlayerViewController {
         let vc = PlayerViewController()
         vc.player = self
