@@ -293,6 +293,76 @@ class TimelineGameViewController: GameViewController, TimelineGameDalegate {
                     animateCard(cardsOnScreen![6], x: view.frame.width/1.45, y: 500, color: UIColor.purpleColor(), delay: 0.1)
                     animateCard(cardsOnScreen![7], x: view.frame.width/1.15, y: 500, color: UIColor.blackColor(), delay: 0.1)
                     
+                }else if(index == 1){
+                    animateCard(cardsOnScreen![0], x: view.frame.width/4.9, y: 500, color: UIColor.blackColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![index], x: view.frame.width/4.4, y: 500, color: UIColor.purpleColor(), delay: 0.25)
+                    animateCard(cardsOnScreen![2], x: view.frame.width/3.6, y: 500, color: UIColor.purpleColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![3], x: view.frame.width/2.63, y: 500, color: UIColor.purpleColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![4], x: view.frame.width/2.05, y: 500, color: UIColor.greenColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![5], x: view.frame.width/1.69, y: 500, color: UIColor.greenColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![6], x: view.frame.width/1.45, y: 500, color: UIColor.purpleColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![7], x: view.frame.width/1.15, y: 500, color: UIColor.blackColor(), delay: 0.1)
+                    
+                }else if(index == 2){
+                    animateCard(cardsOnScreen![0], x: view.frame.width/4.9, y: 500, color: UIColor.blackColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![1], x: view.frame.width/4.4, y: 500, color: UIColor.purpleColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![index], x: view.frame.width/3.6, y: 500, color: UIColor.purpleColor(), delay: 0.25)
+                    animateCard(cardsOnScreen![3], x: view.frame.width/2.63, y: 500, color: UIColor.purpleColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![4], x: view.frame.width/2.05, y: 500, color: UIColor.greenColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![5], x: view.frame.width/1.69, y: 500, color: UIColor.greenColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![6], x: view.frame.width/1.45, y: 500, color: UIColor.purpleColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![7], x: view.frame.width/1.15, y: 500, color: UIColor.blackColor(), delay: 0.1)
+                    
+                }else if(index == 3){
+                    animateCard(cardsOnScreen![0], x: view.frame.width/4.9, y: 500, color: UIColor.blackColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![1], x: view.frame.width/4.4, y: 500, color: UIColor.purpleColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![2], x: view.frame.width/3.6, y: 500, color: UIColor.purpleColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![index], x: view.frame.width/2.63, y: 500, color: UIColor.purpleColor(), delay: 0.25)
+                    animateCard(cardsOnScreen![4], x: view.frame.width/2.05, y: 500, color: UIColor.greenColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![5], x: view.frame.width/1.69, y: 500, color: UIColor.greenColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![6], x: view.frame.width/1.45, y: 500, color: UIColor.purpleColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![7], x: view.frame.width/1.15, y: 500, color: UIColor.blackColor(), delay: 0.1)
+                    
+                }else if(index == 4){
+                    animateCard(cardsOnScreen![0], x: view.frame.width/4.9, y: 500, color: UIColor.blackColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![1], x: view.frame.width/4.4, y: 500, color: UIColor.purpleColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![2], x: view.frame.width/3.6, y: 500, color: UIColor.purpleColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![3], x: view.frame.width/2.63, y: 500, color: UIColor.purpleColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![index], x: view.frame.width/2.05, y: 500, color: UIColor.greenColor(), delay: 0.25)
+                    animateCard(cardsOnScreen![5], x: view.frame.width/1.69, y: 500, color: UIColor.greenColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![6], x: view.frame.width/1.45, y: 500, color: UIColor.purpleColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![7], x: view.frame.width/1.15, y: 500, color: UIColor.blackColor(), delay: 0.1)
+                    
+                }else if(index == 5){
+                    animateCard(cardsOnScreen![0], x: view.frame.width/4.9, y: 500, color: UIColor.blackColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![1], x: view.frame.width/4.4, y: 500, color: UIColor.purpleColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![2], x: view.frame.width/3.6, y: 500, color: UIColor.purpleColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![3], x: view.frame.width/2.63, y: 500, color: UIColor.purpleColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![4], x: view.frame.width/2.05, y: 500, color: UIColor.greenColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![index], x: view.frame.width/1.69, y: 500, color: UIColor.greenColor(), delay: 0.25)
+                    animateCard(cardsOnScreen![6], x: view.frame.width/1.45, y: 500, color: UIColor.purpleColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![7], x: view.frame.width/1.15, y: 500, color: UIColor.blackColor(), delay: 0.1)
+                    
+                }else if(index == 6){
+                    animateCard(cardsOnScreen![0], x: view.frame.width/4.9, y: 500, color: UIColor.blackColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![1], x: view.frame.width/4.4, y: 500, color: UIColor.purpleColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![2], x: view.frame.width/3.6, y: 500, color: UIColor.purpleColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![3], x: view.frame.width/2.63, y: 500, color: UIColor.purpleColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![4], x: view.frame.width/2.05, y: 500, color: UIColor.greenColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![5], x: view.frame.width/1.69, y: 500, color: UIColor.greenColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![index], x: view.frame.width/1.45, y: 500, color: UIColor.purpleColor(), delay: 0.25)
+                    animateCard(cardsOnScreen![7], x: view.frame.width/1.15, y: 500, color: UIColor.blackColor(), delay: 0.1)
+                    
+                }else if(index == 7){
+                    animateCard(cardsOnScreen![0], x: view.frame.width/4.9, y: 500, color: UIColor.blackColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![1], x: view.frame.width/4.4, y: 500, color: UIColor.purpleColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![2], x: view.frame.width/3.6, y: 500, color: UIColor.purpleColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![3], x: view.frame.width/2.63, y: 500, color: UIColor.purpleColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![4], x: view.frame.width/2.05, y: 500, color: UIColor.greenColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![5], x: view.frame.width/1.69, y: 500, color: UIColor.greenColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![6], x: view.frame.width/1.45, y: 500, color: UIColor.purpleColor(), delay: 0.1)
+                    animateCard(cardsOnScreen![index], x: view.frame.width/1.15, y: 500, color: UIColor.blackColor(), delay: 0.25)
+                    
                 }
                 break;
             default:
