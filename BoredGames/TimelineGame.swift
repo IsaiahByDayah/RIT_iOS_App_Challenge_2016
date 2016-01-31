@@ -21,7 +21,7 @@ class TimelineGame: Game {
     init(deck: TimelineDeck) {
         self.deck = deck
         
-        super.init(title: Utilities.Constants.get("TimelineTitle") as! String, minPlayers: Utilities.Constants.get("TimelineMinPlayers") as! Int, maxPlayers: Utilities.Constants.get("TimelineMinPlayers") as! Int)
+        super.init(title: Utilities.Constants.get("TimelineTitle") as! String, minPlayers: Utilities.Constants.get("TimelineMinPlayers") as! Int, maxPlayers: Utilities.Constants.get("TimelineMaxPlayers") as! Int)
     }
     
     convenience init() {
@@ -29,7 +29,15 @@ class TimelineGame: Game {
     }
     
     func tellNextPlayerToGo() {
-        let player = self.players[self.getNextPlayerIndex()]
+        print("Players: \(self.players)")
+        
+        let index = self.getNextPlayerIndex()
+        
+        print("Index of player to go: \(index)")
+        
+        let player = self.players[index]
+        
+        print("Player to go: \(player)")
         
         let data = [
             "type": "MESSAGE",
@@ -47,6 +55,10 @@ class TimelineGame: Game {
     
     func dealCards() {
         self.deck.shuffle()
+        
+        let startingCard = deck.draw()
+        
+        self.board.append(startingCard)
         
         for player in self.players {
             
@@ -66,6 +78,16 @@ class TimelineGame: Game {
                 return
             }
             
+            // json = json.stringByReplacingOccurrencesOfString("\n", withString: "")
+            //json = json.stringByReplacingOccurrencesOfString(" ", withString: "")
+            
+//            let json: NSData
+//            do {
+//                json = try listJSON.rawData()
+//            } catch _ {
+//                json = NSData()
+//            }
+            
             let data = [
                 "type": "MESSAGE",
                 "room": self.id,
@@ -82,16 +104,28 @@ class TimelineGame: Game {
     }
     
     func dealAndStart() {
-        self.announceNewBoard()
         self.dealCards()
+        self.announceNewBoard()
         self.tellNextPlayerToGo()
     }
     
-    func sendResults(success: Bool, msg: JSON){
-        guard let cardString = msg["response"]["card"].rawString() else {
-            print("Couldn't get string of card to send results to spectators")
-            return
-        }
+    func sendResults(success: Bool, msg: NSDictionary){
+        let res = msg["response"] as! NSDictionary
+        
+        let cardString = res["card"] as! String
+        
+        //cardString = cardString.stringByReplacingOccurrencesOfString("\n", withString: "")
+        //cardString = cardString.stringByReplacingOccurrencesOfString(" ", withString: "")
+
+//        let cardString: NSData
+//        do {
+//            cardString = try msg["response"]["card"].rawData()
+//        } catch _ {
+//            cardString = NSData()
+//        }
+        
+        let person = msg["from"] as! NSDictionary
+        let personJSON = Utilities.Convert.fromPlayerDictionaryToJSON(person)
         
         let data = [
             "type": "MESSAGE",
@@ -100,11 +134,11 @@ class TimelineGame: Game {
             "to": self.getToSpectators(),
             "request" : [
                 "action" : Utilities.Constants.get("MoveAction") as! String,
-                "player" : self.getTo(msg["from"]),
+                "player" : self.getTo(personJSON),
                 "success" : success,
                 "move" : [
                     "card": cardString,
-                    "index": msg["response"]["index"].intValue
+                    "index": res["index"] as! Int
                 ]
             ]
         ]
@@ -114,18 +148,29 @@ class TimelineGame: Game {
     
     func isCardRight(card: TimelineCard, index: Int) -> Bool {
         
-        var cardLeftBool = false
-        var cardRightBool = false
+        var tempBoard = [Int]()
         
-        if index == 0 || (board[index-1].year <= card.year) {
-            cardLeftBool = true
+        for i in 0..<board.count {
+            tempBoard.append(Int(board[i].year)!)
         }
         
-        if index == board.count || (board[index+1].year >= card.year) {
-            cardRightBool = true
+        tempBoard.insert(Int(card.year)!, atIndex: index)
+        
+        var returnVal = true
+        
+        var previousYear = tempBoard[0]
+        
+        for i in 0..<tempBoard.count {
+            let year = tempBoard[i]
+            
+            if year >= previousYear {
+                previousYear = year
+            } else {
+                returnVal = false
+            }
         }
         
-        return cardLeftBool && cardRightBool
+        return returnVal
     }
     
     func announceNewBoard() {
@@ -137,6 +182,16 @@ class TimelineGame: Game {
             print("Could not stringify cards.")
             return
         }
+        
+        //json = json.stringByReplacingOccurrencesOfString("\n", withString: "")
+        //json = json.stringByReplacingOccurrencesOfString(" ", withString: "")
+
+//        let json: NSData
+//        do {
+//            json = try listJSON.rawData()
+//        } catch _ {
+//            json = NSData()
+//        }
         
         let data = [
             "type": "MESSAGE",
@@ -191,20 +246,20 @@ class TimelineGame: Game {
         }
         
         self.socket.on("MESSAGE") {data, ack in
-            print("Data: \(data)")
+            // print("Data: \(data)")
             
-            let msg = JSON.parse(data[0] as! String)
+            let msg = data[0] as! NSDictionary
             
-            print("Message: \(msg)")
+            // print("Message: \(msg)")
             
             // Parse message from player perspective
             
-            switch msg["type"].stringValue{
+            switch msg["type"] as! String{
                 
             // MARK: Initial Connect Info
             case "CONNECT_INFO":
                 
-                self.socketID = msg["socketID"].stringValue
+                self.socketID = msg["socketID"] as! String
                 
                 let data = [
                     "type": "JOIN_ROOM",
@@ -218,9 +273,13 @@ class TimelineGame: Game {
                 
             // MARK: Someone Joined The Room
             case "JOIN_ROOM":
-                if msg["from"]["role"].stringValue != Utilities.Constants.get("GameRole") as! String {
-                    let player = msg["from"]
+                let from = msg["from"] as! NSDictionary
+                
+                if from["role"] as! String == Utilities.Constants.get("PlayerRole") as! String {
+                    let player = Utilities.Convert.fromPlayerDictionaryToJSON(from)
+                    print("Players Before: \(self.players)")
                     self.addPlayer(player)
+                    print("Current Players: \(self.players)")
                     if let delegate = self.scanDelagate {
                         delegate.playersUpdated()
                     }
@@ -229,7 +288,9 @@ class TimelineGame: Game {
                 
             // MARK: Message Recieved
             case "MESSAGE":
-                switch msg["from"]["role"].stringValue {
+                let from = msg["from"] as! NSDictionary
+                
+                switch from["role"] as! String {
                     
                 // MARK: From Server
                 case Utilities.Constants.get("ServerRole") as! String:
@@ -242,23 +303,31 @@ class TimelineGame: Game {
                 case Utilities.Constants.get("PlayerRole") as! String:
                     print("Got a message from a player")
                     // Handle message from player
+                    let res = msg["response"] as! NSDictionary
                     
-                    switch msg["response"]["action"].stringValue {
+                    let from = msg["from"] as! NSDictionary
+                    let fromJSON = Utilities.Convert.fromPlayerDictionaryToJSON(from)
+                    
+                    switch res["action"] as! String {
                     
                     // MARK: New Card Played
                     case Utilities.Constants.get("PlayCardAction") as! String:
-                        let c = msg["response"]["card"]
+                        let c = res["card"] as! String
                         
-                        let card = TimelineCard(json: c)
+                        let cardJSON = JSON.parse(c)
                         
-                        let i = msg["response"]["index"].intValue
+                        let card = TimelineCard(json: cardJSON)
+                        
+                        let i = res["index"] as! Int
                         
                         // TODO: Handle the playing of card
-                        print("Card Played: \(card)")
+                        print("Card Played: \(card) \nat index: \(i)")
                         
                         
                         // Announce Result
                         let success = self.isCardRight(card, index: i)
+                        
+                        print("That move is \(success)!")
                         
                         self.sendResults(success, msg: msg)
                         
@@ -267,7 +336,7 @@ class TimelineGame: Game {
                             
                             self.announceNewBoard()
                             
-                            self.askPlayerIfWon(msg["from"])
+                            self.askPlayerIfWon(fromJSON)
                         } else {
                             let card = self.deck.draw()
                             
@@ -276,11 +345,21 @@ class TimelineGame: Game {
                                 return
                             }
                             
+                            //cardString = cardString.stringByReplacingOccurrencesOfString("\n", withString: "")
+                            //cardString = cardString.stringByReplacingOccurrencesOfString(" ", withString: "")
+                            
+//                            let cardString: NSData
+//                            do {
+//                                cardString = try card.toJSON().rawData()
+//                            } catch _ {
+//                                cardString = NSData()
+//                            }
+                            
                             let data = [
                                 "type": "MESSAGE",
                                 "room": self.id,
                                 "from": self.getFromSelf(),
-                                "to": self.getTo(msg["from"]),
+                                "to": self.getTo(fromJSON),
                                 "request" : [
                                     "action" : Utilities.Constants.get("NewCardAction") as! String,
                                     "card" : cardString
@@ -310,10 +389,13 @@ class TimelineGame: Game {
                         
                     // MARK: Answer if won
                     case Utilities.Constants.get("AnswerIfWonAction") as! String:
-                        let success = msg["response"]["success"].boolValue
+                        
+                        let success = res["success"] as! Bool
                         
                         if success {
-                            self.announceWinner(msg["from"])
+                            self.announceWinner(fromJSON)
+                            // Go back to main menu
+                            
                         } else {
                             self.tellNextPlayerToGo()
                         }

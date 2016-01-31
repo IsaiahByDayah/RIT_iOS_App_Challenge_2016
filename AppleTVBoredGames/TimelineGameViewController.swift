@@ -19,9 +19,7 @@ class TimelineGameViewController: GameViewController, TimelineGameDalegate {
         
         self.timelineGame = self.game as! TimelineGame
         
-        self.timelineGame.dealCards()
-        
-        
+        self.timelineGame.dealAndStart()
     }
     
     func gameUpdated() {

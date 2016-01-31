@@ -12,7 +12,7 @@ class GameBoardTVC: UITableViewController {
     
     var timelinePlayer: TimelinePlayer!
     
-    var boardSelectIndex: Int = -1
+//    var boardSelectIndex: Int = -1
     
     private let showBeforeAfterSegue = "timelinePlayerWillShowBeforeOrAfterSegue"
 
@@ -66,9 +66,9 @@ class GameBoardTVC: UITableViewController {
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        boardSelectIndex = indexPath.row
-    }
+//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        self.boardSelectIndex = indexPath.row
+//    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -116,7 +116,13 @@ class GameBoardTVC: UITableViewController {
             let vc = segue.destinationViewController as! PlayerCardPositionChoice
             
             vc.timelinePlayer = self.timelinePlayer
-            vc.boardSelectIndex = boardSelectIndex
+            
+            if let selectedIndexPath = self.tableView.indexPathForCell(sender as! UITableViewCell) {
+                let selectedIndex = selectedIndexPath.row
+                print("Recently Selected Index: \(selectedIndex)")
+                vc.boardSelectIndex = selectedIndex
+                
+            }
         }
     }
 }

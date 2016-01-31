@@ -23,7 +23,7 @@
 	<key>TimelineMaxPlayers</key>
 	<integer>5</integer>
 	<key>TimelineMinPlayers</key>
-	<integer>2</integer>
+	<integer>1</integer>
 	<key>BoardUpdatedAction</key>
 	<string>BOARD_UPDATED</string>
 	<key>EndGameAction</key>

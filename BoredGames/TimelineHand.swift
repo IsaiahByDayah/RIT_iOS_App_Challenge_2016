@@ -58,6 +58,10 @@ class TimelineHand: NSObject {
         return nil
     }
     
+    func addCard(newCard: TimelineCard){
+        self.cards.append(newCard)
+    }
+    
     func getSelectedCard() -> TimelineCard? {
         return getCard(self.selectedCardIndex)
     }

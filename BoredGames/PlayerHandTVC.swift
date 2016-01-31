@@ -45,6 +45,7 @@ class PlayerHandTVC: PlayerViewController, UITableViewDataSource, UITableViewDel
         // #warning Incomplete implementation, return the number of rows
         
         guard let hand = timelinePlayer.hand else {
+            print("Could not get hand when trying to get number of rows for tableview")
             return 0
         }
         return hand.cards.count
@@ -98,7 +99,7 @@ class PlayerHandTVC: PlayerViewController, UITableViewDataSource, UITableViewDel
             self.backToMainMenu()
         }))
         
-        self.backToMainMenu()
+        self.presentViewController(confirmation, animated: true, completion: nil)
     }
     
     func backToMainMenu() {

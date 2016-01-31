@@ -31,6 +31,7 @@ class TimelinePlayerScannedViewController: PlayerViewController, TimelinePlayerS
             
             let tlvc = vc.viewControllers.first as! PlayerHandTVC
             tlvc.player = self.player
+            (tlvc.player as! TimelinePlayer).timelinePlayerDelegate = tlvc
             
         }
     }

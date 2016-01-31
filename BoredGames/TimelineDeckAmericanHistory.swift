@@ -13,7 +13,7 @@ class TimelineDeckAmericanHistory: TimelineDeck {
     override init(){
         super.init()
         
-        for i in 0..<10 {
+        for i in 0..<100 {
             self.cards.append(TimelineCard(id: "\(i)", year: "\(i)", title: "\(i)", imageName: "placeholder"))
         }
     }

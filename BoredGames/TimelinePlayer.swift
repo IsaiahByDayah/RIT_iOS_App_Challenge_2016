@@ -26,10 +26,13 @@ class TimelinePlayer: Player {
     }
     
     func giveCards(newCards: [TimelineCard]){
-        guard let myHand = self.hand else {
+        if self.hand == nil {
+            print("Hand does not exist when given cards, creating hand")
+            self.hand = TimelineHand(cards: newCards)
             return
         }
-        myHand.giveCards(newCards)
+        
+        self.hand!.giveCards(newCards)
     }
     
     func canTakeTurn() -> Bool {
@@ -40,7 +43,7 @@ class TimelinePlayer: Player {
         print("Trying to send card...")
         
         guard let myHand = self.hand else {
-            print("Could not get hand.")
+            print("Could not get hand when sending choice.")
             return
         }
         
@@ -55,6 +58,9 @@ class TimelinePlayer: Player {
             print("Could not stringify card.")
             return
         }
+        
+        //json = json.stringByReplacingOccurrencesOfString("\n", withString: "")
+        //json = json.stringByReplacingOccurrencesOfString(" ", withString: "")
         
         let data = [
             "type": "MESSAGE",
@@ -98,20 +104,20 @@ class TimelinePlayer: Player {
         }
         
         self.socket.on("MESSAGE") {data, ack in
-            print("Data: \(data)")
+            // print("Data: \(data)")
             
-            let msg = JSON.parse(data[0] as! String)
+            let msg = data[0] as! NSDictionary
             
-            print("Message: \(msg)")
+            // print("Message: \(msg)")
             
             // Parse message from player perspective
             
-            switch msg["type"].stringValue{
+            switch msg["type"] as! String {
             
             // MARK: Initial Connect Information
             case "CONNECT_INFO":
                 
-                self.socketID = msg["socketID"].stringValue
+                self.socketID = msg["socketID"] as! String
                 
                 let data = [
                     "type": "JOIN_ROOM",
@@ -125,14 +131,18 @@ class TimelinePlayer: Player {
                 
             // MARK: Message Recieved
             case "MESSAGE":
-                switch msg["from"]["role"].stringValue {
+                let from = msg["from"] as! NSDictionary
+                
+                switch from["role"] as! String {
                     
                 // MARK: From Game
                 case Utilities.Constants.get("GameRole") as! String:
                     print("Got a message from the server")
                     // Handle message from game
                     
-                    switch msg["request"]["action"].stringValue {
+                    let req = msg["request"] as! NSDictionary
+                    
+                    switch req["action"] as! String {
                     
                     // MARK: Game Started
                     case Utilities.Constants.get("StartGameAction") as! String:
@@ -144,17 +154,23 @@ class TimelinePlayer: Player {
                     // MARK: Game Ended
                     case Utilities.Constants.get("EndGameAction") as! String:
                         if let delegate = self.timelinePlayerDelegate {
-                            delegate.gameEnded(self.didWin())
+                            //Utilities.Flow.run(1.0, closure: { () -> () in
+                                delegate.gameEnded(self.didWin())
+                            //})
                         }
                         break
                         
                     // MARK: Board Updated
                     case Utilities.Constants.get("BoardUpdatedAction") as! String:
-                        let board = msg["request"]["board"].arrayValue
+                        let board = req["board"] as! String
                         
-                        let cards = TimelineCard.parse(board)
+                        let boardJSON = JSON.parse(board).arrayValue
+                        
+                        let cards = TimelineCard.parse(boardJSON)
                         
                         self.currentBoard = cards
+                        
+                        print("Current Board From Game: \(self.currentBoard)")
                         
                         if let delegate = self.timelinePlayerDelegate {
                             delegate.gameUpdated()
@@ -163,22 +179,64 @@ class TimelinePlayer: Player {
                         
                     // MARK: Beginning Hand
                     case Utilities.Constants.get("BeginingHandAction") as! String:
-                        let hand = msg["request"]["hand"].arrayValue
+                        let hand = req["hand"] as! String
                         
-                        let cards = TimelineCard.parse(hand)
+                        print("\n\nBeginning Hand (String): \(hand)\n\n")
+                        
+                        let handJSON = JSON.parse(hand).arrayValue
+                        
+                        print("\n\nBeginning Hand (JSON): \(handJSON)\n\n")
+                        
+                        let cards = TimelineCard.parse(handJSON)
+                        
+                        print("\n\nBeginning Hand (Cards): \(cards)\n\n")
                         
                         self.giveCards(cards)
                         
-                        if let delegate = self.timelinePlayerDelegate {
+                        print(self.hand!.cards.count)
+                        
+                        guard let delegate = self.timelinePlayerDelegate else {
+                            print("Delegate does not exist when hands are given")
+                            return
+                        }
+                        delegate.gameUpdated()
+                        break
+                        
+                    // MARK: New Card
+                    case Utilities.Constants.get("NewCardAction") as! String:
+                        
+                        let to = msg["to"] as! NSDictionary
+                        let toJSON = Utilities.Convert.fromPlayerDictionaryToJSON((to))
+                        
+                        if self.isMe(toJSON) {
+                            
+                            let c = req["card"] as! String
+                            
+                            let cardJSON = JSON.parse(c)
+                            
+                            let card = TimelineCard(json: cardJSON)
+                            
+                            self.hand!.addCard(card)
+                            
+                            print(self.hand!.cards.count)
+                            
+                            guard let delegate = self.timelinePlayerDelegate else {
+                                print("Delegate does not exist when hands are given")
+                                return
+                            }
                             delegate.gameUpdated()
                         }
                         break
                         
                     // MARK: Change Player Turn
                     case Utilities.Constants.get("ChangePlayerTurn") as! String:
-                        let player = msg["request"]["player"]
+                        let player = req["player"] as! NSDictionary
                         
-                        self.myTurn = self.isMe(player)
+                        let playeJSON = Utilities.Convert.fromPlayerDictionaryToJSON(player)
+                        
+                        self.myTurn = self.isMe(playeJSON)
+                        
+                        print("\((self.myTurn ? "My" : "Other Player's")) turn!")
                         break
                         
                     // MARK: Ask If Won

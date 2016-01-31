@@ -16,7 +16,7 @@ class PlayerCardPositionChoice: UIViewController {
     
     @IBAction func insertBeforeCard(sender: AnyObject) {
         
-        chooseCard(-1)
+        chooseCard(0)
     }
 
     @IBAction func insertAfterCard(sender: AnyObject) {
