@@ -62,6 +62,8 @@ class TimelineGame: Game {
         
         self.board.append(startingCard)
         
+        self.delagate?.cardPlayed(startingCard, atIndex: 0)
+        
         for player in self.players {
             
             var cards = [TimelineCard]()
