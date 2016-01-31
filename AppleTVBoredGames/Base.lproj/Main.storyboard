@@ -169,16 +169,22 @@
                     <view key="view" contentMode="scaleToFill" id="aVd-oO-pnN">
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="GameBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Ub6-af-4f1">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                            </imageView>
+                        </subviews>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3xH-Ab-GKU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2308" y="1817"/>
+            <point key="canvasLocation" x="2300" y="1805"/>
         </scene>
     </scenes>
     <resources>
         <image name="BoardBackground" width="1125" height="846"/>
         <image name="BoardGames" width="2058" height="1547"/>
         <image name="Button" width="880" height="160"/>
+        <image name="GameBackground" width="2041" height="1533"/>
     </resources>
 </document>
