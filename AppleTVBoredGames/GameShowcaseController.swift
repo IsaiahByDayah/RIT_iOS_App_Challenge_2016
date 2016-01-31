@@ -24,6 +24,7 @@ class GameShowcaseController: UIViewController {
         
         let scanVC = storyboard?.instantiateViewControllerWithIdentifier("PlayerScanViewController") as! PlayerScanViewController
         scanVC.game = game
+        game.scanDelagate = scanVC
         
         self.presentViewController(scanVC, animated: true, completion: nil)
     }

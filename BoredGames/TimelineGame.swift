@@ -12,6 +12,8 @@ class TimelineGame: Game {
     
     var deck: TimelineDeck
     
+    var delagate: TimelineGameDalegate?
+    
     private let vcIdentifier = "TimelineGameViewController"
     
     init(deck: TimelineDeck) {
@@ -19,7 +21,7 @@ class TimelineGame: Game {
         
         super.init(title: Utilities.Constants.get("TimelineTitle") as! String, minPlayers: 0, maxPlayers: 5)
         
-        print(self.deck)
+        // print(self.deck)
     }
     
     convenience init() {
@@ -29,15 +31,6 @@ class TimelineGame: Game {
     override func setup() {
         self.socket.on("connect") {data, ack in
             print("Game socket connected")
-            
-//            let data = [
-//                "type": "JOIN_ROOM",
-//                "room": self.id,
-//                "from": "Game",
-//                "to": "Server"
-//            ]
-//            
-//            self.socket.emit("JOIN_ROOM", data)
         }
         
         self.socket.on("disconnect") {data, ack in
@@ -53,18 +46,55 @@ class TimelineGame: Game {
             
             // Parse message from player perspective
             
-            if msg["type"].stringValue == "CONNECT_INFO" {
-            
+            switch msg["type"].stringValue{
+            case "CONNECT_INFO":
+                
+                self.socketID = msg["socketID"].stringValue
+                
                 let data = [
                     "type": "JOIN_ROOM",
                     "room": self.id,
-                    "from": "Game",
-                    "to": "Server"
+                    "from": self.getFromSelf(),
+                    "to": Utilities.Constants.get("ServerRole") as! String
                 ]
-                            
+                    
                 self.socket.emit("JOIN_ROOM", data)
+                break
                 
-                return
+            case "JOIN_ROOM":
+                if msg["from"]["role"].stringValue != Utilities.Constants.get("GameRole") as! String {
+                    let player = msg["from"]
+                    self.addPlayer(player)
+                    self.scanDelagate?.playersUpdated()
+                }
+                break
+                
+            case "MESSAGE":
+                switch msg["from"]["role"].stringValue {
+                case Utilities.Constants.get("ServerRole") as! String:
+                    print("Got a message from the server")
+                    // Handle message from server
+                    
+                    break
+                case Utilities.Constants.get("PlayerRole") as! String:
+                    print("Got a message from a player")
+                    // Handle message from player
+                    
+                    break
+                case Utilities.Constants.get("SpectatorRole") as! String:
+                    print("Got a message from a spectator")
+                    // Handle message from player
+                    
+                    break
+                default:
+                    print("Message was not from server, player, or spectator. Ignoring...")
+                    break
+                }
+                break
+                
+            default:
+                print("Unknown Message Recieved. Ignoring...")
+                break
             }
         }
         
@@ -76,13 +106,32 @@ class TimelineGame: Game {
         self.socket.disconnect()
     }
     
+    override func startGame() {
+        let data = [
+            "type": "MESSAGE",
+            "room": self.id,
+            "from": self.getFromSelf(),
+            "to": self.getToAllPlayers(),
+            "request" : [
+                "action" : Utilities.Constants.get("StartGameAction") as! String
+            ]
+        ]
+        
+        self.socket.emit("JOIN_ROOM", data)
+    }
+    
     override func getGameViewController() -> GameViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let vc = storyboard.instantiateViewControllerWithIdentifier(vcIdentifier) as! TimelineGameViewController
         
         vc.game = self
+        self.delagate = vc
         
         return vc
     }
+}
+
+protocol TimelineGameDalegate {
+    func gameUpdated()
 }

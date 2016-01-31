@@ -8,8 +8,29 @@
 
 import UIKit
 
-class TimelinePlayerScannedViewController: PlayerViewController {
+class TimelinePlayerScannedViewController: PlayerViewController, TimelinePlayerScanCompleteDelegate {
     
-    private let segueID = "showTimelinePlayerNavVC"
+    private let continueSegue = "showTimelinePlayerNavVC"
+    private let cancelSegue = "cancelGameJoinSegueBackToMainMenu"
     
+    override func viewDidLoad() {
+        let tlPlayer = self.player as! TimelinePlayer
+        
+        tlPlayer.timelinePlayerScanCompleteDelegate = self
+    }
+    
+    func gameStarted() {
+        self.performSegueWithIdentifier(continueSegue, sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == cancelSegue {
+            self.player.tearDown()
+        } else if (segue.identifier == continueSegue) {
+            let vc = segue.destinationViewController as! UINavigationController
+            
+            let tlvc = vc.viewControllers.first as! PlayerHandTVC
+            tlvc.player = self.player
+        }
+    }
 }

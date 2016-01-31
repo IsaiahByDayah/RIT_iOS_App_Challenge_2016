@@ -8,11 +8,15 @@
 
 import UIKit
 
-class TimelineGameViewController: GameViewController {
+class TimelineGameViewController: GameViewController, TimelineGameDalegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print("Timeline view controller loaded")
+    }
+    
+    func gameUpdated() {
+        // Handle Game Updated
     }
 }

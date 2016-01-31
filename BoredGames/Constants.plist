@@ -2,6 +2,22 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>EndGameAction</key>
+	<string>END_GAME</string>
+	<key>StartGameAction</key>
+	<string>START_GAME</string>
+	<key>AllSocketIDs</key>
+	<string>ALL_SOCKETS</string>
+	<key>AllPlayerIDs</key>
+	<string>ALL_PLAYERS</string>
+	<key>SpectatorRole</key>
+	<string>SPECTATOR</string>
+	<key>ServerRole</key>
+	<string>SERVER</string>
+	<key>GameRole</key>
+	<string>GAME</string>
+	<key>PlayerRole</key>
+	<string>PLAYER</string>
 	<key>TimelineTitle</key>
 	<string>Timeline</string>
 	<key>HerokuURL</key>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlayerScanViewController: UIViewController {
+class PlayerScanViewController: UIViewController, GameScanDelagate {
 
     @IBOutlet weak var qrImageView: UIImageView!
     
@@ -42,11 +42,13 @@ class PlayerScanViewController: UIViewController {
             return
         }
         
-        qrImageView.image = qr
+        self.qrImageView.image = qr
         
-        minPlayersTextLabel.text = "Min: \(game.minPlayers) Players"
+        self.minPlayersTextLabel.text = "Min: \(self.game.minPlayers) Players"
         
-        maxPlayersTextLabel.text = "Max: \(game.maxPlayers) Players"
+        self.maxPlayersTextLabel.text = "Max: \(self.game.maxPlayers) Players"
+        
+        self.updatePlayersJoinedText()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -77,12 +79,22 @@ class PlayerScanViewController: UIViewController {
     
     @IBAction func doneButtonPressed(sender: AnyObject) {
         
-//        if game.isRequiredPlayersMet() {
-//            
-//            let vc = game.getGameViewController()
-//            
-//            self.presentViewController(vc, animated: true, completion: nil)
-//        }
+        if game.isRequiredPlayersMet() {
+            
+            game.startGame()
+            
+            let vc = game.getGameViewController()
+            
+            self.presentViewController(vc, animated: true, completion: nil)
+        }
+    }
+    
+    func playersUpdated() {
+        self.updatePlayersJoinedText()
+    }
+    
+    func updatePlayersJoinedText() {
+        playersJoinedTextLabel.text = "\(game.players.count) Players Joined..."
     }
     
     override func canPerformUnwindSegueAction(action: Selector, fromViewController: UIViewController, withSender sender: AnyObject) -> Bool {

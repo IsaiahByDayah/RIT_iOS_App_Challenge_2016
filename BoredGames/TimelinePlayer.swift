@@ -12,6 +12,9 @@ class TimelinePlayer: Player {
     
     var hand: TimelineHand!
     
+    var timelinePlayerScanCompleteDelegate: TimelinePlayerScanCompleteDelegate?
+    var timelinePlayerDelegate: TimelinePlayerDelegate?
+    
     private let vcIdentifier = "TimelinePlayerScannedViewController"
     
     func giveHand(newHand: TimelineHand){
@@ -21,15 +24,6 @@ class TimelinePlayer: Player {
     override func setup() {
         self.socket.on("connect") {data, ack in
             print("Player socket connected")
-            
-            let data = [
-                "type": "JOIN_ROOM",
-                "room": self.room,
-                "from": self.id,
-                "to": "Game"
-            ]
-            
-            self.socket.emit("JOIN_ROOM", data)
         }
         
         self.socket.on("MESSAGE") {data, ack in
@@ -40,6 +34,39 @@ class TimelinePlayer: Player {
             print("Message: \(msg)")
             
             // Parse message from player perspective
+            
+            switch msg["type"].stringValue{
+            case "CONNECT_INFO":
+                
+                self.socketID = msg["socketID"].stringValue
+                
+                let data = [
+                    "type": "JOIN_ROOM",
+                    "room": self.room,
+                    "from": self.getFromSelf(),
+                    "to": Utilities.Constants.get("ServerRole") as! String
+                ]
+                
+                self.socket.emit("JOIN_ROOM", data)
+                break
+                
+            case "MESSAGE":
+                switch msg["from"]["role"].stringValue {
+                case Utilities.Constants.get("GameRole") as! String:
+                    print("Got a message from the server")
+                    // Handle message from game
+                    
+                    break
+                default:
+                    print("Message was not from game. Ignoring...")
+                    break
+                }
+                break
+                
+            default:
+                print("Unknown Message Recieved. Ignoring...")
+                break
+            }
         }
         
         self.socket.connect()
@@ -60,4 +87,12 @@ class TimelinePlayer: Player {
         return vc
     }
     
+}
+
+protocol TimelinePlayerScanCompleteDelegate {
+    func gameStarted()
+}
+
+protocol TimelinePlayerDelegate {
+    func gameUpdated()
 }

@@ -308,6 +308,16 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vB-Sb-cmA">
+                                <rect key="frame" x="235" y="550" width="131" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="131" id="uCo-jJ-jHB"/>
+                                </constraints>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <segue destination="Qax-df-pEW" kind="unwind" identifier="cancelGameJoinSegueBackToMainMenu" unwindAction="prepareForUnwindToMainMenu:" id="1mG-Rv-g1K"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -316,7 +326,9 @@
                             <constraint firstItem="nlh-3v-JSq" firstAttribute="centerY" secondItem="c0u-b2-2Lr" secondAttribute="centerY" id="7vb-i6-uWl"/>
                             <constraint firstItem="nlh-3v-JSq" firstAttribute="leading" secondItem="c0u-b2-2Lr" secondAttribute="leadingMargin" id="GnP-t7-jrI"/>
                             <constraint firstItem="pLU-DI-o5C" firstAttribute="top" secondItem="XNV-TB-PTi" secondAttribute="bottom" constant="111" id="OXz-gF-oZi"/>
+                            <constraint firstAttribute="bottom" secondItem="2vB-Sb-cmA" secondAttribute="bottom" constant="20" symbolic="YES" id="T9V-Cz-8ts"/>
                             <constraint firstItem="pLU-DI-o5C" firstAttribute="leading" secondItem="nlh-3v-JSq" secondAttribute="leading" id="TWY-X8-2J1"/>
+                            <constraint firstItem="2vB-Sb-cmA" firstAttribute="centerX" secondItem="nlh-3v-JSq" secondAttribute="centerX" id="wBY-qL-8cV"/>
                         </constraints>
                     </view>
                     <connections>
@@ -324,6 +336,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uEJ-zJ-6Kb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Qax-df-pEW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2028" y="-619"/>
         </scene>

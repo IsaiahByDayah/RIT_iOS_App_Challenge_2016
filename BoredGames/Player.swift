@@ -12,6 +12,7 @@ class Player: NSObject {
 
     var id: String
     var socket: SocketIOClient
+    var socketID: String!
     var room: String!
     
     override init(){
@@ -26,10 +27,6 @@ class Player: NSObject {
         self.room = room
     }
     
-    func giveRoom(newRoom: String){
-        self.room = newRoom
-    }
-    
     // Will override
     func setup() {
         // Perform task to setup player
@@ -41,6 +38,18 @@ class Player: NSObject {
     func tearDown(){
         // Perform task to teardown player
         // - stop socket
+    }
+    
+    func getFromSelf() -> NSDictionary {
+        return [
+            "role": Utilities.Constants.get("PlayerRole") as! String,
+            "playerID" : self.id,
+            "socketID": self.socketID
+        ]
+    }
+    
+    func giveRoom(newRoom: String){
+        self.room = newRoom
     }
     
     func getPlayerViewController() -> PlayerViewController {
