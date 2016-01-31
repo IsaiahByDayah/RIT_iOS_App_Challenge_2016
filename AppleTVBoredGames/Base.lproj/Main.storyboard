@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -11,7 +11,7 @@
         <!--Game Showcase Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="GameShowcaseController" customModule="AppleTVBoredGames" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="GameShowcaseController" customModule="BoardGames" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -102,7 +102,7 @@
         <!--Player Scan View Controller-->
         <scene sceneID="NL4-CG-RC1">
             <objects>
-                <viewController storyboardIdentifier="PlayerScanViewController" id="rKC-rS-DyA" customClass="PlayerScanViewController" customModule="AppleTVBoredGames" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlayerScanViewController" id="rKC-rS-DyA" customClass="PlayerScanViewController" customModule="BoardGames" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="s4G-3j-nN3"/>
                         <viewControllerLayoutGuide type="bottom" id="xoM-47-rZG"/>
@@ -226,7 +226,7 @@
         <!--Timeline Game View Controller-->
         <scene sceneID="lEN-RF-zoB">
             <objects>
-                <viewController storyboardIdentifier="TimelineGameViewController" id="Kaf-Zr-ge3" customClass="TimelineGameViewController" customModule="AppleTVBoredGames" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TimelineGameViewController" id="Kaf-Zr-ge3" customClass="TimelineGameViewController" customModule="BoardGames" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aaC-rF-tVd"/>
                         <viewControllerLayoutGuide type="bottom" id="rO8-ac-yJY"/>
