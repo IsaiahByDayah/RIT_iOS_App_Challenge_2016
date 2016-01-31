@@ -19,6 +19,7 @@ class TimelineGameViewController: GameViewController, TimelineGameDalegate {
         
         //self.timelineGame = self.game as! TimelineGame
         //self.timelineGame.dealCards()
+        //self.timelineGame.dealAndStart()
         let deck = UIImageView(frame: CGRectMake(self.view.frame.width/2.5, self.view.frame.height/1.2, 150, 150))
         
         deck.backgroundColor = UIColor.redColor()

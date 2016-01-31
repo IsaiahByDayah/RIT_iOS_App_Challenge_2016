@@ -39,11 +39,16 @@ class Game: NSObject {
     func getNextPlayerIndex() -> Int {
         let index = self.currentPlayerIndex
         
-        self.currentPlayerIndex++
+        print("Current Players \(self.players.count)")
+        print("Current Index \(index)")
+        
+        self.currentPlayerIndex += 1
         
         if self.currentPlayerIndex >= self.players.count {
             self.currentPlayerIndex = 0
         }
+        
+        print("Next Index \(self.currentPlayerIndex)")
         
         return index
     }

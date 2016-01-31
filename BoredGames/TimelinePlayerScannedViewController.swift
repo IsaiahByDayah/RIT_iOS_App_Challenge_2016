@@ -11,7 +11,7 @@ import UIKit
 class TimelinePlayerScannedViewController: PlayerViewController, TimelinePlayerScanCompleteDelegate {
     
     private let continueSegue = "showTimelinePlayerNavVC"
-    private let cancelSegue = "cancelGameJoinSegueBackToMainMenu"
+    private let cancelSegue = "cancelBackToMainMenuFromScanComplete"
     
     override func viewDidLoad() {
         let tlPlayer = self.player as! TimelinePlayer
@@ -31,6 +31,7 @@ class TimelinePlayerScannedViewController: PlayerViewController, TimelinePlayerS
             
             let tlvc = vc.viewControllers.first as! PlayerHandTVC
             tlvc.player = self.player
+            (tlvc.player as! TimelinePlayer).timelinePlayerDelegate = tlvc
             
         }
     }

@@ -98,6 +98,24 @@ class Utilities: NSObject {
         }
         
     }
+    
+    class Convert: NSObject{
+        static func fromPlayerDictionaryToJSON(playerDictionary: NSDictionary) -> JSON{
+            
+            let role = playerDictionary["role"] as! String
+            let playerID = playerDictionary["playerID"] as! String
+            let socketID = playerDictionary["socketID"] as! String
+            
+            var json = JSON.parse("{}")
+            json["role"].string = role
+            json["playerID"].string = playerID
+            json["socketID"].string = socketID
+            
+            return json
+            
+        }
+        
+    }
 }
 
 
