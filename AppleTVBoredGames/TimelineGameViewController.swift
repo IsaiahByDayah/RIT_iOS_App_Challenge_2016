@@ -9,11 +9,15 @@
 import UIKit
 
 class TimelineGameViewController: GameViewController, TimelineGameDalegate {
+    
+    var timelineGame: TimelineGame!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print("Timeline view controller loaded")
+        
+        self.timelineGame = self.game as! TimelineGame
     }
     
     func gameUpdated() {

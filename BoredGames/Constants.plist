@@ -2,6 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>ChangePlayerTurn</key>
+	<string>CHANGE_PLAYER_TURN</string>
+	<key>TimelineMaxPlayers</key>
+	<integer>5</integer>
+	<key>TimelineMinPlayers</key>
+	<integer>0</integer>
+	<key>BoardUpdatedAction</key>
+	<string>BOARD_UPDATED</string>
 	<key>EndGameAction</key>
 	<string>END_GAME</string>
 	<key>StartGameAction</key>

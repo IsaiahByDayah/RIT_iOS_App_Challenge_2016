@@ -8,10 +8,13 @@
 
 import UIKit
 
-var boardArr = ["George Washington was born", "Bacon was invented", "The iPhone was born"]
-var chosenBoardCard:String?
-
 class GameBoardTVC: UITableViewController {
+    
+    var timelinePlayer: TimelinePlayer!
+    
+    var boardSelectIndex: Int = -1
+    
+    private let showBeforeAfterSegue = "timelinePlayerWillShowBeforeOrAfterSegue"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,28 +24,6 @@ class GameBoardTVC: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadListBefore:",name:"loadBefore", object: nil)
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadListAfter:",name:"loadAfter", object: nil)
-    }
-    
-    func loadListAfter(notification: NSNotification){
-        
-        let index = boardArr.indexOf(chosenBoardCard!)
-        
-        boardArr.insert(chosenPlayerCard!.title, atIndex: index! + 1)
-        
-        self.tableView.reloadData()
-        
-    }
-    
-    func loadListBefore(notification: NSNotification){
-        
-        let index = boardArr.indexOf(chosenBoardCard!)
-        
-        boardArr.insert(chosenPlayerCard!.title, atIndex: index! - 1)
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,7 +40,11 @@ class GameBoardTVC: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return boardArr.count
+        guard let board = timelinePlayer.currentBoard else {
+            return 0
+        }
+        
+        return board.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -67,17 +52,22 @@ class GameBoardTVC: UITableViewController {
 
         // Configure the cell...
         
-        let card = boardArr[indexPath.row]
-        cell.textLabel?.text = card
+        guard let board = timelinePlayer.currentBoard else {
+            cell.textLabel?.text = ""
+            cell.detailTextLabel?.text = ""
+            return cell
+        }
+        
+        let card = board[indexPath.row]
+        
+        cell.textLabel?.text = card.title
+        cell.detailTextLabel?.text = card.year
 
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        chosenBoardCard = boardArr[indexPath.row]
-        
-        
+        boardSelectIndex = indexPath.row
     }
 
     /*
@@ -115,14 +105,18 @@ class GameBoardTVC: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == showBeforeAfterSegue {
+            let vc = segue.destinationViewController as! PlayerCardPositionChoice
+            
+            vc.timelinePlayer = self.timelinePlayer
+            vc.boardSelectIndex = boardSelectIndex
+        }
     }
-    */
-
 }

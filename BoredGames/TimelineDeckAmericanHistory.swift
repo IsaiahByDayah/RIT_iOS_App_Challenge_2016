@@ -14,7 +14,7 @@ class TimelineDeckAmericanHistory: TimelineDeck {
         super.init()
         
         for i in 0..<10 {
-            self.cards.append(TimelineCard(id: i, year: i, title: "\(i)", imageName: "placeholder"))
+            self.cards.append(TimelineCard(id: "\(i)", year: "\(i)", title: "\(i)", imageName: "placeholder"))
         }
     }
 }

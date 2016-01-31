@@ -12,6 +12,8 @@ class TimelineHand: NSObject {
     
     var cards: [TimelineCard]
     
+    var selectedCardIndex: Int = -1
+    
     override init() {
         self.cards = [TimelineCard]()
     }
@@ -28,6 +30,12 @@ class TimelineHand: NSObject {
         }
     }
     
+    func giveCards(newCards: [TimelineCard]){
+        self.selectedCardIndex = -1
+        
+        self.cards = newCards
+    }
+    
     func toJSON() -> JSON {
         // Cards
         var cardsJSON = [JSON]()
@@ -42,7 +50,24 @@ class TimelineHand: NSObject {
         return json
     }
     
-    func getCard(index: Int) -> TimelineCard {
-        return self.cards.removeAtIndex(index)
+    func getCard(index: Int) -> TimelineCard? {
+        if index >= 0 && index < self.cards.count {
+            return self.cards.removeAtIndex(index)
+        }
+            
+        return nil
+    }
+    
+    func getSelectedCard() -> TimelineCard? {
+        return getCard(self.selectedCardIndex)
+    }
+    
+    func selectCardAtIndex(index: Int) -> Bool {
+        if index >= 0 && index < self.cards.count {
+            selectedCardIndex = index
+            return true
+        }
+        
+        return false
     }
 }

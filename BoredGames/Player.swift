@@ -48,6 +48,14 @@ class Player: NSObject {
         ]
     }
     
+    func isMe(player: JSON) -> Bool {
+        if player["playerID"] == self.id {
+            return true
+        }
+        
+        return false
+    }
+    
     func giveRoom(newRoom: String){
         self.room = newRoom
     }

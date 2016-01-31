@@ -8,13 +8,13 @@
 
 import UIKit
 
-var chosenPlayerCard: TimelineCard?
-
-class PlayerHandTVC: PlayerViewController, UITableViewDataSource, UITableViewDelegate {
+class PlayerHandTVC: PlayerViewController, UITableViewDataSource, UITableViewDelegate, TimelinePlayerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
     var timelinePlayer: TimelinePlayer!
+    
+    private let showBoardSegueIdentifier = "timelinePlayerPresentBoardSegue"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,18 +23,6 @@ class PlayerHandTVC: PlayerViewController, UITableViewDataSource, UITableViewDel
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadList:",name:"load", object: nil)
-    }
-    
-    func loadList(notification: NSNotification){
-        
-        let index = timelinePlayer.hand.cards.indexOf(chosenPlayerCard!)
-        
-        timelinePlayer.hand.cards.removeAtIndex(index!)
-        
-        //load data here
-        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,25 +39,52 @@ class PlayerHandTVC: PlayerViewController, UITableViewDataSource, UITableViewDel
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return timelinePlayer.hand.cards.count
+        
+        guard let hand = timelinePlayer.hand else {
+            return 0
+        }
+        return hand.cards.count
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CardCell", forIndexPath: indexPath)
         
-        let card = timelinePlayer.hand.cards[indexPath.row]
+        guard let hand = timelinePlayer.hand else {
+            return cell
+        }
+        
+        let card = hand.cards[indexPath.row]
         // Configure the cell...
         cell.textLabel?.text = card.title
-        cell.detailTextLabel?.text = "\(card.year)"
 
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        chosenPlayerCard = timelinePlayer.hand.cards[indexPath.row]
-        
-        
+        if timelinePlayer.canTakeTurn() {
+            guard let hand = timelinePlayer.hand else {
+                return
+            }
+            
+            let selected = hand.selectCardAtIndex(indexPath.row)
+            
+            if !selected {
+                tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            }
+        }
+    }
+    
+    func gameUpdated() {
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.tableView.reloadData()
+        })
+    }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        if identifier == showBoardSegueIdentifier {
+            return timelinePlayer.canTakeTurn()
+        }
+        else return false
     }
 
     /*
@@ -107,14 +122,18 @@ class PlayerHandTVC: PlayerViewController, UITableViewDataSource, UITableViewDel
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == showBoardSegueIdentifier {
+            let vc = segue.destinationViewController as! GameBoardTVC
+            
+            vc.timelinePlayer = self.timelinePlayer
+        }
     }
-    */
 
 }

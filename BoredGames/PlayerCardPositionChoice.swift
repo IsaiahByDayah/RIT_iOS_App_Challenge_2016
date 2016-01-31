@@ -9,34 +9,30 @@
 import UIKit
 
 class PlayerCardPositionChoice: UIViewController {
+    
+    var timelinePlayer: TimelinePlayer!
+    
+    var boardSelectIndex: Int!
+    
     @IBAction func insertBeforeCard(sender: AnyObject) {
         
-        let index = boardArr.indexOf(chosenBoardCard!)
-        
-        boardArr.insert((chosenPlayerCard?.title)!, atIndex: index! - 1)
-        
-        print(boardArr)
-        
-        NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
-        NSNotificationCenter.defaultCenter().postNotificationName("loadBefore", object: nil)
-        
-        navigationController?.popToRootViewControllerAnimated(true)
-        
+        chooseCard(-1)
     }
 
     @IBAction func insertAfterCard(sender: AnyObject) {
         
-        let index = boardArr.indexOf(chosenBoardCard!)
+        chooseCard(1)
+    }
+    
+    func chooseCard(shift: Int){
         
-        boardArr.insert((chosenPlayerCard?.title)!, atIndex: index! + 1)
+        self.timelinePlayer.sendChoice(boardSelectIndex+shift)
         
-        print(boardArr)
-        
-        NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
-        NSNotificationCenter.defaultCenter().postNotificationName("loadAfter", object: nil)
-        
+        popBack()
+    }
+    
+    func popBack() {
         navigationController?.popToRootViewControllerAnimated(true)
-        
     }
     
     override func viewDidLoad() {

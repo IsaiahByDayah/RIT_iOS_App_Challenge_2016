@@ -19,13 +19,15 @@ class TimelineGame: Game {
     init(deck: TimelineDeck) {
         self.deck = deck
         
-        super.init(title: Utilities.Constants.get("TimelineTitle") as! String, minPlayers: 0, maxPlayers: 5)
-        
-        // print(self.deck)
+        super.init(title: Utilities.Constants.get("TimelineTitle") as! String, minPlayers: Utilities.Constants.get("TimelineMinPlayers") as! Int, maxPlayers: Utilities.Constants.get("TimelineMinPlayers") as! Int)
     }
     
     convenience init() {
         self.init(deck: TimelineDeckAmericanHistory())
+    }
+    
+    func dealCards() {
+        self.deck.shuffle()
     }
     
     override func setup() {
@@ -47,6 +49,8 @@ class TimelineGame: Game {
             // Parse message from player perspective
             
             switch msg["type"].stringValue{
+                
+            // MARK: Initial Connect Info
             case "CONNECT_INFO":
                 
                 self.socketID = msg["socketID"].stringValue
@@ -61,26 +65,36 @@ class TimelineGame: Game {
                 self.socket.emit("JOIN_ROOM", data)
                 break
                 
+            // MARK: Someone Joined The Room
             case "JOIN_ROOM":
                 if msg["from"]["role"].stringValue != Utilities.Constants.get("GameRole") as! String {
                     let player = msg["from"]
                     self.addPlayer(player)
-                    self.scanDelagate?.playersUpdated()
+                    if let delegate = self.scanDelagate {
+                        delegate.playersUpdated()
+                    }
                 }
                 break
                 
+            // MARK: Message Recieved
             case "MESSAGE":
                 switch msg["from"]["role"].stringValue {
+                    
+                // MARK: From Server
                 case Utilities.Constants.get("ServerRole") as! String:
                     print("Got a message from the server")
                     // Handle message from server
                     
                     break
+                    
+                // MARK: From Player
                 case Utilities.Constants.get("PlayerRole") as! String:
                     print("Got a message from a player")
                     // Handle message from player
                     
                     break
+                    
+                // MARK: From Spectator
                 case Utilities.Constants.get("SpectatorRole") as! String:
                     print("Got a message from a spectator")
                     // Handle message from player

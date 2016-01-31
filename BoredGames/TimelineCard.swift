@@ -9,8 +9,8 @@
 import Foundation
 
 class TimelineCard: NSObject {
-    var id: Int
-    var year: Int
+    var id: String
+    var year: String
     var title: String
     var imageName: String
     
@@ -20,7 +20,7 @@ class TimelineCard: NSObject {
         }
     }
     
-    init(id: Int, year: Int, title: String, imageName: String) {
+    init(id: String, year: String, title: String, imageName: String) {
         self.id = id
         self.year = year
         self.title = title
@@ -28,8 +28,8 @@ class TimelineCard: NSObject {
     }
     
     init(json: JSON) {
-        self.id = json["id"].intValue
-        self.year = json["year"].intValue
+        self.id = json["id"].stringValue
+        self.year = json["year"].stringValue
         self.title = json["title"].stringValue
         self.imageName = json["imageName"].stringValue
     }
@@ -43,5 +43,49 @@ class TimelineCard: NSObject {
         ])
         
         return json
+    }
+    
+    static func jsonify(card: TimelineCard) -> JSON {
+        let json = JSON([
+            "id"        : card.id,
+            "year"      : card.year,
+            "title"     : card.title,
+            "imageName" : card.imageName
+            ])
+        
+        return json
+    }
+    
+    static func jsonify(cards: [TimelineCard]) -> [JSON] {
+        var cardsJSON = [JSON]()
+        
+        for card in cards {
+            let cardJSON = TimelineCard.jsonify(card)
+            cardsJSON.append(cardJSON)
+        }
+        
+        return cardsJSON
+    }
+    
+    static func parse(json: JSON) -> TimelineCard {
+        let id = json["id"].stringValue
+        let year = json["year"].stringValue
+        let title = json["title"].stringValue
+        let imageName = json["imageName"].stringValue
+        
+        let card = TimelineCard(id: id, year: year, title: title, imageName: imageName)
+        
+        return card
+    }
+    
+    static func parse(json: [JSON]) -> [TimelineCard] {
+        var cards = [TimelineCard]()
+        
+        for cardJSON in json {
+            let card = TimelineCard.parse(cardJSON)
+            cards.append(card)
+        }
+        
+        return cards
     }
 }
