@@ -391,6 +391,7 @@ class TimelineGame: Game {
                         if success {
                             self.announceWinner(fromJSON)
                             // Go back to main menu
+                            self.delagate?.gameEnded(fromJSON)
                             
                         } else {
                             //self.tellNextPlayerToGo()
@@ -460,4 +461,6 @@ protocol TimelineGameDalegate {
     func boardUpdated()
     
     func cardPlayed(card: TimelineCard, atIndex index: Int)
+    
+    func gameEnded(winner: JSON)
 }

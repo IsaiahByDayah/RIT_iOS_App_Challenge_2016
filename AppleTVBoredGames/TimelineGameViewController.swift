@@ -14,6 +14,8 @@ class TimelineGameViewController: GameViewController, TimelineGameDalegate {
     
     var deck: UIView?
     var cardsOnScreen: [UIView]?
+    
+    private let unwindBackToShowcaseSegueIdentifier = "unwindFromTLGVCBackToGameShowcase"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,5 +84,20 @@ class TimelineGameViewController: GameViewController, TimelineGameDalegate {
         // Handle Game Updated
         // - Clear Screen
         // - Recreate screen
+    }
+    
+    func gameEnded(winner: JSON) {
+        let confirmation = UIAlertController(title: "Good Game!", message: "Thanks for playing!", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        confirmation.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction) -> Void in
+            // Handle user confirming word reset
+            self.unwindBackToGameShowcase()
+        }))
+        
+        self.presentViewController(confirmation, animated: true, completion: nil)
+    }
+    
+    func unwindBackToGameShowcase() {
+        self.performSegueWithIdentifier(self.unwindBackToShowcaseSegueIdentifier, sender: self)
     }
 }
