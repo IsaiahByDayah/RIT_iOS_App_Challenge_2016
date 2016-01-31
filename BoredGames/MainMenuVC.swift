@@ -22,15 +22,6 @@ class MainMenuVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func scanGameCode(sender: AnyObject) {
-        
-    }
-    
-    @IBAction func prepareForUnwindToMainMenu(segue: UIStoryboardSegue) {
-        
-    }
-    
 
     /*
     // MARK: - Navigation

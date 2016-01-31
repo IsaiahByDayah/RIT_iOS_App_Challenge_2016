@@ -1,48 +1,73 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="Nrg-LO-nYC">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="EHf-IW-A2E">
+        <scene sceneID="8yc-ag-XBo">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                <viewController id="Nrg-LO-nYC" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
-                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                        <viewControllerLayoutGuide type="top" id="PQK-W3-3hX"/>
+                        <viewControllerLayoutGuide type="bottom" id="cnQ-65-uht"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <view key="view" contentMode="scaleToFill" id="80a-a5-RUN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bored Games" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfp-cD-0ee">
-                                <rect key="frame" x="156" y="149" width="291" height="100"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="49"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by The BG's" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gjh-ra-yV5">
-                                <rect key="frame" x="222" y="257" width="158" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BoardBackground" translatesAutoresizingMaskIntoConstraints="NO" id="ZYs-al-TWA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BoardTitle" translatesAutoresizingMaskIntoConstraints="NO" id="yOr-dQ-yvh">
+                                <rect key="frame" x="68" y="104" width="240" height="84"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="84" id="nYv-pw-bLH"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GamesTitle" translatesAutoresizingMaskIntoConstraints="NO" id="DB8-7D-MHr">
+                                <rect key="frame" x="68" y="196" width="240" height="107"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An app created by the team that brought you Rise-n-Chime" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvV-Wu-av8">
+                                <rect key="frame" x="58" y="360" width="261" height="104"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="104" id="HKC-Jn-39m"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" red="0.0" green="0.71182547929999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dfp-cD-0ee" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" constant="1.5" id="6CO-5H-lch"/>
-                            <constraint firstItem="Gjh-ra-yV5" firstAttribute="top" secondItem="dfp-cD-0ee" secondAttribute="bottom" constant="8" symbolic="YES" id="YMj-xc-qO9"/>
-                            <constraint firstItem="dfp-cD-0ee" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="129" id="Z02-wl-FhS"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="dfp-cD-0ee" secondAttribute="bottom" constant="351" id="u9C-B9-TeK"/>
-                            <constraint firstItem="Gjh-ra-yV5" firstAttribute="centerX" secondItem="dfp-cD-0ee" secondAttribute="centerX" id="xvb-a1-1Ww"/>
+                            <constraint firstItem="ZYs-al-TWA" firstAttribute="top" secondItem="80a-a5-RUN" secondAttribute="top" id="1gQ-OF-lmC"/>
+                            <constraint firstItem="ZYs-al-TWA" firstAttribute="bottom" secondItem="cnQ-65-uht" secondAttribute="top" id="DCo-BA-jeL"/>
+                            <constraint firstAttribute="trailing" secondItem="ZYs-al-TWA" secondAttribute="trailing" id="LLe-q7-jGS"/>
+                            <constraint firstItem="cnQ-65-uht" firstAttribute="top" secondItem="vvV-Wu-av8" secondAttribute="bottom" constant="203" id="S6y-2F-kDn"/>
+                            <constraint firstItem="yOr-dQ-yvh" firstAttribute="leading" secondItem="80a-a5-RUN" secondAttribute="leadingMargin" constant="52" id="TJ1-6T-MJD"/>
+                            <constraint firstItem="yOr-dQ-yvh" firstAttribute="top" secondItem="PQK-W3-3hX" secondAttribute="bottom" constant="84" id="TgN-7V-Guo"/>
+                            <constraint firstItem="ZYs-al-TWA" firstAttribute="centerX" secondItem="DB8-7D-MHr" secondAttribute="centerX" id="VzS-sv-56D"/>
+                            <constraint firstItem="DB8-7D-MHr" firstAttribute="leading" secondItem="yOr-dQ-yvh" secondAttribute="leading" id="dhx-Oq-6cQ"/>
+                            <constraint firstItem="ZYs-al-TWA" firstAttribute="leading" secondItem="80a-a5-RUN" secondAttribute="leading" id="edc-HO-t3K"/>
+                            <constraint firstItem="yOr-dQ-yvh" firstAttribute="trailing" secondItem="DB8-7D-MHr" secondAttribute="trailing" id="elb-w7-i3X"/>
+                            <constraint firstItem="vvV-Wu-av8" firstAttribute="leading" secondItem="80a-a5-RUN" secondAttribute="leadingMargin" constant="42" id="gZ9-8N-lTG"/>
+                            <constraint firstItem="vvV-Wu-av8" firstAttribute="top" secondItem="DB8-7D-MHr" secondAttribute="bottom" constant="57" id="jXb-BV-1nY"/>
+                            <constraint firstItem="DB8-7D-MHr" firstAttribute="top" secondItem="yOr-dQ-yvh" secondAttribute="bottom" constant="8" symbolic="YES" id="wbG-kg-4p0"/>
+                            <constraint firstItem="DB8-7D-MHr" firstAttribute="centerX" secondItem="vvV-Wu-av8" secondAttribute="centerX" id="yOj-0N-wDp"/>
                         </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1vA-E7-aYe" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="378.5" y="231.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="BoardBackground" width="1125" height="846"/>
+        <image name="BoardTitle" width="599" height="140"/>
+        <image name="GamesTitle" width="620" height="123"/>
+    </resources>
 </document>
