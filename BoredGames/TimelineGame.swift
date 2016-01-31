@@ -60,7 +60,7 @@ class TimelineGame: Game {
     func dealCards() {
         self.deck.shuffle()
         
-        self.shuffleSound = AudioManager(fileName: Utilities.Constants.get("TimelineShuffleSoundFileName") as! String, fileType: Utilities.Constants.get("TimelineShuffleSoundFileType") as! String, shouldRepeat: true)
+        self.shuffleSound = AudioManager(fileName: Utilities.Constants.get("TimelineShuffleSoundFileName") as! String, fileType: Utilities.Constants.get("TimelineShuffleSoundFileType") as! String, shouldRepeat: false)
         self.shuffleSound?.setVolume(0.25)
         
         self.shuffleSound?.play()

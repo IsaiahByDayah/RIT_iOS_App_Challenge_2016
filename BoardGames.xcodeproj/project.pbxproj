@@ -92,6 +92,10 @@
 		6180076A1C5C456B0024FC1D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618006EA1C5C16AD0024FC1D /* SwiftyJSON.swift */; };
 		6180076B1C5C456F0024FC1D /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6180071B1C5C1A5A0024FC1D /* Utilities.swift */; };
 		6196BCF91C5D6BF3001ECCEC /* TimelinePlayerScannedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6196BCF81C5D6BF3001ECCEC /* TimelinePlayerScannedViewController.swift */; };
+		61BA8A421C5EBAA1003B91BD /* bensound-littleidea.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 61BA8A401C5EBAA1003B91BD /* bensound-littleidea.mp3 */; };
+		61BA8A431C5EBAA1003B91BD /* Shuffle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 61BA8A411C5EBAA1003B91BD /* Shuffle.mp3 */; };
+		61BA8A441C5EBADE003B91BD /* bensound-littleidea.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 61BA8A401C5EBAA1003B91BD /* bensound-littleidea.mp3 */; };
+		61BA8A451C5EBAE1003B91BD /* Shuffle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 61BA8A411C5EBAA1003B91BD /* Shuffle.mp3 */; };
 		61E27FB71C5EA57100EFDA84 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E27FB61C5EA57100EFDA84 /* AudioManager.swift */; };
 		61E27FB81C5EA57100EFDA84 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E27FB61C5EA57100EFDA84 /* AudioManager.swift */; };
 		C60919741C5C6163000C290A /* MainMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60919731C5C6163000C290A /* MainMenuVC.swift */; };
@@ -153,6 +157,8 @@
 		618007301C5C440D0024FC1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		618007371C5C44BE0024FC1D /* TimelineHand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineHand.swift; sourceTree = "<group>"; };
 		6196BCF81C5D6BF3001ECCEC /* TimelinePlayerScannedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelinePlayerScannedViewController.swift; sourceTree = "<group>"; };
+		61BA8A401C5EBAA1003B91BD /* bensound-littleidea.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "bensound-littleidea.mp3"; sourceTree = "<group>"; };
+		61BA8A411C5EBAA1003B91BD /* Shuffle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Shuffle.mp3; sourceTree = "<group>"; };
 		61E27FB61C5EA57100EFDA84 /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		C60919731C5C6163000C290A /* MainMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuVC.swift; sourceTree = "<group>"; };
 		C60919751C5C6642000C290A /* AboutUsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsVC.swift; sourceTree = "<group>"; };
@@ -350,6 +356,8 @@
 		61E27FB91C5EA70400EFDA84 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				61BA8A401C5EBAA1003B91BD /* bensound-littleidea.mp3 */,
+				61BA8A411C5EBAA1003B91BD /* Shuffle.mp3 */,
 			);
 			name = Sounds;
 			sourceTree = "<group>";
@@ -403,7 +411,7 @@
 				TargetAttributes = {
 					618006CE1C5C11EA0024FC1D = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = X98Q92NT72;
+						DevelopmentTeam = 55RL4JW6Y9;
 					};
 					618007241C5C440D0024FC1D = {
 						CreatedOnToolsVersion = 7.2;
@@ -436,8 +444,10 @@
 			files = (
 				618006DD1C5C11EA0024FC1D /* LaunchScreen.storyboard in Resources */,
 				618006DA1C5C11EA0024FC1D /* Assets.xcassets in Resources */,
+				61BA8A431C5EBAA1003B91BD /* Shuffle.mp3 in Resources */,
 				610625E31C5C756C00D1F2A4 /* Constants.plist in Resources */,
 				618006D81C5C11EA0024FC1D /* Main.storyboard in Resources */,
+				61BA8A421C5EBAA1003B91BD /* bensound-littleidea.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,8 +457,10 @@
 			files = (
 				618007341C5C441A0024FC1D /* Assets.xcassets in Resources */,
 				610625E41C5C757300D1F2A4 /* Constants.plist in Resources */,
+				61BA8A451C5EBAE1003B91BD /* Shuffle.mp3 in Resources */,
 				611978C21C5E7931008D555A /* Assets.xcassets in Resources */,
 				6180072D1C5C440D0024FC1D /* Main.storyboard in Resources */,
+				61BA8A441C5EBADE003B91BD /* bensound-littleidea.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
