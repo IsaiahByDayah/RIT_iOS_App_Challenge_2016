@@ -78,7 +78,7 @@ class TimelineGameViewController: GameViewController, TimelineGameDalegate {
         // Add new card to Screen
     }
     
-    func gameUpdated() {
+    func boardUpdated() {
         // Handle Game Updated
         // - Clear Screen
         // - Recreate screen
