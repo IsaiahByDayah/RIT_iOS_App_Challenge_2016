@@ -94,6 +94,11 @@
 		6196BCF91C5D6BF3001ECCEC /* TimelinePlayerScannedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6196BCF81C5D6BF3001ECCEC /* TimelinePlayerScannedViewController.swift */; };
 		61E27FB71C5EA57100EFDA84 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E27FB61C5EA57100EFDA84 /* AudioManager.swift */; };
 		61E27FB81C5EA57100EFDA84 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E27FB61C5EA57100EFDA84 /* AudioManager.swift */; };
+		61E27FBB1C5EAC6800EFDA84 /* bensound-littleidea.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 61E27FBA1C5EAC6800EFDA84 /* bensound-littleidea.mp3 */; };
+		61E27FBC1C5EAC6800EFDA84 /* bensound-littleidea.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 61E27FBA1C5EAC6800EFDA84 /* bensound-littleidea.mp3 */; };
+		61E27FBE1C5EAC9A00EFDA84 /* Shuffle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 61E27FBD1C5EAC9A00EFDA84 /* Shuffle.mp3 */; };
+		61E27FBF1C5EAC9A00EFDA84 /* Shuffle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 61E27FBD1C5EAC9A00EFDA84 /* Shuffle.mp3 */; };
+		61E27FC01C5EAD6300EFDA84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 611978C11C5E7931008D555A /* Assets.xcassets */; };
 		C60919741C5C6163000C290A /* MainMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60919731C5C6163000C290A /* MainMenuVC.swift */; };
 		C60919761C5C6642000C290A /* AboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60919751C5C6642000C290A /* AboutUsVC.swift */; };
 		C609197D1C5C8D55000C290A /* PlayerHandTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C609197C1C5C8D55000C290A /* PlayerHandTVC.swift */; };
@@ -154,6 +159,8 @@
 		618007371C5C44BE0024FC1D /* TimelineHand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineHand.swift; sourceTree = "<group>"; };
 		6196BCF81C5D6BF3001ECCEC /* TimelinePlayerScannedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelinePlayerScannedViewController.swift; sourceTree = "<group>"; };
 		61E27FB61C5EA57100EFDA84 /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		61E27FBA1C5EAC6800EFDA84 /* bensound-littleidea.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "bensound-littleidea.mp3"; sourceTree = "<group>"; };
+		61E27FBD1C5EAC9A00EFDA84 /* Shuffle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Shuffle.mp3; sourceTree = "<group>"; };
 		C60919731C5C6163000C290A /* MainMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuVC.swift; sourceTree = "<group>"; };
 		C60919751C5C6642000C290A /* AboutUsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsVC.swift; sourceTree = "<group>"; };
 		C609197C1C5C8D55000C290A /* PlayerHandTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerHandTVC.swift; sourceTree = "<group>"; };
@@ -350,6 +357,8 @@
 		61E27FB91C5EA70400EFDA84 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				61E27FBA1C5EAC6800EFDA84 /* bensound-littleidea.mp3 */,
+				61E27FBD1C5EAC9A00EFDA84 /* Shuffle.mp3 */,
 			);
 			name = Sounds;
 			sourceTree = "<group>";
@@ -436,8 +445,11 @@
 			files = (
 				618006DD1C5C11EA0024FC1D /* LaunchScreen.storyboard in Resources */,
 				618006DA1C5C11EA0024FC1D /* Assets.xcassets in Resources */,
+				61E27FBE1C5EAC9A00EFDA84 /* Shuffle.mp3 in Resources */,
 				610625E31C5C756C00D1F2A4 /* Constants.plist in Resources */,
+				61E27FC01C5EAD6300EFDA84 /* Assets.xcassets in Resources */,
 				618006D81C5C11EA0024FC1D /* Main.storyboard in Resources */,
+				61E27FBB1C5EAC6800EFDA84 /* bensound-littleidea.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,8 +459,10 @@
 			files = (
 				618007341C5C441A0024FC1D /* Assets.xcassets in Resources */,
 				610625E41C5C757300D1F2A4 /* Constants.plist in Resources */,
+				61E27FBF1C5EAC9A00EFDA84 /* Shuffle.mp3 in Resources */,
 				611978C21C5E7931008D555A /* Assets.xcassets in Resources */,
 				6180072D1C5C440D0024FC1D /* Main.storyboard in Resources */,
+				61E27FBC1C5EAC6800EFDA84 /* bensound-littleidea.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
