@@ -277,6 +277,29 @@ class TimelineGame: Game {
                 self.socket.emit("JOIN_ROOM", data)
                 break
                 
+            // MARK: Someone Disconnected Info
+            case "DISCONNECT_INFO":
+                
+                let playerSocketID = msg["socketID"] as! String
+                
+                var json = JSON.parse("{}")
+                json["socketID"].string = playerSocketID
+                
+                print("SocketID disconnected: \(playerSocketID)")
+                
+                print("My players: \(self.players)")
+                
+                let indexOfPlayer = self.getIndexOfPlayerWithSocketID(playerSocketID)
+                
+                if indexOfPlayer >= 0 {
+                    print("My player Disconnected...");
+                    
+                    self.players.removeAtIndex(indexOfPlayer)
+                    
+                    self.scanDelagate?.playersUpdated()
+                }
+                break
+                
             // MARK: Someone Joined The Room
             case "JOIN_ROOM":
                 let from = msg["from"] as! NSDictionary

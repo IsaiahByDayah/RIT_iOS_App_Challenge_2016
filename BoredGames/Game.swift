@@ -113,16 +113,34 @@ class Game: NSObject {
         ]
     }
     
-    func hasPlayerJoinedAlready(player: JSON) -> Bool {
+    func getIndexOfPlayerWithSocketID(socketID: String) -> Int {
+        if self.hasPlayerJoinedAlready(socketID) {
+            for i in 0..<self.players.count {
+                print("My Player SockerID: \(self.players[i]["socketID"].stringValue)")
+                print("Disconnected Player SockerID: \(socketID)")
+                if self.players[i]["socketID"].stringValue == socketID {
+                    return i
+                }
+            }
+        }
+        
+        return -1
+    }
+    
+    func hasPlayerJoinedAlready(playerSocketID: String) -> Bool {
         var joined = false
         
         for p in self.players {
-            if p["playerID"].stringValue == player["playerID"].stringValue {
+            if p["socketID"].stringValue == playerSocketID {
                 joined = true
             }
         }
         
         return joined
+    }
+    
+    func hasPlayerJoinedAlready(player: JSON) -> Bool {
+        return self.hasPlayerJoinedAlready(player["socketID"].stringValue)
     }
     
     func addPlayer(player: JSON){
