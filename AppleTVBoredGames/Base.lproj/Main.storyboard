@@ -53,7 +53,7 @@
                                     <action selector="playingCardsButtonPressed:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="D6y-au-at0"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timeline" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vF4-66-sUe">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TimeWarp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vF4-66-sUe">
                                 <rect key="frame" x="462" y="565" width="272" height="79"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="79" id="Pdr-Sv-4Vx"/>

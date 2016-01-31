@@ -2,8 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>TimelineShuffleSoundFileType</key>
+	<string>mp3</string>
+	<key>TimelineShuffleSoundFileName</key>
+	<string>Shuffle</string>
+	<key>AppleTVBackgroundSongFileType</key>
+	<string>mp3</string>
+	<key>AppleTVBackgroundSongFileName</key>
+	<string>bensound-littleidea</string>
 	<key>TimelineNumberOfCardsInStartingHand</key>
-	<integer>10</integer>
+	<integer>4</integer>
 	<key>TimelineDecks</key>
 	<dict>
 		<key>AmericanHistory</key>
