@@ -68,7 +68,9 @@ class TimelineGame: Game {
             
             var cards = [TimelineCard]()
             
-            for _ in 0..<4 {
+            let num = Utilities.Constants.get("TimelineNumberOfCardsInStartingHand") as! Int
+            
+            for _ in 0..<num {
                 let card = self.deck.draw()
                 cards.append(card)
             }

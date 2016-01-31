@@ -92,6 +92,8 @@
 		6180076A1C5C456B0024FC1D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618006EA1C5C16AD0024FC1D /* SwiftyJSON.swift */; };
 		6180076B1C5C456F0024FC1D /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6180071B1C5C1A5A0024FC1D /* Utilities.swift */; };
 		6196BCF91C5D6BF3001ECCEC /* TimelinePlayerScannedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6196BCF81C5D6BF3001ECCEC /* TimelinePlayerScannedViewController.swift */; };
+		61E27FB71C5EA57100EFDA84 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E27FB61C5EA57100EFDA84 /* AudioManager.swift */; };
+		61E27FB81C5EA57100EFDA84 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E27FB61C5EA57100EFDA84 /* AudioManager.swift */; };
 		C60919741C5C6163000C290A /* MainMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60919731C5C6163000C290A /* MainMenuVC.swift */; };
 		C60919761C5C6642000C290A /* AboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60919751C5C6642000C290A /* AboutUsVC.swift */; };
 		C609197D1C5C8D55000C290A /* PlayerHandTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C609197C1C5C8D55000C290A /* PlayerHandTVC.swift */; };
@@ -151,6 +153,7 @@
 		618007301C5C440D0024FC1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		618007371C5C44BE0024FC1D /* TimelineHand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineHand.swift; sourceTree = "<group>"; };
 		6196BCF81C5D6BF3001ECCEC /* TimelinePlayerScannedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelinePlayerScannedViewController.swift; sourceTree = "<group>"; };
+		61E27FB61C5EA57100EFDA84 /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		C60919731C5C6163000C290A /* MainMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuVC.swift; sourceTree = "<group>"; };
 		C60919751C5C6642000C290A /* AboutUsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsVC.swift; sourceTree = "<group>"; };
 		C609197C1C5C8D55000C290A /* PlayerHandTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerHandTVC.swift; sourceTree = "<group>"; };
@@ -231,6 +234,7 @@
 				618006DB1C5C11EA0024FC1D /* LaunchScreen.storyboard */,
 				610625E21C5C756C00D1F2A4 /* Constants.plist */,
 				618006DE1C5C11EA0024FC1D /* Info.plist */,
+				61E27FB91C5EA70400EFDA84 /* Sounds */,
 				618006E91C5C160E0024FC1D /* Frameworks */,
 			);
 			path = BoredGames;
@@ -257,6 +261,7 @@
 				618007351C5C444F0024FC1D /* Timeline */,
 				610625E71C5C82C300D1F2A4 /* Game.swift */,
 				610625EA1C5C82F000D1F2A4 /* Player.swift */,
+				61E27FB61C5EA57100EFDA84 /* AudioManager.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -340,6 +345,13 @@
 				6180071F1C5C437A0024FC1D /* TimelineDeckAmericanHistory.swift */,
 			);
 			name = Decks;
+			sourceTree = "<group>";
+		};
+		61E27FB91C5EA70400EFDA84 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -473,6 +485,7 @@
 				61358D611C5CB538004262C4 /* TimelineGameViewController.swift in Sources */,
 				610625F61C5CA1C300D1F2A4 /* TimelineGame.swift in Sources */,
 				618007201C5C437A0024FC1D /* TimelineDeckAmericanHistory.swift in Sources */,
+				61E27FB71C5EA57100EFDA84 /* AudioManager.swift in Sources */,
 				6180070F1C5C18B70024FC1D /* SocketIOClient.swift in Sources */,
 				C609197D1C5C8D55000C290A /* PlayerHandTVC.swift in Sources */,
 				618007061C5C18B70024FC1D /* SocketClientSpec.swift in Sources */,
@@ -501,6 +514,7 @@
 			files = (
 				6180073A1C5C454D0024FC1D /* TimelineDeckAmericanHistory.swift in Sources */,
 				618007591C5C456B0024FC1D /* SocketEngineClient.swift in Sources */,
+				61E27FB81C5EA57100EFDA84 /* AudioManager.swift in Sources */,
 				618007651C5C456B0024FC1D /* SocketParsable.swift in Sources */,
 				618007581C5C456B0024FC1D /* SocketEngine.swift in Sources */,
 				6180075C1C5C456B0024FC1D /* SocketEngineSpec.swift in Sources */,
