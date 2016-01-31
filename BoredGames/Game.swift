@@ -126,6 +126,15 @@ class Game: NSObject {
         }
     }
     
+    func removePlayerwithSocketID(socketID: String) {
+        for var i = 0; i < players.count; i++ {
+            if players[i]["socketID"].stringValue == socketID {
+                players.removeAtIndex(i)
+                return
+            }
+        }
+    }
+    
     func isRequiredPlayersMet() -> Bool {
         return self.players.count >= self.minPlayers
     }

@@ -82,6 +82,7 @@ class TimelineGame: Game {
     }
     
     func dealAndStart() {
+        self.announceNewBoard()
         self.dealCards()
         self.tellNextPlayerToGo()
     }
@@ -125,6 +126,44 @@ class TimelineGame: Game {
         }
         
         return cardLeftBool && cardRightBool
+    }
+    
+    func announceNewBoard() {
+        let cardsJSON = TimelineCard.jsonify(self.board)
+        
+        let listJSON = JSON(cardsJSON)
+        
+        guard let json = listJSON.rawString() else {
+            print("Could not stringify cards.")
+            return
+        }
+        
+        let data = [
+            "type": "MESSAGE",
+            "room": self.id,
+            "from": self.getFromSelf(),
+            "to": self.getToAllPlayers(),
+            "request" : [
+                "action" : Utilities.Constants.get("BoardUpdatedAction") as! String,
+                "board" : json
+            ]
+        ]
+        
+        self.socket.emit("MESSAGE", data)
+    }
+    
+    func askPlayerIfWon(player: JSON) {
+        let data = [
+            "type": "MESSAGE",
+            "room": self.id,
+            "from": self.getFromSelf(),
+            "to": self.getTo(player),
+            "request" : [
+                "action" : Utilities.Constants.get("AskIfWonAction") as! String
+            ]
+        ]
+        
+        self.socket.emit("MESSAGE", data)
     }
     
     override func setup() {
@@ -199,7 +238,7 @@ class TimelineGame: Game {
                         
                         let i = msg["response"]["index"].intValue
                         
-                        // Handle the playing of card
+                        // TODO: Handle the playing of card
                         print("Card Played: \(card)")
                         
                         
@@ -209,33 +248,33 @@ class TimelineGame: Game {
                         self.sendResults(success, msg: msg)
                         
                         if success {
+                            self.board.insert(card, atIndex: i)
                             
+                            self.announceNewBoard()
+                            
+                            self.askPlayerIfWon(<#T##player: JSON##JSON#>)
                         } else {
-                            Utilities.Flow.run(0.5, closure: { () -> () in
-                                let card = self.deck.draw()
-                                
-                                guard let cardString = card.toJSON().rawString() else {
-                                    print("Couldn't get string of card to send results to spectators")
-                                    return
-                                }
-                                
-                                let data = [
-                                    "type": "MESSAGE",
-                                    "room": self.id,
-                                    "from": self.getFromSelf(),
-                                    "to": self.getTo(msg["from"]),
-                                    "request" : [
-                                        "action" : Utilities.Constants.get("NewCardAction") as! String,
-                                        "card" : cardString
-                                    ]
-                                ]
-                                
-                                self.socket.emit("MESSAGE", data)
-                            })
+                            let card = self.deck.draw()
                             
-                            Utilities.Flow.run(0.5, closure: { () -> () in
-                                self.tellNextPlayerToGo()
-                            })
+                            guard let cardString = card.toJSON().rawString() else {
+                                print("Couldn't get string of card to send results to spectators")
+                                return
+                            }
+                            
+                            let data = [
+                                "type": "MESSAGE",
+                                "room": self.id,
+                                "from": self.getFromSelf(),
+                                "to": self.getTo(msg["from"]),
+                                "request" : [
+                                    "action" : Utilities.Constants.get("NewCardAction") as! String,
+                                    "card" : cardString
+                                ]
+                            ]
+                            
+                            self.socket.emit("MESSAGE", data)
+                            
+                            self.tellNextPlayerToGo()
                         }
                         /*
                             - Is Card correct?
