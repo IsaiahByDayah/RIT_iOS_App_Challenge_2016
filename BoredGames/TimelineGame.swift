@@ -166,6 +166,21 @@ class TimelineGame: Game {
         self.socket.emit("MESSAGE", data)
     }
     
+    func announceWinner(player: JSON){
+        let data = [
+            "type": "MESSAGE",
+            "room": self.id,
+            "from": self.getFromSelf(),
+            "to": self.getToAllPlayers(),
+            "request" : [
+                "action" : Utilities.Constants.get("EndGameAction") as! String,
+                "winner" : self.getTo(player)
+            ]
+        ]
+        
+        self.socket.emit("MESSAGE", data)
+    }
+    
     override func setup() {
         self.socket.on("connect") {data, ack in
             print("Game socket connected")
@@ -252,7 +267,7 @@ class TimelineGame: Game {
                             
                             self.announceNewBoard()
                             
-                            self.askPlayerIfWon(<#T##player: JSON##JSON#>)
+                            self.askPlayerIfWon(msg["from"])
                         } else {
                             let card = self.deck.draw()
                             
@@ -291,6 +306,18 @@ class TimelineGame: Game {
                                             - if not
                                                 - Tell next player to go
                         */
+                        break
+                        
+                    // MARK: Answer if won
+                    case Utilities.Constants.get("AnswerIfWonAction") as! String:
+                        let success = msg["response"]["success"].boolValue
+                        
+                        if success {
+                            self.announceWinner(msg["from"])
+                        } else {
+                            self.tellNextPlayerToGo()
+                        }
+
                         break
                         
                     default:

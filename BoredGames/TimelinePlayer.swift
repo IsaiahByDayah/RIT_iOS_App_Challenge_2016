@@ -79,8 +79,17 @@ class TimelinePlayer: Player {
         delegate.gameUpdated()
     }
     
-    func checkForWin() {
-        guard let myHand = self.win
+    func didWin() -> Bool {
+        guard let myHand = self.hand else {
+            print("Could not get hand, returning did not win.")
+            return false
+        }
+        
+        if myHand.cards.count == 0 {
+            return true
+        }
+        
+        return false
     }
     
     override func setup() {
@@ -132,6 +141,13 @@ class TimelinePlayer: Player {
                         }
                         break
                         
+                    // MARK: Game Ended
+                    case Utilities.Constants.get("EndGameAction") as! String:
+                        if let delegate = self.timelinePlayerDelegate {
+                            delegate.gameEnded(self.didWin())
+                        }
+                        break
+                        
                     // MARK: Board Updated
                     case Utilities.Constants.get("BoardUpdatedAction") as! String:
                         let board = msg["request"]["board"].arrayValue
@@ -163,6 +179,26 @@ class TimelinePlayer: Player {
                         let player = msg["request"]["player"]
                         
                         self.myTurn = self.isMe(player)
+                        break
+                        
+                    // MARK: Ask If Won
+                    case Utilities.Constants.get("AskIfWonAction") as! String:
+                        
+                        let didWin = self.didWin()
+                        
+                        let data = [
+                            "type": "MESSAGE",
+                            "room": self.room,
+                            "from": self.getFromSelf(),
+                            "to": Utilities.Constants.get("GameRole") as! String,
+                            "response" : [
+                                "action" : Utilities.Constants.get("AnswerIfWonAction") as! String,
+                                "success": didWin
+                            ]
+                        ]
+                        
+                        self.socket.emit("MESSAGE", data)
+                        
                         break
                         
                     default:
@@ -209,4 +245,5 @@ protocol TimelinePlayerScanCompleteDelegate {
 
 protocol TimelinePlayerDelegate {
     func gameUpdated()
+    func gameEnded(win: Bool)
 }

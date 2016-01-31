@@ -2,8 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>TimelineLoseMessage</key>
+	<string>Default Lose Text</string>
+	<key>TimelineWinMessage</key>
+	<string>Default Win Text</string>
+	<key>AnswerIfWonAction</key>
+	<string>ANSWER_DID_WIN</string>
 	<key>AskIfWonAction</key>
-	<string>DID_WIN</string>
+	<string>ASK_DID_WIN</string>
 	<key>BeginingHandAction</key>
 	<string>BEGINNING_HAND</string>
 	<key>MoveAction</key>

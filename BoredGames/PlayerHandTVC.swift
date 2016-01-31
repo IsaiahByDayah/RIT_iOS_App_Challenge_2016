@@ -16,6 +16,9 @@ class PlayerHandTVC: PlayerViewController, UITableViewDataSource, UITableViewDel
     
     private let showBoardSegueIdentifier = "timelinePlayerPresentBoardSegue"
     
+    let winText = Utilities.Constants.get("TimelineWinMessage") as! String
+    let loseText = Utilities.Constants.get("TimelineLoseMessage") as! String
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -78,6 +81,27 @@ class PlayerHandTVC: PlayerViewController, UITableViewDataSource, UITableViewDel
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
             self.tableView.reloadData()
         })
+    }
+    
+    func gameEnded(win: Bool) {
+        let msg = win ? self.winText : self.loseText
+        
+        self.alertGameOver(msg)
+    }
+    
+    func alertGameOver(msg: String){
+        let confirmation = UIAlertController(title: "Good Game!", message: msg, preferredStyle: UIAlertControllerStyle.Alert)
+        
+        confirmation.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction) -> Void in
+            // Handle user confirming word reset
+            self.backToMainMenu()
+        }))
+        
+        self.presentViewController(confirmation, animated: true, completion: nil)
+    }
+    
+    func backToMainMenu() {
+        // Unwind back to main menu
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
