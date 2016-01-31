@@ -22,6 +22,14 @@ class MainMenuVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func prepareToUnwindBackToMainMenuFromScanComplete(segue: UIStoryboardSegue) {
+        
+    }
+    
+    @IBAction func prepareToUnwindBackToMainMenuFromTLHand(segue: UIStoryboardSegue) {
+        
+    }
 
     /*
     // MARK: - Navigation

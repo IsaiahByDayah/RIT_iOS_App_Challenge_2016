@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -347,7 +347,7 @@
                                 </constraints>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
-                                    <segue destination="Qax-df-pEW" kind="unwind" identifier="cancelGameJoinSegueBackToMainMenu" unwindAction="prepareForUnwindToMainMenu:" id="1mG-Rv-g1K"/>
+                                    <segue destination="Qax-df-pEW" kind="unwind" identifier="cancelBackToMainMenuFromScanComplete" unwindAction="prepareToUnwindBackToMainMenuFromScanComplete:" id="QjJ-Zs-fxS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -440,9 +440,11 @@
                     <navigationItem key="navigationItem" id="K6s-o5-h6L"/>
                     <connections>
                         <outlet property="tableView" destination="xYg-6e-6ah" id="2VG-3N-tWK"/>
+                        <segue destination="q6V-l4-QNX" kind="unwind" identifier="unwindBackToMainMenuFromTLHand" unwindAction="prepareToUnwindBackToMainMenuFromTLHand:" id="erb-Jx-P9w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="stg-vm-rma" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="q6V-l4-QNX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2722" y="233"/>
         </scene>

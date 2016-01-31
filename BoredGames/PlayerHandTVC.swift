@@ -15,6 +15,7 @@ class PlayerHandTVC: PlayerViewController, UITableViewDataSource, UITableViewDel
     var timelinePlayer: TimelinePlayer!
     
     private let showBoardSegueIdentifier = "timelinePlayerPresentBoardSegue"
+    private let backToMainMenuIdentifier = "unwindBackToMainMenuFromTLHand"
     
     let winText = Utilities.Constants.get("TimelineWinMessage") as! String
     let loseText = Utilities.Constants.get("TimelineLoseMessage") as! String
@@ -97,11 +98,12 @@ class PlayerHandTVC: PlayerViewController, UITableViewDataSource, UITableViewDel
             self.backToMainMenu()
         }))
         
-        self.presentViewController(confirmation, animated: true, completion: nil)
+        self.backToMainMenu()
     }
     
     func backToMainMenu() {
         // Unwind back to main menu
+        self.performSegueWithIdentifier(backToMainMenuIdentifier, sender: self)
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
@@ -157,6 +159,8 @@ class PlayerHandTVC: PlayerViewController, UITableViewDataSource, UITableViewDel
             let vc = segue.destinationViewController as! GameBoardTVC
             
             vc.timelinePlayer = self.timelinePlayer
+        } else if segue.identifier == backToMainMenuIdentifier {
+            self.timelinePlayer.tearDown()
         }
     }
 
