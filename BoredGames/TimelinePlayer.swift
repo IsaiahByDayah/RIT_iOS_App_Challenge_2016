@@ -49,7 +49,7 @@ class TimelinePlayer: Player {
             return
         }
         
-        let card = TimelineCard.jsonify(c)
+        let card = c.toJSON()
         
         guard let json = card.rawString() else {
             print("Could not stringify card.")
@@ -60,9 +60,11 @@ class TimelinePlayer: Player {
             "type": "MESSAGE",
             "room": self.room,
             "from": self.getFromSelf(),
-            "to": Utilities.Constants.get("ServerRole") as! String,
+            "to": Utilities.Constants.get("GameRole") as! String,
             "response" : [
-                "card": json
+                "action" : Utilities.Constants.get("PlayCardAction") as! String,
+                "card": json,
+                "index": index
             ]
         ]
         
@@ -75,6 +77,10 @@ class TimelinePlayer: Player {
         }
         
         delegate.gameUpdated()
+    }
+    
+    func checkForWin() {
+        guard let myHand = self.win
     }
     
     override func setup() {
@@ -133,6 +139,19 @@ class TimelinePlayer: Player {
                         let cards = TimelineCard.parse(board)
                         
                         self.currentBoard = cards
+                        
+                        if let delegate = self.timelinePlayerDelegate {
+                            delegate.gameUpdated()
+                        }
+                        break
+                        
+                    // MARK: Beginning Hand
+                    case Utilities.Constants.get("BeginingHandAction") as! String:
+                        let hand = msg["request"]["hand"].arrayValue
+                        
+                        let cards = TimelineCard.parse(hand)
+                        
+                        self.giveCards(cards)
                         
                         if let delegate = self.timelinePlayerDelegate {
                             delegate.gameUpdated()

@@ -19,6 +19,8 @@ class Game: NSObject {
     
     var scanDelagate: GameScanDelagate?
     
+    private var currentPlayerIndex: Int = 0
+    
     init(title: String, minPlayers: Int, maxPlayers: Int){
         self.id = NSUUID().UUIDString
         self.title = title
@@ -28,6 +30,22 @@ class Game: NSObject {
 
         let herokuURL = Utilities.Constants.get("HerokuURL") as! String
         self.socket = SocketIOClient(socketURL: NSURL(string: herokuURL)!)
+    }
+    
+    func getCurrentPlayerIndex() -> Int {
+        return self.currentPlayerIndex
+    }
+    
+    func getNextPlayerIndex() -> Int {
+        let index = self.currentPlayerIndex
+        
+        self.currentPlayerIndex++
+        
+        if self.currentPlayerIndex >= self.players.count {
+            self.currentPlayerIndex = 0
+        }
+        
+        return index
     }
     
     // Will override
@@ -60,6 +78,12 @@ class Game: NSObject {
         // Make call to start the game
     }
     
+    func getToSpectators() -> NSDictionary {
+        return [
+            "role": Utilities.Constants.get("SpectatorRole") as! String
+        ]
+    }
+    
     func getFromSelf() -> NSDictionary {
         return [
             "role": Utilities.Constants.get("GameRole") as! String,
@@ -73,6 +97,14 @@ class Game: NSObject {
             "role" : Utilities.Constants.get("PlayerRole") as! String,
             "playerID" : Utilities.Constants.get("AllPlayerIDs") as! String,
             "socketID" : Utilities.Constants.get("AllSocketIDs") as! String
+        ]
+    }
+    
+    func getTo(player: JSON) -> NSDictionary {
+        return [
+            "role" : Utilities.Constants.get("PlayerRole") as! String,
+            "playerID" : player["playerID"].stringValue,
+            "socketID" : player["socketID"].stringValue
         ]
     }
     
@@ -91,6 +123,15 @@ class Game: NSObject {
     func addPlayer(player: JSON){
         if !self.hasPlayerJoinedAlready(player) {
             self.players.append(player)
+        }
+    }
+    
+    func removePlayerwithSocketID(socketID: String) {
+        for var i = 0; i < players.count; i++ {
+            if players[i]["socketID"].stringValue == socketID {
+                players.removeAtIndex(i)
+                return
+            }
         }
     }
     
