@@ -246,6 +246,10 @@ class TimelinePlayer: Player {
                         
                         self.myTurn = self.isMe(playeJSON)
                         
+                        if self.myTurn {
+                            self.timelinePlayerDelegate?.playersTurn()
+                        }
+                        
                         print("\((self.myTurn ? "My" : "Other Player's")) turn!")
                         break
                         
@@ -314,4 +318,5 @@ protocol TimelinePlayerScanCompleteDelegate {
 protocol TimelinePlayerDelegate {
     func gameUpdated()
     func gameEnded(win: Bool)
+    func playersTurn()
 }

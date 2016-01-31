@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class PlayerHandTVC: PlayerViewController, UITableViewDataSource, UITableViewDelegate, TimelinePlayerDelegate {
 
@@ -89,6 +90,10 @@ class PlayerHandTVC: PlayerViewController, UITableViewDataSource, UITableViewDel
         let msg = win ? self.winText : self.loseText
         
         self.alertGameOver(msg)
+    }
+    
+    func playersTurn() {
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
     }
     
     func alertGameOver(msg: String){

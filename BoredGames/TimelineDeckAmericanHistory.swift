@@ -13,8 +13,19 @@ class TimelineDeckAmericanHistory: TimelineDeck {
     override init(){
         super.init()
         
-        for i in 0..<100 {
-            self.cards.append(TimelineCard(id: "\(i)", year: "\(i)", title: "\(i)", imageName: "placeholder"))
+        let decksDict = Utilities.Constants.get("TimelineDecks") as! NSDictionary
+        
+        let ahDeckDict = decksDict["AmericanHistory"] as! [NSDictionary]
+        
+        for cardDict in ahDeckDict {
+            let id = cardDict["id"] as! String
+            let year = cardDict["year"] as! String
+            let title = cardDict["title"] as! String
+            let imageName = cardDict["imageName"] as! String
+            
+            let card = TimelineCard(id: id, year: year, title: title, imageName: imageName)
+            
+            self.cards.append(card)
         }
     }
 }

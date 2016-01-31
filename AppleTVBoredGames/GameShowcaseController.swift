@@ -10,16 +10,21 @@ import UIKit
 
 class GameShowcaseController: UIViewController {
 
-    var socket: SocketIOClient!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func gamePressed(sender: AnyObject) {
+    @IBAction func timelineGameButtonPressed(sender: AnyObject) {
+        self.launchTimeline()
+    }
     
+    @IBAction func playingCardsButtonPressed(sender: AnyObject) {
+        self.launchPlayingCards()
+    }
+    
+    func launchTimeline() {
         let game = TimelineGame(deck: TimelineDeckAmericanHistory())
         
         let scanVC = storyboard?.instantiateViewControllerWithIdentifier("PlayerScanViewController") as! PlayerScanViewController
@@ -27,6 +32,10 @@ class GameShowcaseController: UIViewController {
         game.scanDelagate = scanVC
         
         self.presentViewController(scanVC, animated: true, completion: nil)
+    }
+    
+    func launchPlayingCards() {
+        // Setup for launching playing cards
     }
     
     override func didReceiveMemoryWarning() {

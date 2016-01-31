@@ -2,6 +2,262 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>TimelineDecks</key>
+	<dict>
+		<key>AmericanHistory</key>
+		<array>
+			<dict>
+				<key>id</key>
+				<string>0</string>
+				<key>year</key>
+				<string>1969</string>
+				<key>imageName</key>
+				<string>placeholder</string>
+				<key>title</key>
+				<string>Neil Armstrong walked on the moon</string>
+			</dict>
+            <dict>
+                <key>id</key>
+                <string>1</string>
+                <key>year</key>
+                <string>1799</string>
+                <key>imageName</key>
+                <string>placeholder</string>
+                <key>title</key>
+                <string>Death of George Washington</string>
+            </dict>
+            <dict>
+                <key>id</key>
+                <string>2</string>
+                <key>year</key>
+                <string>1865</string>
+                <key>imageName</key>
+                <string>placeholder</string>
+                <key>title</key>
+                <string>Abraham Lincoln Assassinated</string>
+            </dict>
+            <dict>
+                <key>id</key>
+                <string>3</string>
+                <key>year</key>
+                <string>1789</string>
+                <key>imageName</key>
+                <string>placeholder</string>
+                <key>title</key>
+                <string>George Washington first elected President</string>
+            </dict>
+            <dict>
+                <key>id</key>
+                <string>4</string>
+                <key>year</key>
+                <string>1941</string>
+                <key>imageName</key>
+                <string>placeholder</string>
+                <key>title</key>
+                <string>Pearl Harbor</string>
+            </dict>
+            <dict>
+                <key>id</key>
+                <string>5</string>
+                <key>year</key>
+                <string>1867</string>
+                <key>imageName</key>
+                <string>placeholder</string>
+                <key>title</key>
+                <string>Purchase of Alaska</string>
+            </dict>
+            <dict>
+                <key>id</key>
+                <string>6</string>
+                <key>year</key>
+                <string>1903</string>
+                <key>imageName</key>
+                <string>placeholder</string>
+                <key>title</key>
+                <string>Wright Brothers' first flight</string>
+            </dict>
+            <dict>
+                <key>id</key>
+                <string>7</string>
+                <key>year</key>
+                <string>1992</string>
+                <key>imageName</key>
+                <string>placeholder</string>
+                <key>title</key>
+                <string>Bill Clinton first elected President</string>
+            </dict>
+            <dict>
+                <key>id</key>
+                <string>8</string>
+                <key>year</key>
+                <string>1968</string>
+                <key>imageName</key>
+                <string>placeholder</string>
+                <key>title</key>
+                <string>Martin Luther King assassinated</string>
+            </dict>
+            <dict>
+                <key>id</key>
+                <string>9</string>
+                <key>year</key>
+                <string>1965</string>
+                <key>imageName</key>
+                <string>placeholder</string>
+                <key>title</key>
+                <string>Malcolm X assassinated</string>
+            </dict>
+            <dict>
+                <key>id</key>
+                <string>10</string>
+                <key>year</key>
+                <string>1963</string>
+                <key>imageName</key>
+                <string>placeholder</string>
+                <key>title</key>
+                <string>Kennedy assassinated</string>
+            </dict>
+            <dict>
+                <key>id</key>
+                <string>11</string>
+                <key>year</key>
+                <string>1932</string>
+                <key>imageName</key>
+                <string>placeholder</string>
+                <key>title</key>
+                <string>Franklin D. Roosevelt first elected President</string>
+            </dict>
+            <dict>
+                <key>id</key>
+                <string>12</string>
+                <key>year</key>
+                <string>1968</string>
+                <key>imageName</key>
+                <string>placeholder</string>
+                <key>title</key>
+                <string>Richard Nixon first elected President</string>
+            </dict>
+            <dict>
+                <key>id</key>
+                <string>13</string>
+                <key>year</key>
+                <string>1929</string>
+                <key>imageName</key>
+                <string>placeholder</string>
+                <key>title</key>
+                <string>The Museum of Modern Art opened in NYC</string>
+            </dict>
+            <dict>
+                <key>id</key>
+                <string>14</string>
+                <key>year</key>
+                <string>1929</string>
+                <key>imageName</key>
+                <string>placeholder</string>
+                <key>title</key>
+                <string>Beginning of the Great Depression</string>
+            </dict>
+            <dict>
+                <key>id</key>
+                <string>15</string>
+                <key>year</key>
+                <string>1960</string>
+                <key>imageName</key>
+                <string>placeholder</string>
+                <key>title</key>
+                <string>John F. Kennedy elected President</string>
+            </dict>
+            <dict>
+                <key>id</key>
+                <string>16</string>
+                <key>year</key>
+                <string>1980</string>
+                <key>imageName</key>
+                <string>placeholder</string>
+                <key>title</key>
+                <string>Ronald Reagan first elected President</string>
+            </dict>
+            <dict>
+                <key>id</key>
+                <string>17</string>
+                <key>year</key>
+                <string>1692</string>
+                <key>imageName</key>
+                <string>placeholder</string>
+                <key>title</key>
+                <string>Salem Witch Trials</string>
+            </dict>
+            <dict>
+                <key>id</key>
+                <string>18</string>
+                <key>year</key>
+                <string>1900</string>
+                <key>imageName</key>
+                <string>placeholder</string>
+                <key>title</key>
+                <string>Theodore Roosevelt elected President</string>
+            </dict>
+            <dict>
+                <key>id</key>
+                <string>19</string>
+                <key>year</key>
+                <string>2008</string>
+                <key>imageName</key>
+                <string>placeholder</string>
+                <key>title</key>
+                <string>Barack Obama first elected President</string>
+            </dict>
+            <dict>
+                <key>id</key>
+                <string>20</string>
+                <key>year</key>
+                <string>1803</string>
+                <key>imageName</key>
+                <string>placeholder</string>
+                <key>title</key>
+                <string>Louisiana purchase</string>
+            </dict>
+            <dict>
+                <key>id</key>
+                <string>21</string>
+                <key>year</key>
+                <string>1917</string>
+                <key>imageName</key>
+                <string>placeholder</string>
+                <key>title</key>
+                <string>The United States' involvement in World War I</string>
+            </dict>
+            <dict>
+                <key>id</key>
+                <string>22</string>
+                <key>year</key>
+                <string>1865</string>
+                <key>imageName</key>
+                <string>placeholder</string>
+                <key>title</key>
+                <string>Last Battle of the Civil War</string>
+            </dict>
+            <dict>
+                <key>id</key>
+                <string>23</string>
+                <key>year</key>
+                <string>1960</string>
+                <key>imageName</key>
+                <string>placeholder</string>
+                <key>title</key>
+                <string>Last version of American Flag</string>
+            </dict>
+            <dict>
+                <key>id</key>
+                <string>24</string>
+                <key>year</key>
+                <string>1947</string>
+                <key>imageName</key>
+                <string>placeholder</string>
+                <key>title</key>
+                <string>Founding of the CIA</string>
+            </dict>
+		</array>
+	</dict>
 	<key>TimelineLoseMessage</key>
 	<string>Default Lose Text</string>
 	<key>TimelineWinMessage</key>

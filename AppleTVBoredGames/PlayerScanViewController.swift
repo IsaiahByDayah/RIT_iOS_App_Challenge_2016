@@ -48,7 +48,7 @@ class PlayerScanViewController: UIViewController, GameScanDelagate {
         
         self.maxPlayersTextLabel.text = "Max: \(self.game.maxPlayers) Players"
         
-        self.updatePlayersJoinedText()
+        self.playersUpdated()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -91,6 +91,12 @@ class PlayerScanViewController: UIViewController, GameScanDelagate {
     
     func playersUpdated() {
         self.updatePlayersJoinedText()
+        
+        if self.game.isRequiredPlayersMet() {
+            self.doneScanningButton.alpha = 1.0
+        } else {
+            self.doneScanningButton.alpha = 0.5
+        }
     }
     
     func updatePlayersJoinedText() {
