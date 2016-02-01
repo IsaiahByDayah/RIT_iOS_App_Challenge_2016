@@ -9,6 +9,12 @@ RIT iOS App Challenge 2016 Competition Submission
 - [Jade Evans](http://devpost.com/Jadejetaun)
 
 
+## About:
+Board Games is a fun and interactive educational focused system that can be ran and operated across multiple platforms. Our goal is to allow groups of people to come together and easily join each other in fun and educational experiences with minimal setup. Simplly choose a game you want to play, scan yourself in as a player (iOS device) or spectator (web) and you can join in on the fun right then and there.
+
+Our first game is a fun historical events game that you can play solo or with friends. Given a series of historican events, you must place them, one-by-one, on a timeline in the correct order.
+
+
 ## External Resources Used:
 
 ### Guides / Online Tutorials / Help
@@ -22,6 +28,6 @@ RIT iOS App Challenge 2016 Competition Submission
 - [Assets](http://kenney.nl/assets)
 - [Sound](http://www.bensound.com/royalty-free-music/track/little-idea)
 
-## See Also:
+### See Also:
 - [Web Link](https://bored-games.herokuapp.com)
 - [Server GitHub](https://github.com/jordankid93/Bored-Games-Server)
