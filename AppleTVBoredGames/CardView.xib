@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardView" customModule="BoardGames" customModuleProvider="target">
+            <connections>
+                <outlet property="imageView" destination="FZZ-j3-vml" id="40a-kM-dHG"/>
+                <outlet property="titleLabel" destination="75n-0t-dbv" id="DZL-xr-piY"/>
+                <outlet property="yearLabel" destination="Nku-x2-D5f" id="aeI-eH-mLx"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="250"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" translatesAutoresizingMaskIntoConstraints="NO" id="FZZ-j3-vml">
+                    <rect key="frame" x="0.0" y="0.0" width="150" height="250"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75n-0t-dbv">
+                    <rect key="frame" x="16" y="170" width="118" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="OM8-WL-WOj"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nku-x2-D5f">
+                    <rect key="frame" x="16" y="141" width="118" height="21"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="FZZ-j3-vml" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="0Nh-s2-g83"/>
+                <constraint firstAttribute="trailing" secondItem="FZZ-j3-vml" secondAttribute="trailing" id="71P-F6-SFG"/>
+                <constraint firstItem="FZZ-j3-vml" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="EJb-R2-iYW"/>
+                <constraint firstAttribute="bottom" secondItem="FZZ-j3-vml" secondAttribute="bottom" id="N3s-Yi-9OZ"/>
+                <constraint firstItem="75n-0t-dbv" firstAttribute="top" secondItem="Nku-x2-D5f" secondAttribute="bottom" constant="8" id="O24-kx-mZa"/>
+                <constraint firstItem="75n-0t-dbv" firstAttribute="centerX" secondItem="FZZ-j3-vml" secondAttribute="centerX" id="Oqp-PL-7Ld"/>
+                <constraint firstItem="Nku-x2-D5f" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="aHF-Jc-g8r"/>
+                <constraint firstItem="75n-0t-dbv" firstAttribute="leading" secondItem="Nku-x2-D5f" secondAttribute="leading" id="gZo-Ey-UWs"/>
+                <constraint firstItem="75n-0t-dbv" firstAttribute="trailing" secondItem="Nku-x2-D5f" secondAttribute="trailing" id="kXl-pj-q0P"/>
+                <constraint firstAttribute="bottom" secondItem="75n-0t-dbv" secondAttribute="bottom" constant="20" id="nzN-hq-1UR"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="541" y="446"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="person" width="240" height="400"/>
+    </resources>
+</document>
