@@ -2,8 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>TimelineShuffleSoundFileType</key>
+	<string>mp3</string>
+	<key>TimelineShuffleSoundFileName</key>
+	<string>Shuffle</string>
+	<key>AppleTVBackgroundSongFileType</key>
+	<string>mp3</string>
+	<key>AppleTVBackgroundSongFileName</key>
+	<string>bensound-littleidea</string>
 	<key>TimelineNumberOfCardsInStartingHand</key>
-	<integer>10</integer>
+	<integer>4</integer>
 	<key>TimelineDecks</key>
 	<dict>
 		<key>AmericanHistory</key>
@@ -14,7 +22,7 @@
 				<key>year</key>
 				<string>1969</string>
 				<key>imageName</key>
-				<string>placeholder</string>
+				<string>discovery</string>
 				<key>title</key>
 				<string>Neil Armstrong walked on the moon</string>
 			</dict>
@@ -24,7 +32,7 @@
 				<key>year</key>
 				<string>1799</string>
 				<key>imageName</key>
-				<string>placeholder</string>
+				<string>person</string>
 				<key>title</key>
 				<string>Death of George Washington</string>
 			</dict>
@@ -34,7 +42,7 @@
 				<key>year</key>
 				<string>1865</string>
 				<key>imageName</key>
-				<string>placeholder</string>
+				<string>person</string>
 				<key>title</key>
 				<string>Abraham Lincoln Assassinated</string>
 			</dict>
@@ -44,7 +52,7 @@
 				<key>year</key>
 				<string>1789</string>
 				<key>imageName</key>
-				<string>placeholder</string>
+				<string>person</string>
 				<key>title</key>
 				<string>George Washington first elected President</string>
 			</dict>
@@ -54,7 +62,7 @@
 				<key>year</key>
 				<string>1941</string>
 				<key>imageName</key>
-				<string>placeholder</string>
+				<string>event</string>
 				<key>title</key>
 				<string>Pearl Harbor</string>
 			</dict>
@@ -64,7 +72,7 @@
 				<key>year</key>
 				<string>1867</string>
 				<key>imageName</key>
-				<string>placeholder</string>
+				<string>event</string>
 				<key>title</key>
 				<string>Purchase of Alaska</string>
 			</dict>
@@ -74,7 +82,7 @@
 				<key>year</key>
 				<string>1903</string>
 				<key>imageName</key>
-				<string>placeholder</string>
+				<string>event</string>
 				<key>title</key>
 				<string>Wright Brothers&apos; first flight</string>
 			</dict>
@@ -84,7 +92,7 @@
 				<key>year</key>
 				<string>1992</string>
 				<key>imageName</key>
-				<string>placeholder</string>
+				<string>person</string>
 				<key>title</key>
 				<string>Bill Clinton first elected President</string>
 			</dict>
@@ -94,7 +102,7 @@
 				<key>year</key>
 				<string>1968</string>
 				<key>imageName</key>
-				<string>placeholder</string>
+				<string>person</string>
 				<key>title</key>
 				<string>Martin Luther King assassinated</string>
 			</dict>
@@ -104,7 +112,7 @@
 				<key>year</key>
 				<string>1965</string>
 				<key>imageName</key>
-				<string>placeholder</string>
+				<string>person</string>
 				<key>title</key>
 				<string>Malcolm X assassinated</string>
 			</dict>
@@ -114,7 +122,7 @@
 				<key>year</key>
 				<string>1963</string>
 				<key>imageName</key>
-				<string>placeholder</string>
+				<string>person</string>
 				<key>title</key>
 				<string>Kennedy assassinated</string>
 			</dict>
@@ -124,7 +132,7 @@
 				<key>year</key>
 				<string>1932</string>
 				<key>imageName</key>
-				<string>placeholder</string>
+				<string>person</string>
 				<key>title</key>
 				<string>Franklin D. Roosevelt first elected President</string>
 			</dict>
@@ -134,7 +142,7 @@
 				<key>year</key>
 				<string>1968</string>
 				<key>imageName</key>
-				<string>placeholder</string>
+				<string>person</string>
 				<key>title</key>
 				<string>Richard Nixon first elected President</string>
 			</dict>
@@ -144,7 +152,7 @@
 				<key>year</key>
 				<string>1929</string>
 				<key>imageName</key>
-				<string>placeholder</string>
+				<string>place</string>
 				<key>title</key>
 				<string>The Museum of Modern Art opened in NYC</string>
 			</dict>
@@ -154,7 +162,7 @@
 				<key>year</key>
 				<string>1929</string>
 				<key>imageName</key>
-				<string>placeholder</string>
+				<string>event</string>
 				<key>title</key>
 				<string>Beginning of the Great Depression</string>
 			</dict>
@@ -164,7 +172,7 @@
 				<key>year</key>
 				<string>1960</string>
 				<key>imageName</key>
-				<string>placeholder</string>
+				<string>person</string>
 				<key>title</key>
 				<string>John F. Kennedy elected President</string>
 			</dict>
@@ -174,7 +182,7 @@
 				<key>year</key>
 				<string>1980</string>
 				<key>imageName</key>
-				<string>placeholder</string>
+				<string>person</string>
 				<key>title</key>
 				<string>Ronald Reagan first elected President</string>
 			</dict>
@@ -184,7 +192,7 @@
 				<key>year</key>
 				<string>1692</string>
 				<key>imageName</key>
-				<string>placeholder</string>
+				<string>event</string>
 				<key>title</key>
 				<string>Salem Witch Trials</string>
 			</dict>
@@ -194,7 +202,7 @@
 				<key>year</key>
 				<string>1900</string>
 				<key>imageName</key>
-				<string>placeholder</string>
+				<string>person</string>
 				<key>title</key>
 				<string>Theodore Roosevelt elected President</string>
 			</dict>
@@ -204,7 +212,7 @@
 				<key>year</key>
 				<string>2008</string>
 				<key>imageName</key>
-				<string>placeholder</string>
+				<string>person</string>
 				<key>title</key>
 				<string>Barack Obama first elected President</string>
 			</dict>
@@ -214,7 +222,7 @@
 				<key>year</key>
 				<string>1803</string>
 				<key>imageName</key>
-				<string>placeholder</string>
+				<string>event</string>
 				<key>title</key>
 				<string>Louisiana purchase</string>
 			</dict>
@@ -224,7 +232,7 @@
 				<key>year</key>
 				<string>1917</string>
 				<key>imageName</key>
-				<string>placeholder</string>
+				<string>event</string>
 				<key>title</key>
 				<string>The United States&apos; involvement in World War I</string>
 			</dict>
@@ -234,7 +242,7 @@
 				<key>year</key>
 				<string>1865</string>
 				<key>imageName</key>
-				<string>placeholder</string>
+				<string>event</string>
 				<key>title</key>
 				<string>Last Battle of the Civil War</string>
 			</dict>
@@ -244,7 +252,7 @@
 				<key>year</key>
 				<string>1960</string>
 				<key>imageName</key>
-				<string>placeholder</string>
+				<string>invention</string>
 				<key>title</key>
 				<string>Last version of American Flag</string>
 			</dict>
@@ -254,16 +262,16 @@
 				<key>year</key>
 				<string>1947</string>
 				<key>imageName</key>
-				<string>placeholder</string>
+				<string>discovery</string>
 				<key>title</key>
 				<string>Founding of the CIA</string>
 			</dict>
 		</array>
 	</dict>
 	<key>TimelineLoseMessage</key>
-	<string>Default Lose Text</string>
+	<string>Aww man, better luck next time!</string>
 	<key>TimelineWinMessage</key>
-	<string>Default Win Text</string>
+	<string>You showed them who&apos;s boss!</string>
 	<key>AnswerIfWonAction</key>
 	<string>ANSWER_DID_WIN</string>
 	<key>AskIfWonAction</key>

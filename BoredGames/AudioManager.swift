@@ -11,19 +11,39 @@ import AVFoundation
 
 class AudioManager: NSObject {
     
-//    var musicPlayer: AVAudioPlayer
+    var musicPlayer: AVAudioPlayer?
     
-//    init(){
+    init(fileName: String, fileType: String, shouldRepeat: Bool){
     
-//        var sound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("button-09", ofType: "wav"))
-//        println(alertSound)
-//    }
-//    
-//    func play(){
-//        
-//    }
-//    
-//    func pause(){
-//    
-//    }
+        let sound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(fileName, ofType: fileType)!)
+        
+        do {
+            musicPlayer = try AVAudioPlayer(contentsOfURL: sound)
+        } catch _ {
+            print("Could not load file")
+            return
+        }
+        
+        musicPlayer?.prepareToPlay()
+        
+        if shouldRepeat {
+            musicPlayer?.numberOfLoops = -1
+        }
+    }
+    
+    func setVolume(vol: Float){
+        self.musicPlayer?.volume = vol
+    }
+    
+    func play(){
+        musicPlayer?.play()
+    }
+    
+    func pause(){
+        musicPlayer?.pause()
+    }
+    
+    func stop(){
+        musicPlayer?.stop()
+    }
 }

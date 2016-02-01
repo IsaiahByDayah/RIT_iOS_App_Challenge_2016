@@ -12,7 +12,7 @@ class TimelineGameViewController: GameViewController, TimelineGameDalegate {
     
     var timelineGame: TimelineGame!
     
-    var cardsOnScreen: [UIImageView]? = []
+    var cardsOnScreen: [CardView]? = []
     
     private let unwindBackToShowcaseSegueIdentifier = "unwindFromTLGVCBackToGameShowcase"
 
@@ -23,19 +23,23 @@ class TimelineGameViewController: GameViewController, TimelineGameDalegate {
         self.timelineGame.dealAndStart()
     }
     
-    func createCardOnScreen(card: TimelineCard, index: Int) -> UIImageView{
+    func createCardOnScreen(card: TimelineCard, index: Int) -> CardView{
         
-        let newCard = UIImageView(frame: CGRectMake(self.view.frame.width/2.5, self.view.frame.height/1.2, 150, 150))
-        
-        newCard.backgroundColor = UIColor.redColor()
+//        let newCard = UIImageView(frame: CGRectMake(self.view.frame.width/2.5, self.view.frame.height/1.2, 150, 150))
+//        
+//        newCard.backgroundColor = UIColor.redColor()
         //newCard.image = card.imageName
         
-        return newCard
+        // let cardView = CardView(frame: CGRect(x: self.view.frame.width / 2.5, y: self.view.frame.height / 1.2, width: 150, height: 250))
+        let cardView = CardView(frame: CGRect(x: self.view.frame.width / 2.5, y: self.view.frame.height + 251, width: 150, height: 250))
+        cardView.setNewCard(card)
+        
+        return cardView
         
     }
     
     
-    func animateCard(card: UIImageView, x: CGFloat, y: CGFloat, color: UIColor, delay: Double){
+    func animateCard(card: CardView, x: CGFloat, y: CGFloat, color: UIColor, delay: Double){
         
         self.view.addSubview(card)
         
@@ -43,8 +47,7 @@ class TimelineGameViewController: GameViewController, TimelineGameDalegate {
             UIView.animateWithDuration(2.0) { () -> Void in
                 
                 card.backgroundColor = color
-                
-                card.frame = CGRect(x: x, y: y, width: 300, height: 300)
+                card.frame = CGRect(x: x, y: y, width: 150, height: 250)
             }
         }
         
