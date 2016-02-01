@@ -47,7 +47,6 @@ class TimelineGameViewController: GameViewController, TimelineGameDalegate {
             UIView.animateWithDuration(2.0) { () -> Void in
                 
                 card.backgroundColor = color
-                
                 card.frame = CGRect(x: x, y: y, width: 150, height: 250)
             }
         }
