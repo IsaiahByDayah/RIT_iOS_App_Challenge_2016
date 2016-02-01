@@ -44,7 +44,7 @@ class TimelineGameViewController: GameViewController, TimelineGameDalegate {
                 
                 card.backgroundColor = color
                 
-                card.frame = CGRect(x: x, y: y, width: 150, height: 150)
+                card.frame = CGRect(x: x, y: y, width: 300, height: 300)
             }
         }
         
