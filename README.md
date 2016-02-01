@@ -30,4 +30,5 @@ Our first game is a fun historical events game that you can play solo or with fr
 
 ### See Also:
 - [Web Link](https://bored-games.herokuapp.com)
+- [GitHub](https://github.com/jordankid93/RIT_iOS_App_Challenge_2016)
 - [Server GitHub](https://github.com/jordankid93/Bored-Games-Server)
