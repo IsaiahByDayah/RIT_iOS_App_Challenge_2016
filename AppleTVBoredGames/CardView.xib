@@ -35,7 +35,6 @@
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="FZZ-j3-vml" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="0Nh-s2-g83"/>
                 <constraint firstAttribute="trailing" secondItem="FZZ-j3-vml" secondAttribute="trailing" id="71P-F6-SFG"/>
@@ -53,6 +52,6 @@
         </view>
     </objects>
     <resources>
-        <image name="person" width="240" height="400"/>
+        <image name="person" width="232" height="348"/>
     </resources>
 </document>
