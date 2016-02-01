@@ -15,9 +15,13 @@ RIT iOS App Challenge 2016 Competition Submission
 
 - [Generating QR Codes](http://www.appcoda.com/qr-code-generator-tutorial/)
 
-### Frameworks
+### Frameworks / Materials
 
 - [Socket.io](https://github.com/socketio/socket.io-client-swift)
 - [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON)
+- [Assets](http://kenney.nl/assets)
+- [Sound](http://www.bensound.com/royalty-free-music/track/little-idea)
 
-[Web Link](https://bored-games.herokuapp.com)
+## See Also:
+- [Web Link](https://bored-games.herokuapp.com)
+- [Server GitHub](https://github.com/jordankid93/Bored-Games-Server)
