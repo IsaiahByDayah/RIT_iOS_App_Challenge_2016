@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -9,26 +9,26 @@
         <!--Main MenuVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainMenuVC" customModule="BoredGames" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainMenuVC" customModule="BoardGames" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BoardBackground" translatesAutoresizingMaskIntoConstraints="NO" id="611-kZ-0Eo">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BoardTitle" translatesAutoresizingMaskIntoConstraints="NO" id="ZO2-3e-sus">
-                                <rect key="frame" x="72" y="104" width="457" height="84"/>
+                                <rect key="frame" x="68" y="104" width="240" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="84" id="7TC-Gs-RoD"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3q-Fo-7nu">
-                                <rect key="frame" x="72" y="318" width="443" height="72"/>
+                                <rect key="frame" x="68" y="385" width="226" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="72" id="5ap-0s-zX4"/>
                                 </constraints>
@@ -39,7 +39,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1C0-7S-F9H">
-                                <rect key="frame" x="72" y="442" width="443" height="72"/>
+                                <rect key="frame" x="68" y="509" width="226" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="72" id="jdY-5y-xZV"/>
                                 </constraints>
@@ -50,7 +50,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GamesTitle" translatesAutoresizingMaskIntoConstraints="NO" id="ebf-BK-qUa">
-                                <rect key="frame" x="72" y="196" width="457" height="107"/>
+                                <rect key="frame" x="68" y="196" width="240" height="174"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -74,6 +74,7 @@
                             <constraint firstItem="ZO2-3e-sus" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="52" id="vRU-zh-IcM"/>
                         </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -82,17 +83,17 @@
         <!--Scan View Controller-->
         <scene sceneID="UvD-J5-rWN">
             <objects>
-                <viewController id="aPV-yc-K8g" customClass="QRScanViewController" customModule="BoredGames" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="aPV-yc-K8g" customClass="QRScanViewController" customModule="BoardGames" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Y8y-0A-FhD"/>
                         <viewControllerLayoutGuide type="bottom" id="Z7N-m0-T3K"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="TuI-X1-moW">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nh7-69-OLL">
-                                <rect key="frame" x="206" y="506" width="189" height="74"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nh7-69-OLL">
+                                <rect key="frame" x="94" y="506" width="189" height="141"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="189" id="PjF-0C-QDW"/>
                                 </constraints>
@@ -121,7 +122,7 @@
         <!--Board-->
         <scene sceneID="JvQ-TP-4ew">
             <objects>
-                <tableViewController title="Board" id="PCT-F4-cEF" customClass="GameBoardTVC" customModule="BoredGames" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Board" id="PCT-F4-cEF" customClass="GameBoardTVC" customModule="BoardGames" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ekA-XR-yYD">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -168,7 +169,7 @@
         <!--Position-->
         <scene sceneID="4wl-1R-WTg">
             <objects>
-                <viewController title="Position" id="8Vh-GD-Qld" customClass="PlayerCardPositionChoice" customModule="BoredGames" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Position" id="8Vh-GD-Qld" customClass="PlayerCardPositionChoice" customModule="BoardGames" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3SM-ga-p5R"/>
                         <viewControllerLayoutGuide type="bottom" id="WnE-gd-Aob"/>
@@ -218,32 +219,32 @@
         <!--About UsVC-->
         <scene sceneID="HWQ-ma-vh5">
             <objects>
-                <viewController id="PXB-Qq-fZk" customClass="AboutUsVC" customModule="BoredGames" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="PXB-Qq-fZk" customClass="AboutUsVC" customModule="BoardGames" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bkY-VS-Gc9"/>
                         <viewControllerLayoutGuide type="bottom" id="bN5-sU-vtv"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qwI-j5-Ay0">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BoardBackground" translatesAutoresizingMaskIntoConstraints="NO" id="gUC-4F-U5F">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jade Evans" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jaj-Z4-xFu">
-                                <rect key="frame" x="20" y="246" width="560" height="31"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Jade Evans" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jaj-Z4-xFu">
+                                <rect key="frame" x="16" y="280" width="343" height="31"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="24"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arthur Burgin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUN-Ai-YQD">
-                                <rect key="frame" x="20" y="285" width="560" height="31"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Arthur Burgin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUN-Ai-YQD">
+                                <rect key="frame" x="16" y="319" width="343" height="31"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="24"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oy-za-WBf">
-                                <rect key="frame" x="20" y="398" width="560" height="89"/>
+                                <rect key="frame" x="16" y="465" width="343" height="89"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="89" id="kMI-0T-twz"/>
                                 </constraints>
@@ -254,7 +255,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ujb-0A-bd0">
-                                <rect key="frame" x="50" y="495" width="500" height="72"/>
+                                <rect key="frame" x="46" y="562" width="283" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="500" id="TEr-F7-euT"/>
                                     <constraint firstAttribute="width" constant="500" id="wVF-mm-Xjc"/>
@@ -271,14 +272,14 @@
                                     <action selector="backToMainMenu:" destination="PXB-Qq-fZk" eventType="touchUpInside" id="30s-rM-6ph"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Isaiah Smith" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLz-pf-sCB">
-                                <rect key="frame" x="20" y="324" width="560" height="31"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Isaiah Smith" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLz-pf-sCB">
+                                <rect key="frame" x="16" y="358" width="343" height="31"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="24"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Team" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCH-XJ-sc0">
-                                <rect key="frame" x="20" y="51" width="560" height="78"/>
+                                <rect key="frame" x="16" y="51" width="343" height="78"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="78" id="vDa-Ss-Vq2"/>
                                 </constraints>
@@ -329,7 +330,7 @@
         <!--Timeline Player Scanned View Controller-->
         <scene sceneID="NeX-Mu-EY9">
             <objects>
-                <viewController storyboardIdentifier="TimelinePlayerScannedViewController" id="Mzw-Wd-M2c" customClass="TimelinePlayerScannedViewController" customModule="BoredGames" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TimelinePlayerScannedViewController" id="Mzw-Wd-M2c" customClass="TimelinePlayerScannedViewController" customModule="BoardGames" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XNV-TB-PTi"/>
                         <viewControllerLayoutGuide type="bottom" id="zPn-bi-j14"/>
@@ -408,7 +409,7 @@
         <!--Hand-->
         <scene sceneID="g1r-Bo-8wu">
             <objects>
-                <viewController title="Hand" id="yki-ck-cVo" customClass="PlayerHandTVC" customModule="BoredGames" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Hand" id="yki-ck-cVo" customClass="PlayerHandTVC" customModule="BoardGames" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2Rc-Xa-EuF"/>
                         <viewControllerLayoutGuide type="bottom" id="5H3-Jn-uYv"/>

@@ -18,31 +18,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BoardBackground" translatesAutoresizingMaskIntoConstraints="NO" id="ZYs-al-TWA">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BoardTitle" translatesAutoresizingMaskIntoConstraints="NO" id="yOr-dQ-yvh">
-                                <rect key="frame" x="68" y="104" width="240" height="84"/>
+                                <rect key="frame" x="67" y="36" width="240" height="84"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="84" id="nYv-pw-bLH"/>
+                                    <constraint firstAttribute="height" constant="84" id="EFU-5J-ata"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GamesTitle" translatesAutoresizingMaskIntoConstraints="NO" id="DB8-7D-MHr">
-                                <rect key="frame" x="68" y="196" width="240" height="123"/>
+                                <rect key="frame" x="67" y="82" width="240" height="123"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashScreenBackground" translatesAutoresizingMaskIntoConstraints="NO" id="2Xy-CG-fdf">
+                                <rect key="frame" x="15" y="185" width="344" height="362"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.050980392159999999" green="0.24313725489999999" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="ZYs-al-TWA" firstAttribute="top" secondItem="80a-a5-RUN" secondAttribute="top" constant="20" id="1gQ-OF-lmC"/>
-                            <constraint firstItem="ZYs-al-TWA" firstAttribute="bottom" secondItem="cnQ-65-uht" secondAttribute="top" id="DCo-BA-jeL"/>
-                            <constraint firstAttribute="trailing" secondItem="ZYs-al-TWA" secondAttribute="trailing" id="LLe-q7-jGS"/>
-                            <constraint firstItem="yOr-dQ-yvh" firstAttribute="leading" secondItem="80a-a5-RUN" secondAttribute="leadingMargin" constant="52" id="TJ1-6T-MJD"/>
-                            <constraint firstItem="yOr-dQ-yvh" firstAttribute="top" secondItem="PQK-W3-3hX" secondAttribute="bottom" constant="84" id="TgN-7V-Guo"/>
-                            <constraint firstItem="ZYs-al-TWA" firstAttribute="centerX" secondItem="DB8-7D-MHr" secondAttribute="centerX" id="VzS-sv-56D"/>
-                            <constraint firstItem="DB8-7D-MHr" firstAttribute="leading" secondItem="yOr-dQ-yvh" secondAttribute="leading" id="dhx-Oq-6cQ"/>
-                            <constraint firstItem="ZYs-al-TWA" firstAttribute="leading" secondItem="80a-a5-RUN" secondAttribute="leading" id="edc-HO-t3K"/>
-                            <constraint firstItem="yOr-dQ-yvh" firstAttribute="trailing" secondItem="DB8-7D-MHr" secondAttribute="trailing" id="elb-w7-i3X"/>
-                            <constraint firstItem="DB8-7D-MHr" firstAttribute="top" secondItem="yOr-dQ-yvh" secondAttribute="bottom" constant="8" symbolic="YES" id="wbG-kg-4p0"/>
+                            <constraint firstItem="DB8-7D-MHr" firstAttribute="top" secondItem="PQK-W3-3hX" secondAttribute="bottom" constant="62" id="6oR-Ss-T9t"/>
+                            <constraint firstItem="yOr-dQ-yvh" firstAttribute="leading" secondItem="DB8-7D-MHr" secondAttribute="leading" id="8Hq-LE-exo"/>
+                            <constraint firstItem="2Xy-CG-fdf" firstAttribute="centerX" secondItem="80a-a5-RUN" secondAttribute="centerX" id="Adh-SU-Wxv"/>
+                            <constraint firstItem="cnQ-65-uht" firstAttribute="top" secondItem="2Xy-CG-fdf" secondAttribute="bottom" constant="120" id="RRT-xs-qMc"/>
+                            <constraint firstItem="yOr-dQ-yvh" firstAttribute="leading" secondItem="80a-a5-RUN" secondAttribute="leadingMargin" constant="51" id="Zbo-TP-Mfc"/>
+                            <constraint firstItem="DB8-7D-MHr" firstAttribute="centerX" secondItem="2Xy-CG-fdf" secondAttribute="centerX" id="fV2-uF-j6G"/>
+                            <constraint firstItem="2Xy-CG-fdf" firstAttribute="top" secondItem="yOr-dQ-yvh" secondAttribute="bottom" constant="65" id="muV-9g-NCK"/>
+                            <constraint firstItem="yOr-dQ-yvh" firstAttribute="top" secondItem="PQK-W3-3hX" secondAttribute="bottom" constant="16" id="rmZ-Vz-z3f"/>
+                            <constraint firstItem="2Xy-CG-fdf" firstAttribute="trailing" secondItem="80a-a5-RUN" secondAttribute="trailingMargin" id="tE2-sO-b2d"/>
+                            <constraint firstItem="DB8-7D-MHr" firstAttribute="trailing" secondItem="yOr-dQ-yvh" secondAttribute="trailing" id="u7z-Eb-OVE"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -53,8 +53,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BoardBackground" width="1125" height="846"/>
         <image name="BoardTitle" width="599" height="140"/>
         <image name="GamesTitle" width="620" height="123"/>
+        <image name="splashScreenBackground" width="500" height="500"/>
     </resources>
 </document>
